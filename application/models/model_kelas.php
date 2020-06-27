@@ -12,6 +12,10 @@ class Model_Kelas extends CI_Model {
         return $this->db->get('tbl_kelompok');
     }
 
+    public function count_data() {
+        return $this->db->get('tbl_kelas')->num_rows();
+    }
+
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }
