@@ -1,13 +1,7 @@
 <?php
 class Model_Matakuliah extends CI_Model {
     public function read_data() {
-        return $this->db->from('tbl_matakuliah')    ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_matakuliah.kode_dosen')
-                                                    ->order_by('kode_mk', 'asc')
-                                                    ->get();
-    }
-
-    public function read_dosen_data() {
-        return $this->db->get('tbl_dosen');
+        return $this->db->get('tbl_matakuliah');
     }
 
     public function count_data() {
@@ -37,14 +31,10 @@ class Model_Matakuliah extends CI_Model {
         $new_number_mk = $str_mk. sprintf('%03s',$number_mk). '-' .$year_mk ; 
 
         return $new_number_mk;
-
-        return $number_rows_mk;
     }
 
     public function form_edit($where, $table) {
-        $data = $this->db->where($where);
-        $data = $this->db->from($table)->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_matakuliah.kode_dosen')->get();
-        return $data;
+        return $this->db->get_where($table, $where);
     }
 
     public function update_data($where, $data, $table) {

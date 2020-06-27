@@ -32,16 +32,6 @@
 													<?= form_error('nama_mk', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
-													<label> Dosen </label>
-													<select class="form-control" name="kode_dosen">
-														<option value="<?= $mk->kode_dosen; ?>"><?= $mk->nama_dosen; ?></option>
-														<?php foreach($dosen as $dsn): ?>
-															<option value="<?= $dsn->kode_dosen; ?>"><?= $dsn->nama_dosen; ?></option>
-														<?php endforeach; ?>
-													</select>
-													<?= form_error('kode_dosen', '<div class="text-small text-danger">', '</div>'); ?>
-												</div>
-												<div class="form-group">
 													<label>Jumlah SKS</label>
 													<select class="form-control" name="sks">
 														<option value="<?= $mk->sks ?>"><?= $mk->sks ?></option>
