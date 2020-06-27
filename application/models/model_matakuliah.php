@@ -19,11 +19,11 @@ class Model_Matakuliah extends CI_Model {
         $number_rows_mk = $this->db->get('tbl_matakuliah')->num_rows();
 
         if ($number_rows_mk > 0) {
-            $number_mk = (int) substr($last_number_mk, -4, 4);
+            $number_mk = (int) substr($last_number_mk, 4, 4);
             $number_mk++;
         } else {
             $number_mk = 1;
-        }
+        } 
         
         $str_mk = "TIF";
         $year_mk = date('y')-1;
