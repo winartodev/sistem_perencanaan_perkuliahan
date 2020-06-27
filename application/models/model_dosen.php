@@ -4,6 +4,10 @@ class Model_Dosen extends CI_Model {
         return $this->db->get('tbl_dosen');
     }
 
+    public function count_data() {
+        return $this->db->get('tbl_dosen')->num_rows();
+    }
+
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }
