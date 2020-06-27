@@ -15,7 +15,7 @@
       							<h4>Mata Kuliah</h4>
       						</div>
       						<div class="card-body">
-      							0
+      							<?= $matakuliah; ?>
       						</div>
       					</div>
       				</div>
@@ -30,7 +30,22 @@
       							<h4>Dosen</h4>
       						</div>
       						<div class="card-body">
-      							0
+      							<?= $dosen; ?>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+				  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+      				<div class="card card-statistic-1">
+      					<div class="card-icon bg-warning">
+      						<i class="fa fa-building fa-2x" style="color:#ffffff;"></i>
+      					</div>
+      					<div class="card-wrap">
+      						<div class="card-header">
+      							<h4>Kelas</h4>
+      						</div>
+      						<div class="card-body">
+      							<?= $kelas; ?>
       						</div>
       					</div>
       				</div>
