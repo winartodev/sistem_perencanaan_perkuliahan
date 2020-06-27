@@ -95,6 +95,11 @@
 								<span>Dosen</span>
 							</a>
 						</li>
+						<li>
+							<a href="<?= base_url('Kaprodi/Kelas')?>" class="nav-link"><i class="fas fa-building"></i>
+								<span>Kelas</span>
+							</a>
+						</li>
 						<li class="menu-header">Settings</li>
 						<li>
 							<a  href="credits.html" class="nav-link"><i class="fas fa-times"></i>
