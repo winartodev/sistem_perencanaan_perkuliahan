@@ -20,7 +20,7 @@ class Model_Dosen extends CI_Model {
            $number_dosen++;
        }
 
-       $new_number_mk = 'DSN'.sprintf('%03s',$number_dosen);
+       $new_number_mk = sprintf('%03s',$number_dosen);
 
         return $new_number_mk;
     }
