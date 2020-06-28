@@ -42,5 +42,13 @@ class Model_Dosen extends CI_Model {
         $this->db->where($where);
         $this->db->delete($table);
     }
+
+    public function get_matakuliah($where, $table) {
+        $data = $this->db->where($where);
+        $data = $this->db->from($table)->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
+        ->get();
+        return $data;
+       
+    }
     
 }
