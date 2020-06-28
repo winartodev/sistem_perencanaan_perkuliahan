@@ -45,7 +45,7 @@ class Mahasiswa extends CI_Controller {
             $no_telp    = $this->input->post('no_telp');
             $semester   = $this->input->post('semester');
 
-            $data = array (
+            $data_mhs = array (
                 'npm'       => $npm,
                 'nama_mhs'  => $nama_mhs,
                 'email'     => $email,
@@ -53,7 +53,15 @@ class Mahasiswa extends CI_Controller {
                 'semester'  => $semester
             );
 
-            $this->model_mahasiswa->insert_data($data, 'tbl_mahasiswa');
+            $data_user = array(
+                'username'  => $npm,
+                'password'  => MD5($npm),
+                'role_id'   => '3'
+            );
+
+            $this->model_mahasiswa->insert_data($data_mhs, 'tbl_mahasiswa');
+            $this->model_mahasiswa->insert_data($data_user, 'tbl_user');
+            
             $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                         <b>Data Mahasiswa berhasil di Simpan.</b>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
