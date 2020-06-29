@@ -17,6 +17,11 @@
 	<link rel="stylesheet"
 		href="<?= base_url('assets') ?>/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/summernote/summernote-bs4.css">
+	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/codemirror/theme/duotone-dark.css">
+	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/jquery-selectric/selectric.css">
+	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/bootstrap-daterangepicker/daterangepicker.css">
 
 	<!-- Template CSS -->
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/css/style.css">

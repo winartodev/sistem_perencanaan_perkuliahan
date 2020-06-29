@@ -24,6 +24,11 @@
 <script src="<?= base_url('assets') ?>/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
 <script src="<?= base_url('assets') ?>/modules/jquery-ui/jquery-ui.min.js"></script>
 <script src="<?= base_url('assets') ?>/modules/sweetalert/sweetalert.min.js"></script>
+<script src="<?= base_url('assets') ?>/modules/summernote/summernote-bs4.js"></script>
+<script src="<?= base_url('assets') ?>/modules/codemirror/lib/codemirror.js"></script>
+<script src="<?= base_url('assets') ?>/modules/codemirror/mode/javascript/javascript.js"></script>
+<script src="<?= base_url('assets') ?>/modules/jquery-selectric/jquery.selectric.min.js"></script>
+<script src="<?= base_url('assets') ?>/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <!-- Page Specific JS File -->
 <script src="<?= base_url('assets') ?>/js/page/modules-datatables.js"></script>
