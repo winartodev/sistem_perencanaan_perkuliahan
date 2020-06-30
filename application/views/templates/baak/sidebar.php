@@ -96,8 +96,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('BAAK/Mahasiswa')?>" class="nav-link"><i class="fas fa-user"></i>
+							<a href="<?= base_url('BAAK/Mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
 								<span>Mahasiswa</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?= base_url('BAAK/Anggota')?>" class="nav-link"><i class="fas fa-user"></i>
+								<span>Anggota BAAK</span>
 							</a>
 						</li>
 						<li class="menu-header">Settings</li>
