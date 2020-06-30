@@ -30,7 +30,7 @@ class Guest extends CI_Controller {
                 }               
             }else if ($cek_baak->num_rows() > 0) {
                 $data=$cek_baak->row_array();
-                if ($data['rolde_id'] == '2') {
+                if ($data['role_id'] == '2') {
                     $this->session->set_userdata('masuk',TRUE);
                     $this->session->set_userdata('akses','2');
                     $this->session->set_userdata('kode',$data['kode']);
