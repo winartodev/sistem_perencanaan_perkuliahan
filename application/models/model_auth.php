@@ -1,19 +1,17 @@
 <?php
 class Model_Auth extends CI_Model {
-    public function cek_login() {
-        $username = set_value('username');
-        $password = MD5(set_value('password'));
+    public function auth_kaprodi($username,$password){
+        $query=$this->db->query("SELECT * FROM tbl_kaprodi WHERE kode='$username' AND pass=MD5('$password') LIMIT 1");
+        return $query;
+    }
 
-        $result = $this->db->where('username', $username)
-                            ->where('password', $password)
-                            ->limit(1)
-                            ->get('tbl_user');
-        
-        if ($result->num_rows() > 0) {
-            return $result->row();
-        } else {
-            return array(); 
-        }
+    public function auth_baak($username,$password){
+        $query=$this->db->query("SELECT * FROM tbl_baak WHERE kode='$username' AND pass=MD5('$password') LIMIT 1");
+        return $query;
+    }
 
+    public function auth_mahasiswa($username,$password){
+        $query=$this->db->query("SELECT * FROM tbl_mahasiswa WHERE npm='$username' AND pass=MD5('$password') LIMIT 1");
+        return $query;
     }
 }
