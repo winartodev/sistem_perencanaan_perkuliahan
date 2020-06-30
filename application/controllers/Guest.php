@@ -19,7 +19,7 @@ class Guest extends CI_Controller {
             $cek_baak =$this->model_auth->auth_baak($username, $password);
             $cek_mahasiswa =$this->model_auth->auth_mahasiswa($username, $password);
             
-            if ($cek_baak == FALSE) {
+            if ($cek_kaprodi && $cek_baak && $cek_mahasiswa == FALSE) {
                 $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         <b>Username atau Password Salah.</b>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -64,12 +64,13 @@ class Guest extends CI_Controller {
         }
     }
 
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect(base_url('Guest/login'));
+    }
+
     public function _rules() {
         $this->form_validation->set_rules('username', '','required');
         $this->form_validation->set_rules('password', '','required');
     }
-
-
-
-
 }
