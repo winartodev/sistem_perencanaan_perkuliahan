@@ -13,4 +13,9 @@ class Model_Jadwal extends CI_Model {
                                                     ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
                                                     ->get(); 
     } 
+
+    public function delete_data($id, $table) {
+        $this->db->where($id);
+        $this->db->delete($table);
+    }
 }

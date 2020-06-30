@@ -44,12 +44,24 @@ class Kelas extends CI_Controller {
 
         $this->model_jadwal->insert_data($data, 'tbl_jadwal_tmp');
         $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                    <b>Mata Kuliah berhasil di Simpan.</b>
+                                                    <b>Mata Kuliah berhasil di Daftarkan.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
         redirect(base_url('Mahasiswa/Kelas')); 
+    }
+
+    public function Batal($id) {
+        $where = array('id' => $id);
+        $this->model_jadwal->delete_data($where, 'tbl_jadwal_tmp');
+        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <b>Mata Kuliah Berhasil di Batalkan.</b>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>');
+        redirect(base_url('Mahasiswa/Kelas/Jadwal')); 
     }
 
 

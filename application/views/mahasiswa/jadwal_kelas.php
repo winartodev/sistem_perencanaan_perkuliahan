@@ -40,7 +40,7 @@
 														<td><?= $jdwl->semester; ?></td>
 														<td><?= $jdwl->status; ?></td>
 														<td>
-															<?= anchor(base_url('Mahasiswa/Matakuliah/Batal/'. $jdwl->id), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
+															<?= anchor(base_url('Mahasiswa/Kelas/Batal/'. $jdwl->id), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>
