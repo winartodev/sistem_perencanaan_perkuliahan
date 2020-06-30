@@ -9,7 +9,8 @@
 
             <div class="card card-primary">
               <div class="card-body">
-                <form method="POST" action="#">
+              <?= $this->session->flashdata('pesan') ?>
+                <form method="POST" action="<?= base_url('Auth/login')?>">
                   <div class="form-group">
                     <input id="username" type="text" class="form-control" name="username" tabindex="1" autocomplete="off" placeholder="Username">
                     <?= form_error('username', '<div class="text-small text-danger">', '</div>'); ?>
