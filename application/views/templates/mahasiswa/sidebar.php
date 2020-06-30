@@ -86,8 +86,13 @@
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/MataKuliah')?>" class="nav-link"><i class="fas fa-book"></i>
-								<span>Mata Kuliah</span>
+							<a href="<?= base_url('Mahasiswa/Kelas')?>" class="nav-link"><i class="fas fa-book"></i>
+								<span>Pendaftaran Kelas</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?= base_url('Mahasiswa/Kelas/Jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
+								<span>Lihat Kelas</span>
 							</a>
 						</li>
 						<!-- <li>
