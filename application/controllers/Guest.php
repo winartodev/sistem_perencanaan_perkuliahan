@@ -23,7 +23,7 @@ class Guest extends CI_Controller {
                 $data=$cek_kaprodi->row_array();
                 if ($data['role_id'] == '1') {
                     $this->session->set_userdata('masuk',TRUE);
-                    $this->session->set_userdata('akses','1');
+                    $this->session->set_userdata('role_id','1');
                     $this->session->set_userdata('kode',$data['kode']);
                     $this->session->set_userdata('nama',$data['nama']);
                     redirect(base_url('Kaprodi/Dashboard'));
@@ -32,7 +32,7 @@ class Guest extends CI_Controller {
                 $data=$cek_baak->row_array();
                 if ($data['role_id'] == '2') {
                     $this->session->set_userdata('masuk',TRUE);
-                    $this->session->set_userdata('akses','2');
+                    $this->session->set_userdata('role_id','2');
                     $this->session->set_userdata('kode',$data['kode']);
                     $this->session->set_userdata('nama',$data['nama']);
                     redirect(base_url('BAAK/Dashboard'));
@@ -41,7 +41,7 @@ class Guest extends CI_Controller {
                 $data=$cek_mahasiswa->row_array();
                 if ($data['role_id'] == '3') {
                     $this->session->set_userdata('masuk',TRUE);
-                    $this->session->set_userdata('akses','3');
+                    $this->session->set_userdata('role_id','3');
                     $this->session->set_userdata('npm',$data['npm']);
                     $this->session->set_userdata('nama_mhs',$data['nama_mhs']);
                     redirect(base_url('Mahasiswa/Dashboard'));
