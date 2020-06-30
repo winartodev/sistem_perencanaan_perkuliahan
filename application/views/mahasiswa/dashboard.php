@@ -15,7 +15,7 @@
       							<h4>Semester</h4>
       						</div>
       						<div class="card-body">
-      							0
+      							<?= $this->session->userdata('semester'); ?>
       						</div>
       					</div>
       				</div>
