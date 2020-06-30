@@ -102,7 +102,7 @@
 						</li>
 						<li class="menu-header">Settings</li>
 						<li>
-							<a  href="credits.html" class="nav-link"><i class="fas fa-times"></i>
+							<a  href="<?= base_url('Guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
 								<span>Logout</span>
 							</a>
 						</li>
