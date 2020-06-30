@@ -65,7 +65,7 @@ class Mahasiswa extends CI_Controller {
                 'email'     => $email,
                 'no_telp'   => $no_telp,
                 'semester'  => $semester,
-                'password'  => MD5($npm)
+                'pass'      => MD5($npm)
             );
 
             $this->model_mahasiswa->insert_data($data_mhs, 'tbl_mahasiswa');
