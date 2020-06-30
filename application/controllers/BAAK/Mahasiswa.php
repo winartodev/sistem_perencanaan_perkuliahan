@@ -50,17 +50,11 @@ class Mahasiswa extends CI_Controller {
                 'nama_mhs'  => $nama_mhs,
                 'email'     => $email,
                 'no_telp'   => $no_telp,
-                'semester'  => $semester
-            );
-
-            $data_user = array(
-                'username'  => $npm,
-                'password'  => MD5($npm),
-                'role_id'   => '3'
+                'semester'  => $semester,
+                'password'  => MD5($npm)
             );
 
             $this->model_mahasiswa->insert_data($data_mhs, 'tbl_mahasiswa');
-            $this->model_mahasiswa->insert_data($data_user, 'tbl_user');
             
             $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                         <b>Data Mahasiswa berhasil di Simpan.</b>
