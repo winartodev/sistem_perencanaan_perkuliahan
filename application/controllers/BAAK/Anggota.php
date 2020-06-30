@@ -52,7 +52,7 @@ class Anggota extends CI_Controller {
                 'kode'      => $kode,
                 'nama'      => $nama,
                 'email'     => $email,
-                'password'  => MD5($kode)
+                'pass'      => MD5($kode)
             );
 
             $this->model_baak->insert_data($data, 'tbl_baak');
