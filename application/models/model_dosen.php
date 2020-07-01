@@ -29,22 +29,22 @@ class Model_Dosen extends CI_Model {
         return $new_number_mk;
     }
 
-    public function form_edit($where, $table) {
-        return $this->db->get_where($table, $where);
+    public function form_edit($id, $table) {
+        return $this->db->get_where($table, $id);
     }
 
-    public function update_data($where, $data, $table) {
-        $this->db->where($where);
+    public function update_data($id, $data, $table) {
+        $this->db->where($id);
         $this->db->update($table, $data);
     }
 
-    public function delete_data($where, $table) {
-        $this->db->where($where);
+    public function delete_data($id, $table) {
+        $this->db->where($id);
         $this->db->delete($table);
     }
 
-    public function get_matakuliah($where, $table) {
-        $data = $this->db->where($where);
+    public function get_matakuliah($id, $table) {
+        $data = $this->db->where($id);
         $data = $this->db->from($table)->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
         ->get();
         return $data;

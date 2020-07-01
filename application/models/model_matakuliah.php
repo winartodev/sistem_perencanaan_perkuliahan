@@ -33,17 +33,17 @@ class Model_Matakuliah extends CI_Model {
         return $new_number_mk;
     }
 
-    public function form_edit($where, $table) {
-        return $this->db->get_where($table, $where);
+    public function form_edit($id, $table) {
+        return $this->db->get_where($table, $id);
     }
 
-    public function update_data($where, $data, $table) {
-        $this->db->where($where);
+    public function update_data($id, $data, $table) {
+        $this->db->where($id);
         $this->db->update($table, $data);
     }
 
-    public function delete_data($where, $table) {
-        $this->db->where($where);
+    public function delete_data($id, $table) {
+        $this->db->where($id);
         $this->db->delete($table);
     }
 
