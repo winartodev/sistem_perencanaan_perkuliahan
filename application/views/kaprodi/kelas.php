@@ -33,17 +33,17 @@
 												</thead>
                                                 <?php
                                                     $no = 1; 
-                                                    foreach($kelas as $kls): 
+                                                    foreach($kelas as $_kelas): 
                                                 ?>
 													<tr>
 														<td><?= $no++ ?></td>
-														<td><?= $kls->nama_kelas ?></td>
-														<td><?= $kls->nama_mk ?></td>
-														<td><?= $kls->nama_dosen ?></td>
+														<td><?= $_kelas->nama_kelas ?></td>
+														<td><?= $_kelas->nama_mk ?></td>
+														<td><?= $_kelas->nama_dosen ?></td>
 														<td>
-                                                            <?= anchor(base_url('Kaprodi/kelas/Info/'. $kls->no), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
-															<?= anchor(base_url('Kaprodi/kelas/Edit/'. $kls->no), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('Kaprodi/kelas/Delete/'. $kls->no), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+                                                            <?= anchor(base_url('Kaprodi/kelas/Info/'. $_kelas->id), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
+															<?= anchor(base_url('Kaprodi/kelas/Edit/'. $_kelas->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('Kaprodi/kelas/Delete/'. $_kelas->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>
 												<?php endforeach; ?>

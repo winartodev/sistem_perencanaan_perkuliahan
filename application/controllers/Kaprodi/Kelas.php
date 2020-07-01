@@ -15,7 +15,7 @@ class Kelas extends CI_Controller {
     }
     
     public function index() {
-        $data['kelas'] = $this->model_kelas->read_data()->result();
+        $data['kelas'] = $this->model_kelas->read_data();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
         $this->load->view('kaprodi/kelas', $data);
@@ -23,7 +23,7 @@ class Kelas extends CI_Controller {
     }
 
     public function Add() {
-        $data['kelompok']   = $this->model_kelas->get_nama_Kelompok()->result();
+        $data['kelompok']   = $this->model_kelas->get_nama_Kelompok();
         $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
         $data['dosen']      = $this->model_dosen->read_data()->result();
         $this->load->view('templates/kaprodi/header');
@@ -32,10 +32,10 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Edit($no) {
-        $where = array('no' => $no);
-        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas')->result();
-        $data['kelompok']   = $this->model_kelas->get_nama_Kelompok()->result();
+    public function Edit($id) {
+        $where = array('id' => $id);
+        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas');
+        $data['kelompok']   = $this->model_kelas->get_nama_Kelompok();
         $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
         $data['dosen']      = $this->model_dosen->read_data()->result();
         $this->load->view('templates/kaprodi/header');
@@ -44,16 +44,16 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function info($no) {
-        $where = array('no' => $no);
-        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas')->result();
+    public function info($id) {
+        $where = array('id' => $id);
+        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas');
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
         $this->load->view('kaprodi/info_kelas', $data);
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function insert_kls() {
+    public function insert_kelas() {
         $this->_rules();
              
         if ($this->form_validation->run() == FALSE) {
@@ -84,13 +84,13 @@ class Kelas extends CI_Controller {
         }
     }
 
-    public function update_kls() {
+    public function update_kelas() {
         $this->_rules();
              
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $no                 = $this->input->post('no');
+            $id                 = $this->input->post('id');
             $kode_kelompok      = $this->input->post('kode_kelompok');
             $kode_mk            = $this->input->post('kode_mk');
             $kode_dosen         = $this->input->post('kode_dosen');
@@ -98,7 +98,7 @@ class Kelas extends CI_Controller {
             $nama_kelas         = $this->input->post('nama_kelas');
 
             $data = array (
-                'no'                => $no,
+                'id'                => $id,
                 'kode_kelompok'     => $kode_kelompok,
                 'kode_mk'           => $kode_mk,
                 'kode_dosen'        => $kode_dosen,
@@ -107,7 +107,7 @@ class Kelas extends CI_Controller {
             ); 
 
             $where = array(
-                'no' => $no
+                'id' => $id
             );
 
             $this->model_kelas->update_data($where, $data, 'tbl_kelas');
@@ -121,8 +121,8 @@ class Kelas extends CI_Controller {
         }
     }
 
-    public function delete($no) {
-        $where = array('no' => $no);
+    public function delete($id) {
+        $where = array('id' => $id);
         $this->model_kelas->delete_data($where, 'tbl_kelas');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         <b>Data Kelas Berhasil di Hapus.</b>

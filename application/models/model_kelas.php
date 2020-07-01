@@ -4,12 +4,12 @@ class Model_Kelas extends CI_Model {
         return $this->db->from('tbl_kelas') ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
                                             ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kelas.kode_dosen')
                                             ->join('tbl_kelompok', 'tbl_kelompok.kode_kelompok = tbl_kelas.kode_kelompok')
-                                            ->order_by('no', 'asc')
-                                            ->get(); 
+                                            ->order_by('id', 'asc')
+                                            ->get()->result(); 
     }
 
     public function get_nama_Kelompok() {
-        return $this->db->get('tbl_kelompok');
+        return $this->db->get('tbl_kelompok')->result();
     }
 
     public function count_data() {
@@ -26,7 +26,7 @@ class Model_Kelas extends CI_Model {
                                         ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kelas.kode_dosen')
                                         ->join('tbl_kelompok', 'tbl_kelompok.kode_kelompok = tbl_kelas.kode_kelompok')
                                         ->get(); 
-        return $data;
+        return $data->result();
     }
 
     public function update_data($id, $data, $table) {
