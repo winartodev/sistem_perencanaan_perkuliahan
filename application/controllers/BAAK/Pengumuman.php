@@ -15,7 +15,7 @@ class Pengumuman extends CI_Controller {
     }
     
     public function index() {
-        $data['pengumuman'] = $this->model_pengumuman->read_data()->result();
+        $data['pengumuman'] = $this->model_pengumuman->read_data();
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/pengumuman', $data);
@@ -29,9 +29,9 @@ class Pengumuman extends CI_Controller {
         $this->load->view('templates/baak/footer');
     }
 
-    public function Edit($no) {
-        $where = array('no' => $no);
-        $data['pengumuman'] = $this->model_pengumuman->form_edit($where, 'tbl_pengumuman')->result();
+    public function Edit($id) {
+        $where = array('id' => $id);
+        $data['pengumuman'] = $this->model_pengumuman->form_edit($where, 'tbl_pengumuman');
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/form_edit_pengumuman', $data);
@@ -54,7 +54,7 @@ class Pengumuman extends CI_Controller {
                 'konten'   => $konten
             );
 
-            $this->model_mahasiswa->insert_data($data, 'tbl_pengumuman');
+            $this->model_pengumuman->insert_data($data, 'tbl_pengumuman');
             
             $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                         <b>Pengumuman berhasil di Simpan.</b>
@@ -72,23 +72,23 @@ class Pengumuman extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $no        = $this->input->post('no');
+            $id        = $this->input->post('id');
             $judul     = $this->input->post('judul');
             $tanggal   = $this->input->post('tanggal');
             $konten    = $this->input->post('konten');
 
             $data = array (
-                'no'       => $no,
+                'id'       => $id,
                 'judul'    => $judul,
                 'tanggal'  => $tanggal,
                 'konten'   => $konten
             );
 
             $where = array(
-                'no' => $no
+                'id' => $id
             );
 
-            $this->model_mahasiswa->update_data($where, $data, 'tbl_pengumuman');
+            $this->model_pengumuman->update_data($where, $data, 'tbl_pengumuman');
             
             $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                         <b>Pengumuman berhasil di Ubah.</b>
@@ -100,8 +100,8 @@ class Pengumuman extends CI_Controller {
         }
     } 
 
-    public function delete($no) {
-        $where = array('no' => $no);
+    public function delete($id) {
+        $where = array('id' => $id);
         $this->model_pengumuman->delete_data($where, 'tbl_pengumuman');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         <b>Data Pengumuman Berhasil di Hapus.</b>

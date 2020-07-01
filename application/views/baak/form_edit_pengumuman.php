@@ -25,7 +25,7 @@
 												<label
 													class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul</label>
 												<div class="col-sm-12 col-md-7">
-													<input type="text" class="form-control" name="no" value="<?= $_pengumuman->no; ?>" hidden>
+													<input type="text" class="form-control" name="id" value="<?= $_pengumuman->id; ?>" hidden>
 													<input type="text" class="form-control" name="judul" value="<?= $_pengumuman->judul; ?>">
 												</div>
 											</div>
@@ -39,7 +39,7 @@
 												<label
 													class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
 												<div class="col-sm-12 col-md-7">
-													<textarea class="summernote-simple" name="konten"><?= $_pengumuman->konten; ?></textarea>
+													<textarea class="summernote-simple" name="konten"> <?= $_pengumuman->konten; ?></textarea>
 												</div>
 											</div>
 											<div class="form-group row mb-4">

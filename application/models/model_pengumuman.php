@@ -1,19 +1,19 @@
 <?php
 class Model_Pengumuman extends CI_Model {
     public function read_data() {
-        return $this->db->get('tbl_pengumuman');
+        return $this->db->get('tbl_pengumuman')->result();
     }
 
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }
 
-    public function form_edit($where, $table) {
-        return $this->db->get_where($table, $where);
+    public function form_edit($id, $table) {
+        return $this->db->get_where($table, $id)->result();
     }
 
-    public function update_data($where, $data, $table) {
-        $this->db->where($where);
+    public function update_data($id, $data, $table) {
+        $this->db->where($id);
         $this->db->update($table, $data);
     }
 
