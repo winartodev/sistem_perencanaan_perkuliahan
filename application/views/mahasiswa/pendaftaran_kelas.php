@@ -39,7 +39,7 @@
 														<td><?= $kls->nama_mk; ?></td>
 														<td><?= $kls->sks; ?></td>
 														<td>
-															<?= anchor(base_url('Mahasiswa/Kelas/Daftar/'. $kls->no), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
+															<?= anchor(base_url('Mahasiswa/Kelas/Daftar/'. $kls->id), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>

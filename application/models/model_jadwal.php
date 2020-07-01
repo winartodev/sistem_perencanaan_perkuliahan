@@ -9,7 +9,7 @@ class Model_Jadwal extends CI_Model {
     }
 
     public function get_kode_kelas() {
-        return $this->db->from('tbl_jadwal_tmp')    ->join('tbl_kelas', 'tbl_kelas.no = tbl_jadwal_tmp.kode_kelas')
+        return $this->db->from('tbl_jadwal_tmp')    ->join('tbl_kelas', 'tbl_kelas.id = tbl_jadwal_tmp.kode_kelas')
                                                     ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
                                                     ->get(); 
     } 

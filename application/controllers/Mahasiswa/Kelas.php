@@ -15,7 +15,7 @@ class Kelas extends CI_Controller {
     }
     
     public function index() {
-        $data['kelas'] = $this->model_kelas->read_data()->result();
+        $data['kelas'] = $this->model_kelas->read_data();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
         $this->load->view('mahasiswa/pendaftaran_kelas', $data);
