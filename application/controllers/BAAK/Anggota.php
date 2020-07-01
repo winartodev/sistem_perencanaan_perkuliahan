@@ -15,7 +15,7 @@ class Anggota extends CI_Controller {
     }
     
     public function index () {
-        $data['baak'] = $this->model_baak->read_data('tbl_baak')->result();
+        $data['baak'] = $this->model_baak->read_data();
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/anggota', $data);
@@ -29,9 +29,9 @@ class Anggota extends CI_Controller {
         $this->load->view('templates/baak/footer');
     }
 
-    public function Edit($kode) {
-        $where = array('kode' => $kode);
-        $data['baak'] = $this->model_baak->form_edit($where, 'tbl_baak')->result();
+    public function Edit($id) {
+        $where = array('id' => $id);
+        $data['baak'] = $this->model_baak->form_edit($where, 'tbl_baak');
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/form_edit_anggota', $data);
@@ -44,15 +44,15 @@ class Anggota extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $kode        = $this->input->post('kode');
+            $id        = $this->input->post('id');
             $nama   = $this->input->post('nama');
             $email      = $this->input->post('email');
         
             $data = array (
-                'kode'      => $kode,
+                'id'      => $id,
                 'nama'      => $nama,
                 'email'     => $email,
-                'pass'      => MD5($kode)
+                'pass'      => MD5($id)
             );
 
             $this->model_baak->insert_data($data, 'tbl_baak');
@@ -73,18 +73,18 @@ class Anggota extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $kode       = $this->input->post('kode');
+            $id       = $this->input->post('id');
             $nama       = $this->input->post('nama');
             $email      = $this->input->post('email');
         
             $data = array (
-                'kode'      => $kode,
+                'id'      => $id,
                 'nama'      => $nama,
                 'email'     => $email,
             );
 
             $where = array(
-                'kode' => $kode
+                'id' => $id
             );
 
             $this->model_baak->update_data($where, $data, 'tbl_baak');
@@ -99,8 +99,8 @@ class Anggota extends CI_Controller {
         }
     }
 
-    public function delete($kode) {
-        $where = array('kode' => $kode);
+    public function delete($id) {
+        $where = array('id' => $id);
         $this->model_baak->delete_data($where, 'tbl_baak');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         <b>Data Anggota Berhasil di Hapus.</b>
@@ -112,7 +112,7 @@ class Anggota extends CI_Controller {
     }
 
     public function _rules() {
-        $this->form_validation->set_rules('kode', '', 'required');
+        $this->form_validation->set_rules('id', '', 'required');
         $this->form_validation->set_rules('nama', '', 'required');
         $this->form_validation->set_rules('email', '', 'required');
     }

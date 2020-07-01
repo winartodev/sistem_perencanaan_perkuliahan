@@ -24,21 +24,21 @@
 											<table class="table table-striped" id="table-1">
 												<thead>
 													<tr>
-														<th>Kode</th>
+														<th>ID</th>
 														<th>Nama</th>																										
 														<th>Email</th>																																																																																																					
 														<th>Aksi</th>
 													</tr>
 												</thead>
-                                                <?php foreach($baak as $_anggota): ?>
+                                                <?php foreach($baak as $_baak): ?>
                                                     <tr>
-														<td><?= $_anggota->kode; ?></td>
-														<td><?= $_anggota->nama; ?></td>																										
-														<td><?= $_anggota->email; ?></td>																																																																																																					
+														<td><?= $_baak->id; ?></td>
+														<td><?= $_baak->nama; ?></td>																										
+														<td><?= $_baak->email; ?></td>																																																																																																					
 														<td>
-                                                            <!-- <?= anchor(base_url('BAAK/Anggota/Info/'. $_anggota->kode), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?> -->
-															<?= anchor(base_url('BAAK/Anggota/Edit/'. $_anggota->kode), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('BAAK/Anggota/Delete/'. $_anggota->kode), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+                                                            <!-- <?= anchor(base_url('BAAK/Anggota/Info/'. $_baak->id), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?> -->
+															<?= anchor(base_url('BAAK/Anggota/Edit/'. $_baak->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('BAAK/Anggota/Delete/'. $_baak->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>
                                                 <?php endforeach; ?>

@@ -21,8 +21,8 @@
 											</div>
 											<div class="card-body">
 												<div class="form-group">
-													<label>Kode</label>
-													<input type="text" name="kode" class="form-control">
+													<label>ID</label>
+													<input type="text" name="id" class="form-control">
 													<?= form_error('kode', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">

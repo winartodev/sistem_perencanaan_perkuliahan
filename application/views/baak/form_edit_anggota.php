@@ -15,25 +15,25 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6">
-                                    <?php foreach($baak as $_anggota): ?>
+                                    <?php foreach($baak as $_baak): ?>
 										<form method="POST" action="<?= base_url('BAAK/Anggota/update_anggota')?>" enctype="multipart/form-data">
                                             <div class="card-header">
                                                 <h4>Form Data Anggota</h4>
                                             </div>
 											<div class="card-body">
 												<div class="form-group">
-													<label>Kode</label>
-													<input type="text" name="kode" class="form-control" value="<?= $_anggota->kode; ?>">
-													<?= form_error('kode', '<div class="text-small text-danger">', '</div>'); ?>
+													<label>id</label>
+													<input type="text" name="id" class="form-control" value="<?= $_baak->id; ?>">
+													<?= form_error('id', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
 													<label>Nama</label>
-													<input type="text" name="nama" class="form-control" value="<?= $_anggota->nama; ?>">
+													<input type="text" name="nama" class="form-control" value="<?= $_baak->nama; ?>">
 													<?= form_error('nama', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
                                                 <div class="form-group">
 													<label>Email</label>
-													<input type="text" name="email" class="form-control" value="<?= $_anggota->email; ?>">
+													<input type="text" name="email" class="form-control" value="<?= $_baak->email; ?>">
 													<?= form_error('email', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>										
 											</div>
