@@ -25,8 +25,10 @@ class Guest extends CI_Controller {
                 $data=$cek_kaprodi->row_array();
                 if ($data['role_id'] == '1') {
                     $this->session->set_userdata('masuk',TRUE);
-                    $this->session->set_userdata('kode',$data['kode']);
+                    $this->session->set_userdata('id',$data['id']);
                     $this->session->set_userdata('nama',$data['nama']);
+                    $this->session->set_userdata('email',$data['email']);
+                    $this->session->set_userdata('password',$data['password']);
                     redirect(base_url('Kaprodi/Dashboard'));
                 }               
             }else if ($cek_baak->num_rows() > 0) {
@@ -34,8 +36,10 @@ class Guest extends CI_Controller {
                 $data=$cek_baak->row_array();
                 if ($data['role_id'] == '2') {
                     $this->session->set_userdata('masuk',TRUE);
-                    $this->session->set_userdata('kode',$data['kode']);
+                    $this->session->set_userdata('id',$data['id']);
                     $this->session->set_userdata('nama',$data['nama']);
+                    $this->session->set_userdata('email',$data['email']);
+                    $this->session->set_userdata('password',$data['password']);
                     redirect(base_url('BAAK/Dashboard'));
                 }
             } else if($cek_mahasiswa->num_rows() > 0){
@@ -45,7 +49,10 @@ class Guest extends CI_Controller {
                     $this->session->set_userdata('masuk',TRUE);
                     $this->session->set_userdata('npm',$data['npm']);
                     $this->session->set_userdata('nama_mhs',$data['nama_mhs']);
+                    $this->session->set_userdata('email',$data['email']);
+                    $this->session->set_userdata('no_telp',$data['no_telp']);
                     $this->session->set_userdata('semester',$data['semester']);
+                    $this->session->set_userdata('password',$data['password']);
                     redirect(base_url('Mahasiswa/Dashboard'));
                 }
             } else {
