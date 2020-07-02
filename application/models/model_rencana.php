@@ -4,9 +4,9 @@ class Model_Rencana extends CI_Model {
         $this->db->insert($table, $data);
     }
 
-    public function check_duplicate_data($data) {
+    public function check_duplicate_data($data, $table) {
         $this->db->where($data);
-        return $this->db->get('tbl_perencanaan');       
+        return $this->db->get($table);       
     }
 
     public function read_data($table) {

@@ -40,10 +40,12 @@ class Perencanaan extends CI_Controller {
             'npm'           => $npm
         );
 
-        $check = $this->model_rencana->check_duplicate_data($array);
-        $num = $check->num_rows();
+        $check1 = $this->model_rencana->check_duplicate_data($array, 'tbl_perencanaan');
+        $check2 = $this->model_rencana->check_duplicate_data($array, 'tbl_jadwal');
+        $num1 = $check1->num_rows();
+        $num2 = $check2->num_rows();
 
-        if ($num == 1) {
+        if ($num1 == 1 || $num2 == 1) {
             $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                     <b>Anda Sudah Mengambil Perkuliahan Ini.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

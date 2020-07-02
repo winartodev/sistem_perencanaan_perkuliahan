@@ -91,8 +91,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Perencanaan/Detail_Perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
-								<span>Lihat Kelas</span>
+							<a href="<?= base_url('Mahasiswa/Jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
+								<span>Lihat Jadwal</span>
 							</a>
 						</li>
 						<!-- <li>
