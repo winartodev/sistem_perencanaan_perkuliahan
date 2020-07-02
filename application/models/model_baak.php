@@ -20,4 +20,19 @@ class Model_Baak extends CI_Model {
         $this->db->where($id);
         $this->db->delete($table);
     }
+
+    public function info_kelas_baak ($id, $table) {
+        $data = $this->db->where($id);
+        $data = $this->db->from($table) ->join('tbl_perencanaan', 'tbl_perencanaan.kode_kelas = tbl_kelas.id')
+                                        ->get(); 
+        return $data->result();
+    }
+
+    public function get_data_perencanaan($id, $filed) {
+        $this->db->select($filed);
+        $this->db->where('kode_kelas', $id);
+        $res = $this->db->get('tbl_perencanaan');
+
+        return $res->row()->$filed;
+    }
 }
