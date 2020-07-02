@@ -1,5 +1,5 @@
 <?php
-class Kelas extends CI_Controller {
+class Perencanaan extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
@@ -18,50 +18,68 @@ class Kelas extends CI_Controller {
         $data['kelas'] = $this->model_kelas->read_data();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
-        $this->load->view('mahasiswa/pendaftaran_kelas', $data);
+        $this->load->view('mahasiswa/perencanaan_kuliah', $data);
         $this->load->view('templates/mahasiswa/footer');
     }
 
-    public function jadwal() {
-        $data['jadwal'] = $this->model_jadwal->get_kode_kelas()->result();
+    public function Detail_Rencana() {
+        $data['jadwal'] = $this->model_rencana->get_kode_kelas()->result();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
-        $this->load->view('mahasiswa/jadwal_kelas', $data);
+        $this->load->view('mahasiswa/detail_perencanaan', $data);
         $this->load->view('templates/mahasiswa/footer');
     }
 
-    public function Daftar($no) {
-        $kode_kelas = $no;
+    public function Daftar($id) {
+        $kode_kelas = $id;
         $npm        = $this->session->userdata('npm');
         $semester   = $this->session->userdata('semester');
 
-        $data = array (
-            'npm'           => $npm,
-            'kode_kelas'    => $kode_kelas,
-            'semester'      => $semester,
-            'status'        => 'Di Proses',
+        $array = array(
+            'kode_kelas'    => $kode_kelas, 
+            'npm'           => $npm
         );
 
-        $this->model_jadwal->insert_data($data, 'tbl_jadwal_tmp');
-        $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                    <b>Mata Kuliah berhasil di Daftarkan.</b>
+        $check = $this->model_rencana->check_duplicate_data($array);
+        $num = $check->num_rows();
+
+        if ($num == 1) {
+            $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <b>Anda Sudah Mengambil Perkuliahan Ini.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-        redirect(base_url('Mahasiswa/Kelas')); 
+            redirect(base_url('Mahasiswa/Perencanaan')); 
+        } else {
+            $data = array (
+                'npm'           => $npm,
+                'kode_kelas'    => $kode_kelas,
+                'semester'      => $semester,
+                'status'        => 'Di Proses',
+            );
+    
+            $this->model_rencana->insert_data($data, 'tbl_perencanaan');
+            $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                        <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>');
+            redirect(base_url('Mahasiswa/Perencanaan')); 
+        }       
     }
 
     public function Batal($id) {
-        $where = array('id' => $id);
-        $this->model_jadwal->delete_data($where, 'tbl_jadwal_tmp');
+        $where = array('id_tmp' => $id);
+        $this->model_rencana->delete_data($where, 'tbl_perencanaan');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                    <b>Mata Kuliah Berhasil di Batalkan.</b>
+                                                    <b>Rencana Perkuliahan Anda Berhasil di Batalkan.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-        redirect(base_url('Mahasiswa/Kelas/Jadwal')); 
+        redirect(base_url('Mahasiswa/Perencanaan/detail_rencana')); 
     }
 
 

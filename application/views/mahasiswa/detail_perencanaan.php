@@ -2,7 +2,7 @@
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header">
-						<h1>Kelas</h1>
+						<h1>Perencanaan Perkuliahan</h1>
 						<!-- <div class="section-header-breadcrumb">
 							<div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
 							<div class="breadcrumb-item"><a href="#">Modules</a></div>
@@ -16,7 +16,7 @@
 							<div class="col-12">
 								<div class="card">
 									<div class="card-header">
-										<h4>Kelas</h4>
+										<h4>Daftar Perkuliahan yang Kamu Pilih</h4>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
@@ -26,7 +26,7 @@
 														<th>Kelas</th>
 														<th>Kode MK</th>
 														<th>Nama MK</th>
-                                                        <th>Semester</th>
+                                                        <th>Nama Dosen</th>
 														<th>Status</th>																																																																																																																																																																																																																							
 														<th>Aksi</th>
 													</tr>
@@ -40,7 +40,7 @@
 														<td><?= $jdwl->semester; ?></td>
 														<td><?= $jdwl->status; ?></td>
 														<td>
-															<?= anchor(base_url('Mahasiswa/Kelas/Batal/'. $jdwl->id), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
+															<?= anchor(base_url('Mahasiswa/Perencanaan/Batal/'. $jdwl->id_tmp), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>

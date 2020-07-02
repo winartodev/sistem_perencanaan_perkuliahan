@@ -86,12 +86,12 @@
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Kelas')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('Mahasiswa/Perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Pendaftaran Kelas</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Kelas/Jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('Mahasiswa/Perencanaan/Detail_Perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Lihat Kelas</span>
 							</a>
 						</li>
