@@ -41,6 +41,7 @@ class Mahasiswa extends CI_Controller {
     public function Info($npm) {
         $where = array('npm' => $npm);
         $data['mahasiswa'] = $this->model_mahasiswa->form_info($where, 'tbl_mahasiswa')->result();
+        $data['matakuliah'] = $this->model_mahasiswa->get_matakuliah($npm)->result();
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/info_mahasiswa', $data);

@@ -25,4 +25,11 @@ class Model_Mahasiswa extends CI_Model {
         $this->db->where($id);
         $this->db->delete($table);
     }
+
+    public function get_matakuliah($id) {
+        return $this->db->from('tbl_jadwal')    ->join('tbl_kelas', 'tbl_kelas.id = tbl_jadwal.kode_kelas')
+                                                ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
+                                                ->where('npm', $id)
+                                                ->get();
+    }
 }

@@ -45,8 +45,14 @@
 														<th>SKS</th>
 													</tr>
 												</thead>
-												
 												<tbody>
+												<?php foreach($matakuliah as $mk) : ?>
+													<tr>
+														<td><?= $mk->nama_kelas; ?></td>
+														<td><?= $mk->nama_mk; ?></td>
+														<td><?= $mk->sks; ?></td>
+													</tr>
+												<?php endforeach; ?>
 												</tbody>
 											</table>
 										</div>
