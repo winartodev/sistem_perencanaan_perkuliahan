@@ -96,6 +96,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('Kaprodi/Mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
+								<span>Mahasiswa</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('Kaprodi/Kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Kelas</span>
 							</a>
