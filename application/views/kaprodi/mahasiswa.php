@@ -27,7 +27,7 @@
 														<th>NPM</th>
 														<th>Nama</th>																										
 														<th>Email</th>																																																			
-														<th>Semester</th>																																																			
+														<th>angkatan</th>																																																			
 														<th>Aksi</th>
 													</tr>
 												</thead>
@@ -36,7 +36,7 @@
 														<td><?= $mhs->npm; ?></td>
 														<td><?= $mhs->nama_mhs; ?></td>																										
 														<td><?= $mhs->email; ?></td>																																																			
-														<td><?= $mhs->semester; ?></td>																																																			
+														<td><?= $mhs->angkatan; ?></td>																																																			
 														<td>
                                                             <?= anchor(base_url('Kaprodi/Mahasiswa/Info/'. $mhs->npm), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
 														</td>

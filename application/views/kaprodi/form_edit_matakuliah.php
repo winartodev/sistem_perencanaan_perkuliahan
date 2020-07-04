@@ -43,9 +43,9 @@
 													<?= form_error('sks', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group mb-0">
-													<label>Semester</label>
-													<select class="form-control" name="semester">
-														<option value="<?= $mk->semester ?>" ><?= $mk->semester ?></option>
+													<label>angkatan</label>
+													<select class="form-control" name="angkatan">
+														<option value="<?= $mk->angkatan ?>" ><?= $mk->angkatan ?></option>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
@@ -56,7 +56,7 @@
 														<option value="8">8</option>
 														<option value="9">9</option>
 													</select>
-													<?= form_error('semester', '<div class="text-small text-danger">', '</div>'); ?>
+													<?= form_error('angkatan', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 											</div>
 											<div class="card-footer text-right">

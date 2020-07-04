@@ -12,10 +12,10 @@
       					</div>
       					<div class="card-wrap">
       						<div class="card-header">
-      							<h4>Semester</h4>
+      							<h4>angkatan</h4>
       						</div>
       						<div class="card-body">
-      							<?= $this->session->userdata('semester'); ?>
+      							<?= $this->session->userdata('angkatan'); ?>
       						</div>
       					</div>
       				</div>

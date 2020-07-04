@@ -58,14 +58,14 @@ class Mahasiswa extends CI_Controller {
             $nama_mhs   = $this->input->post('nama_mhs');
             $email      = $this->input->post('email');
             $no_telp    = $this->input->post('no_telp');
-            $semester   = $this->input->post('semester');
+            $angkatan   = $this->input->post('angkatan');
 
             $data_mhs = array (
                 'npm'       => $npm,
                 'nama_mhs'  => $nama_mhs,
                 'email'     => $email,
                 'no_telp'   => $no_telp,
-                'semester'  => $semester,
+                'angkatan'  => $angkatan,
                 'pass'      => MD5($npm)
             );
 
@@ -91,14 +91,14 @@ class Mahasiswa extends CI_Controller {
             $nama_mhs   = $this->input->post('nama_mhs');
             $email      = $this->input->post('email');
             $no_telp    = $this->input->post('no_telp');
-            $semester   = $this->input->post('semester');
+            $angkatan   = $this->input->post('angkatan');
 
             $data = array (
                 'npm'       => $npm,
                 'nama_mhs'  => $nama_mhs,
                 'email'     => $email,
                 'no_telp'   => $no_telp,
-                'semester'  => $semester
+                'angkatan'  => $angkatan
             );
 
             $where = array(
@@ -133,6 +133,6 @@ class Mahasiswa extends CI_Controller {
         $this->form_validation->set_rules('nama_mhs', 'Nama Mahasiswa', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('no_telp', 'No Telp', 'required');
-        $this->form_validation->set_rules('semester', 'Semester', 'required');
+        $this->form_validation->set_rules('angkatan', 'angkatan', 'required');
     }
 }

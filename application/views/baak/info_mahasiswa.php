@@ -27,8 +27,8 @@
 												<td>: <?= $mhs->no_telp ?></td>
 											</tr>
                                             <tr>
-												<td>Semester </td>
-												<td>: <?= $mhs->semester ?></td>
+												<td>angkatan </td>
+												<td>: <?= $mhs->angkatan ?></td>
 											</tr>
 										</table>
 										<?php endforeach; ?>

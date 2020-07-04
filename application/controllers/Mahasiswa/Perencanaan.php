@@ -33,7 +33,7 @@ class Perencanaan extends CI_Controller {
     public function Daftar($id) {
         $kode_kelas = $id;
         $npm        = $this->session->userdata('npm');
-        $semester   = $this->session->userdata('semester');
+        $angkatan   = $this->session->userdata('angkatan');
 
         $array = array(
             'kode_kelas'    => $kode_kelas, 
@@ -57,7 +57,7 @@ class Perencanaan extends CI_Controller {
             $data = array (
                 'npm'           => $npm,
                 'kode_kelas'    => $kode_kelas,
-                'semester'      => $semester,
+                'angkatan'      => $angkatan,
                 'status'        => 'Di Proses',
             );
     

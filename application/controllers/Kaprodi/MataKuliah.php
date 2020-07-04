@@ -49,13 +49,13 @@ class MataKuliah extends CI_Controller {
             $kode_mk    = $this->input->post('kode_mk');
             $nama_mk    = $this->input->post('nama_mk');
             $sks        = $this->input->post('sks');
-            $semester   = $this->input->post('semester');
+            $angkatan   = $this->input->post('angkatan');
 
             $data = array (
                 'kode_mk'       => $kode_mk,
                 'nama_mk'       => $nama_mk,
                 'sks'           => $sks,
-                'semester'      => $semester
+                'angkatan'      => $angkatan
             );
 
             $this->model_matakuliah->insert_data($data, 'tbl_matakuliah');
@@ -78,13 +78,13 @@ class MataKuliah extends CI_Controller {
             $kode_mk    = $this->input->post('kode_mk');
             $nama_mk    = $this->input->post('nama_mk');
             $sks        = $this->input->post('sks');
-            $semester   = $this->input->post('semester');
+            $angkatan   = $this->input->post('angkatan');
 
             $data = array (
                 'kode_mk'       => $kode_mk,
                 'nama_mk'       => $nama_mk,
                 'sks'           => $sks,
-                'semester'      => $semester
+                'angkatan'      => $angkatan
             );
 
             $where = array(
@@ -118,6 +118,6 @@ class MataKuliah extends CI_Controller {
         $this->form_validation->set_rules('kode_mk', 'Kode Mata Kuliah', 'required');
         $this->form_validation->set_rules('nama_mk', 'Nama Mata Kuliah', 'required');
         $this->form_validation->set_rules('sks', 'SKS', 'required');
-        $this->form_validation->set_rules('semester', 'Semester', 'required');
+        $this->form_validation->set_rules('angkatan', 'angkatan', 'required');
     }
 }

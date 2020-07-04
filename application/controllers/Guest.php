@@ -51,7 +51,7 @@ class Guest extends CI_Controller {
                     $this->session->set_userdata('nama_mhs',$data['nama_mhs']);
                     $this->session->set_userdata('email',$data['email']);
                     $this->session->set_userdata('no_telp',$data['no_telp']);
-                    $this->session->set_userdata('semester',$data['semester']);
+                    $this->session->set_userdata('angkatan',$data['angkatan']);
                     $this->session->set_userdata('password',$data['password']);
                     redirect(base_url('Mahasiswa/Dashboard'));
                 }

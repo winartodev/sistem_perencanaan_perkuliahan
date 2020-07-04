@@ -25,7 +25,7 @@
 													<tr>
 														<th>Kelas</th>
 														<th>NPM</th>
-														<th>Semester</th>
+														<th>angkatan</th>
                                                         <th>Kode Kelas</th>
 														<th>Aksi</th>
 													</tr>
@@ -35,7 +35,7 @@
 													<tr>
 														<td><?= $jdwl->nama_kelas; ?></td>
 														<td><?= $jdwl->npm; ?></td>
-														<td><?= $jdwl->semester; ?></td>
+														<td><?= $jdwl->angkatan; ?></td>
 														<td><?= $jdwl->kode_kelas; ?></td>
 														<td>
 															<?= anchor(base_url('BAAK/Kelas/Verifikasi/'. $jdwl->kode_kelas), '<div class="btn btn-info btn-action mr-1 text-bold" href="">Verifikasi</div>')?>

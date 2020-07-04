@@ -37,7 +37,7 @@
 														<td><?= $jdwl->nama_kelas; ?></td>
 														<td><?= $jdwl->kode_mk; ?></td>
 														<td><?= $jdwl->nama_mk; ?></td>
-														<td><?= $jdwl->semester; ?></td>
+														<td><?= $jdwl->angkatan; ?></td>
 														<td><span class="badge badge-pill badge-warning text-dark font-weight-bold text-capitalize"><?= $jdwl->status; ?></span></td>
 														<td>
 															<?= anchor(base_url('Mahasiswa/Perencanaan/Batal/'. $jdwl->id_tmp), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
