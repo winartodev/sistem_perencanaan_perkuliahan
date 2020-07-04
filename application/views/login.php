@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="simple-footer">
-              Copyright &copy; Stisla 2018
+              Copyright &copy; Sistem Perencanaan Perkuliahan 2020
             </div>
           </div>
         </div>
