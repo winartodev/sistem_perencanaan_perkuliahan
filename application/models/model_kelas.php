@@ -12,6 +12,20 @@ class Model_Kelas extends CI_Model {
         return $this->db->get('tbl_kelompok')->result();
     }
 
+    public function get_mahasiswa($id) {
+        return $this->db->from('tbl_jadwal')->join('tbl_kelas', 'tbl_kelas.id = tbl_jadwal.kode_kelas')
+                                            ->join('tbl_mahasiswa', 'tbl_mahasiswa.npm = tbl_jadwal.npm')
+                                            ->where('kode_kelas', $id)                                            
+                                            ->get();
+    }
+
+    public function count_angkatan($id,$angkatan, $table) {
+        return $this->db->from($table)  ->join('tbl_mahasiswa', 'tbl_mahasiswa.npm = tbl_jadwal.npm')
+                                        ->where('kode_kelas', $id)
+                                        ->where('angkatan', $angkatan)
+                                        ->get()->num_rows();
+    }
+
     public function count_data() {
         return $this->db->get('tbl_kelas')->num_rows();
     }

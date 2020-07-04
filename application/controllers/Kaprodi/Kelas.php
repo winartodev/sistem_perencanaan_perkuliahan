@@ -47,6 +47,11 @@ class Kelas extends CI_Controller {
     public function info($id) {
         $where = array('id' => $id);
         $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas');
+        $data['mahasiswa']  = $this->model_kelas->get_mahasiswa($id)->result();
+        $data['A15']        = $this->model_kelas->count_angkatan($id,'15','tbl_jadwal');
+        $data['A16']        = $this->model_kelas->count_angkatan($id,'16','tbl_jadwal');
+        $data['A17']        = $this->model_kelas->count_angkatan($id,'17','tbl_jadwal');
+        $data['A18']        = $this->model_kelas->count_angkatan($id,'18','tbl_jadwal');
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
         $this->load->view('kaprodi/info_kelas', $data);
