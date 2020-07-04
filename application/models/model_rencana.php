@@ -9,6 +9,10 @@ class Model_Rencana extends CI_Model {
         return $this->db->get($table);       
     }
 
+    public function count_data() {
+        return $this->db->get('tbl_perencanaan')->num_rows();
+    }
+
     public function read_data($table) {
         return $this->db->get($table);
     }

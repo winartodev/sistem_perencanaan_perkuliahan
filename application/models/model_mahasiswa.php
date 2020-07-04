@@ -12,6 +12,10 @@ class Model_Mahasiswa extends CI_Model {
         return $this->db->get_where($table, $id);
     }
 
+    public function count_data() {
+        return $this->db->get('tbl_mahasiswa')->num_rows();
+    }
+
     public function form_info($id, $table) {
         return $this->db->get_where($table, $id);
     }

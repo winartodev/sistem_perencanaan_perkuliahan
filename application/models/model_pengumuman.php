@@ -12,6 +12,10 @@ class Model_Pengumuman extends CI_Model {
         return $this->db->get_where($table, $id)->result();
     }
 
+    public function count_data() {
+        return $this->db->get('tbl_pengumuman')->num_rows();
+    }
+
     public function update_data($id, $data, $table) {
         $this->db->where($id);
         $this->db->update($table, $data);
