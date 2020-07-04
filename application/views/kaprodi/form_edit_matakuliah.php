@@ -46,15 +46,10 @@
 													<label>angkatan</label>
 													<select class="form-control" name="angkatan">
 														<option value="<?= $mk->angkatan ?>" ><?= $mk->angkatan ?></option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
 													</select>
 													<?= form_error('angkatan', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
