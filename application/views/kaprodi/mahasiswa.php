@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('BAAK/Mahasiswa/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mahasiswa</a>
+                        <!-- <a class="btn btn-primary mb-4" href="<?= base_url('BAAK/Mahasiswa/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mahasiswa</a> -->
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
