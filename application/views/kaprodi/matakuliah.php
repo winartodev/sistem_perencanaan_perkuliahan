@@ -25,8 +25,8 @@
 												<thead>
 													<tr>
 														<th>Kode MK</th>
-                                                        <th>SKS</th>
-														<th>Nama MK</th>																																																																								
+														<th>Nama MK</th>
+														<th>SKS</th>																																																																								
 														<th>angkatan</th>																																																																																																																																															
 														<th>Aksi</th>
 													</tr>
@@ -35,8 +35,8 @@
 												<?php foreach($matakuliah as $mk): ?>
 													<tr>
 														<td><?= $mk->kode_mk; ?></td>
-														<td><?= $mk->sks; ?></td>
 														<td><?= $mk->nama_mk; ?></td>
+														<td><?= $mk->sks; ?></td>
 														<td><?= $mk->angkatan; ?></td>
 														<td>
 															<?= anchor(base_url('Kaprodi/MataKuliah/Edit/'. $mk->kode_mk), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
