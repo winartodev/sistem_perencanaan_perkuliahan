@@ -17,6 +17,7 @@
 	<link rel="stylesheet"
 		href="<?= base_url('assets') ?>/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/ionicons/css/ionicons.min.css">
+	<link rel="icon" type="image/png" href="<?= base_url('assets') ?>/img/uti_logo.png" /> 
 
 	<!-- Template CSS -->
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/css/style.css">

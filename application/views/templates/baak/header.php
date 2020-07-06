@@ -9,6 +9,7 @@
 	<!-- General CSS Files -->
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/fontawesome/css/all.min.css">
+	<link rel="icon" type="image/png" href="<?= base_url('assets') ?>/img/uti_logo.png" /> 
 
 	<!-- CSS Libraries -->
 	<link rel="stylesheet" href="<?= base_url('assets') ?>/modules/datatables/datatables.min.css">
