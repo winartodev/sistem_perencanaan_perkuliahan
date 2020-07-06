@@ -25,8 +25,6 @@
 									<a href="#">Mark All As Read</a>
 								</div>
 							</div>
-							<div class="dropdown-list-content dropdown-list-message">
-							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
 							</div>
@@ -39,8 +37,6 @@
 								<div class="float-right">
 									<a href="#">Mark All As Read</a>
 								</div>
-							</div>
-							<div class="dropdown-list-content dropdown-list-icons">
 							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
@@ -74,10 +70,10 @@
 			<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="index.html">SIPERKUL</a>
+						<a href="<?= base_url('mahasiswa/dashboard') ?>">SIPERKUL</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
-						<a href="index.html">SPK</a>
+						<a href="<?= base_url('mahasiswa/dashboard') ?>">SPK</a>
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
