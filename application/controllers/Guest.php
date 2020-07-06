@@ -29,7 +29,7 @@ class Guest extends CI_Controller {
                     $this->session->set_userdata('nama',$data['nama']);
                     $this->session->set_userdata('email',$data['email']);
                     $this->session->set_userdata('password',$data['password']);
-                    redirect(base_url('Kaprodi/Dashboard'));
+                    redirect(base_url('kaprodi/dashboard'));
                 }               
             }else if ($cek_baak->num_rows() > 0) {
                 $this->session->set_userdata('role_id','2');
@@ -40,7 +40,7 @@ class Guest extends CI_Controller {
                     $this->session->set_userdata('nama',$data['nama']);
                     $this->session->set_userdata('email',$data['email']);
                     $this->session->set_userdata('password',$data['password']);
-                    redirect(base_url('BAAK/Dashboard'));
+                    redirect(base_url('baak/dashboard'));
                 }
             } else if($cek_mahasiswa->num_rows() > 0){
                 $this->session->set_userdata('role_id','3');
@@ -53,7 +53,7 @@ class Guest extends CI_Controller {
                     $this->session->set_userdata('no_telp',$data['no_telp']);
                     $this->session->set_userdata('angkatan',$data['angkatan']);
                     $this->session->set_userdata('password',$data['password']);
-                    redirect(base_url('Mahasiswa/Dashboard'));
+                    redirect(base_url('mahasiswa/dashboard'));
                 }
             } else {
                 $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -69,7 +69,7 @@ class Guest extends CI_Controller {
 
     public function logout() {
         $this->session->sess_destroy();
-        redirect(base_url('Guest/login'));
+        redirect(base_url('guest/login'));
     }
 
     public function _rules() {
