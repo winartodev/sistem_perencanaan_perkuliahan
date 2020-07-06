@@ -25,8 +25,6 @@
 									<a href="#">Mark All As Read</a>
 								</div>
 							</div>
-							<div class="dropdown-list-content dropdown-list-message">
-							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
 							</div>
@@ -39,8 +37,6 @@
 								<div class="float-right">
 									<a href="#">Mark All As Read</a>
 								</div>
-							</div>
-							<div class="dropdown-list-content dropdown-list-icons">
 							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
@@ -64,7 +60,7 @@
 								<i class="fas fa-cog"></i> Settings
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="<?= base_url('Guest/logout')?>" class="dropdown-item has-icon text-danger">
+							<a href="<?= base_url('guest/logout')?>" class="dropdown-item has-icon text-danger">
 								<i class="fas fa-sign-out-alt"></i> Logout
 							</a>
 						</div>
@@ -74,38 +70,51 @@
 			<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="index.html">SIPERKUL</a>
+						<a href="<?= base_url('kaprodi/dashboard') ?>">SIPERKUL</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
-						<a href="index.html">SPK</a>
+						<a href="<?= base_url('kaprodi/dashboard') ?>">SPK</a>
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
 						<li>
-							<a href="<?= base_url('Kaprodi/Dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+							<a href="<?= base_url('kaprodi/dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+						</li>
+						<li>
+							<a href="<?= base_url('kaprodi/biodata/info/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-user"></i><span>Data User</span></a>
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('Kaprodi/MataKuliah')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('kaprodi/matakuliah')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Mata Kuliah</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Kaprodi/Dosen')?>" class="nav-link"><i class="fas fa-user"></i>
+							<a href="<?= base_url('kaprodi/dosen')?>" class="nav-link"><i class="fas fa-user"></i>
 								<span>Dosen</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Kaprodi/Mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
+							<a href="<?= base_url('kaprodi/mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
 								<span>Mahasiswa</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Kaprodi/Kelas')?>" class="nav-link"><i class="fas fa-building"></i>
+							<a href="<?= base_url('kaprodi/kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Kelas</span>
 							</a>
 						</li>
 						<li class="menu-header">Settings</li>
+						<li>
+							<a  href="<?= base_url('kaprodi/biodata/user_email/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
+								<span>Buat Email</span>
+							</a>
+						</li>
+						<li>
+							<a  href="<?= base_url('kaprodi/biodata/ubah_password/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-key"></i>
+								<span>Ubah User Password</span>
+							</a>
+						</li>
 						<li>
 							<a  href="<?= base_url('Guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
 								<span>Logout</span>
