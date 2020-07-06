@@ -54,7 +54,7 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
 							<div class="dropdown-title">-----</div>
-							<a href="<?= base_url('Mahasiswa/Biodata/Info/'.$this->session->userdata('npm')) ?>" class="dropdown-item has-icon">
+							<a href="<?= base_url('mahasiswa/biodata/info/'.$this->session->userdata('npm')) ?>" class="dropdown-item has-icon">
 								<i class="far fa-user"></i> Profile
 							</a>
 							<a href="" class="dropdown-item has-icon">
@@ -82,19 +82,19 @@
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+							<a href="<?= base_url('mahasiswa/dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
 						</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Biodata/Info/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-user"></i><span>Data Mahasiswa</span></a>
+							<a href="<?= base_url('mahasiswa/biodata/info/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-user"></i><span>Data Mahasiswa</span></a>
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('mahasiswa/perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Pendaftaran Kelas</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('Mahasiswa/Jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('mahasiswa/jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Lihat Jadwal</span>
 							</a>
 						</li>
@@ -105,17 +105,17 @@
 						</li> -->
 						<li class="menu-header">Settings</li>
 						<li>
-							<a  href="<?= base_url('Mahasiswa/Biodata/email_mahasiswa/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
+							<a  href="<?= base_url('mahasiswa/biodata/email_mahasiswa/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
 								<span>Buat Email Mahasiswa</span>
 							</a>
 						</li>
 						<li>
-							<a  href="<?= base_url('Mahasiswa/Biodata/ubah_password/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-key"></i>
+							<a  href="<?= base_url('mahasiswa/biodata/ubah_password/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-key"></i>
 								<span>Ubah User Password</span>
 							</a>
 						</li>
 						<li>
-							<a  href="<?= base_url('Guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
+							<a  href="<?= base_url('guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
 								<span>Logout</span>
 							</a>
 						</li>
