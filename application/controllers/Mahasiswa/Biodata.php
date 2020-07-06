@@ -10,7 +10,7 @@ class Biodata extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
 
@@ -87,7 +87,7 @@ class Biodata extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span> 
                                                     </button>
                                                 </div>');
-        redirect(base_url('Mahasiswa/Biodata/email_mahasiswa/'.$this->session->userdata('npm'))); 
+        redirect(base_url('mahasiswa/biodata/email_mahasiswa/'.$this->session->userdata('npm'))); 
     }
 
     public function update_password() {
@@ -105,12 +105,12 @@ class Biodata extends CI_Controller {
 
         $this->model_mahasiswa->update_data($where, $data, 'tbl_mahasiswa');
         $this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <b>Password Anda Berhasil Di Buat Silahkan <a href='.base_url('Guest/login').'  style="color:blue;" >Log Out</a> Terlebih dahulu.</b>
+                                                    <b>Password Anda Berhasil Di Buat Silahkan <a href='.base_url('guest/login').'  style="color:blue;" >Log Out</a> Terlebih dahulu.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span> 
                                                     </button>
                                                 </div>');
-        redirect(base_url('Mahasiswa/Biodata/ubah_password/'.$this->session->userdata('npm'))); 
+        redirect(base_url('mahasiswa/biodata/ubah_password/'.$this->session->userdata('npm'))); 
     }
 
 }
