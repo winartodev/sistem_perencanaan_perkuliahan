@@ -22,7 +22,7 @@ class Pengumuman extends CI_Controller {
         $this->load->view('templates/mahasiswa/footer');
     }
 
-    public function Detail($id) {
+    public function detail($id) {
         $where = array('id' => $id);
         $data['pengumuman'] = $this->model_pengumuman->info_data($where, 'tbl_pengumuman');
         $this->load->view('templates/mahasiswa/header');
