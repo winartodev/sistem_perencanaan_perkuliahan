@@ -16,7 +16,7 @@
 								<div class="row">
 									<div class="col-md-6">
                                     <?php foreach($baak as $_baak): ?>
-										<form method="POST" action="<?= base_url('BAAK/Anggota/update_anggota')?>" enctype="multipart/form-data">
+										<form method="POST" action="<?= base_url('baak/anggota/update_anggota')?>" enctype="multipart/form-data">
                                             <div class="card-header">
                                                 <h4>Form Data Anggota</h4>
                                             </div>

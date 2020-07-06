@@ -6,7 +6,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('BAAK/Pengumuman/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Buat Pengumuman</a>
+                        <a class="btn btn-primary mb-4" href="<?= base_url('baak/pengumuman/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Buat Pengumuman</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -36,8 +36,8 @@
 														<td><?= $_pengumuman->tanggal; ?></td>																																																			
 														<td><?= $_pengumuman->konten; ?></td>																																																			
 														<td>
-															<?= anchor(base_url('BAAK/Pengumuman/Edit/'. $_pengumuman->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('BAAK/Pengumuman/Delete/'. $_pengumuman->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+															<?= anchor(base_url('baak/pengumuman/edit/'. $_pengumuman->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('baak/pengumuman/delete/'. $_pengumuman->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>
                                                 <?php endforeach; ?>

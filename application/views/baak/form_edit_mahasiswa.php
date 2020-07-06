@@ -16,7 +16,7 @@
 								<div class="row">
 									<div class="col-md-6">
                                     <?php foreach($mahasiswa as $mhs): ?>
-										<form method="POST" action="<?= base_url('BAAK/Mahasiswa/update_mahasiswa')?>" enctype="multipart/form-data">
+										<form method="POST" action="<?= base_url('baak/mahasiswa/update_mahasiswa')?>" enctype="multipart/form-data">
 											<div class="card-header">
 												<h4>Form Mahasiswa</h4>
 											</div>

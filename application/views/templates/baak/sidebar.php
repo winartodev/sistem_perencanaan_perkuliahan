@@ -25,8 +25,6 @@
 									<a href="#">Mark All As Read</a>
 								</div>
 							</div>
-							<div class="dropdown-list-content dropdown-list-message">
-							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
 							</div>
@@ -39,8 +37,6 @@
 								<div class="float-right">
 									<a href="#">Mark All As Read</a>
 								</div>
-							</div>
-							<div class="dropdown-list-content dropdown-list-icons">
 							</div>
 							<div class="dropdown-footer text-center">
 								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
@@ -74,40 +70,53 @@
 			<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="index.html">SIPERKUL</a>
+						<a href="<?= base_url('baak/dashboard') ?>">SIPERKUL</a>
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
-						<a href="index.html">SPK</a>
+						<a href="<?= base_url('baak/dashboard') ?>">SPK</a>
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
 						<li>
-							<a href="<?= base_url('BAAK/Dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+							<a href="<?= base_url('baak/dashboard') ?>" class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+						</li>
+						<li>
+							<a href="<?= base_url('baak/biodata/info/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-user"></i><span>User</span></a>
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('BAAK/Kelas')?>" class="nav-link"><i class="fas fa-building"></i>
+							<a href="<?= base_url('baak/kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Konfirmasi Kelas</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('BAAK/Pengumuman')?>" class="nav-link"><i class="fas fa-bullhorn"></i>
+							<a href="<?= base_url('baak/pengumuman')?>" class="nav-link"><i class="fas fa-bullhorn"></i>
 								<span>Pengumuman</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('BAAK/Mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
+							<a href="<?= base_url('baak/mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
 								<span>Mahasiswa</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('BAAK/Anggota')?>" class="nav-link"><i class="fas fa-user"></i>
+							<a href="<?= base_url('baak/anggota')?>" class="nav-link"><i class="fas fa-user"></i>
 								<span>Anggota BAAK</span>
 							</a>
 						</li>
 						<li class="menu-header">Settings</li>
 						<li>
-							<a  href="<?= base_url('Guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
+							<a  href="<?= base_url('baak/biodata/user_email/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
+								<span>Buat User Email</span>
+							</a>
+						</li>
+						<li>
+							<a  href="<?= base_url('baak/biodata/ubah_password/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-key"></i>
+								<span>Ubah User Password</span>
+							</a>
+						</li>
+						<li>
+							<a  href="<?= base_url('guest/logout')?>" class="nav-link"><i class="fas fa-times"></i>
 								<span>Logout</span>
 							</a>
 						</li>

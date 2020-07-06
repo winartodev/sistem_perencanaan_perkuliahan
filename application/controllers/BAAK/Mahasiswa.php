@@ -10,7 +10,7 @@ class Mahasiswa extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -77,7 +77,7 @@ class Mahasiswa extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Mahasiswa')); 
+            redirect(base_url('baak/mahasiswa')); 
         }
     }
 
@@ -112,7 +112,7 @@ class Mahasiswa extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Mahasiswa')); 
+            redirect(base_url('baak/mahasiswa')); 
         }
     }
 
@@ -125,7 +125,7 @@ class Mahasiswa extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('BAAK/Mahasiswa')); 
+        redirect(base_url('baak/mahasiswa')); 
     }
 
     public function _rules() {

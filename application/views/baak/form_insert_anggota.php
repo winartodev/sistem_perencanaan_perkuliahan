@@ -15,7 +15,7 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6">
-										<form method="POST" action="<?= base_url('BAAK/Anggota/insert_anggota')?>" enctype="multipart/form-data">
+										<form method="POST" action="<?= base_url('baak/anggota/insert_anggota')?>" enctype="multipart/form-data">
 											<div class="card-header">
 												<h4>Form Data Anggota</h4>
 											</div>

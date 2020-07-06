@@ -15,7 +15,7 @@
 							<div class="col-12">
 								<div class="card">
                                 <?php foreach($pengumuman as $_pengumuman): ?>
-									<form method="POST" action="<?= base_url('BAAK/Pengumuman/update_pengumuman')?>"
+									<form method="POST" action="<?= base_url('baak/pengumuman/update_pengumuman')?>"
 										enctype="multipart/form-data">
 										<div class="card-header">
 											<h4>Form Pengumuman</h4>

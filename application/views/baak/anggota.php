@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('BAAK/Anggota/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Anggota</a>
+                        <a class="btn btn-primary mb-4" href="<?= base_url('baak/anggota/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Anggota</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -36,9 +36,9 @@
 														<td><?= $_baak->nama; ?></td>																										
 														<td><?= $_baak->email; ?></td>																																																																																																					
 														<td>
-                                                            <!-- <?= anchor(base_url('BAAK/Anggota/Info/'. $_baak->id), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?> -->
-															<?= anchor(base_url('BAAK/Anggota/Edit/'. $_baak->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('BAAK/Anggota/Delete/'. $_baak->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+                                                            <!-- <?= anchor(base_url('baak/anggota/info/'. $_baak->id), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?> -->
+															<?= anchor(base_url('baak/anggota/edit/'. $_baak->id), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('baak/anggota/delete/'. $_baak->id), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>
                                                 <?php endforeach; ?>

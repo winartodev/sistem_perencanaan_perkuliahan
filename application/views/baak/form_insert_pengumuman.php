@@ -14,7 +14,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="card">
-									<form method="POST" action="<?= base_url('BAAK/Pengumuman/insert_pengumuman')?>"
+									<form method="POST" action="<?= base_url('baak/pengumuman/insert_pengumuman')?>"
 										enctype="multipart/form-data">
 										<div class="card-header">
 											<h4>Form Pengumuman</h4>

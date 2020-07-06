@@ -10,7 +10,7 @@ class Kelas extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,7 +22,7 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/baak/footer');
     }
 
-    public function Info($id) {
+    public function info($id) {
         $where = array('id' => $id);
         $data['perencanaan'] = $this->model_baak->info_kelas_baak($where, 'tbl_kelas');
         $this->load->view('templates/baak/header');
@@ -31,7 +31,7 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/baak/footer');
     }
 
-    public function Verifikasi($id) {
+    public function verifikasi($id) {
         $kode_kelas = $id;
         $npm        =  $this->model_baak->get_data_perencanaan($id, 'npm');
         $id_tmp = $this->model_baak->get_data_perencanaan($id, 'id_tmp');
@@ -55,6 +55,6 @@ class Kelas extends CI_Controller {
                                                     </button>
                                                 </div>');
 
-        redirect(base_url('BAAK/Kelas/Info/'.$kode_kelas)); 
+        redirect(base_url('baak/kelas/info/'.$kode_kelas)); 
     }
 }

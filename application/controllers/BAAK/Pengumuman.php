@@ -10,7 +10,7 @@ class Pengumuman extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,14 +22,14 @@ class Pengumuman extends CI_Controller {
         $this->load->view('templates/baak/footer');
     }
 
-    public function Add() {
+    public function add() {
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/form_insert_pengumuman');
         $this->load->view('templates/baak/footer');
     }
 
-    public function Edit($id) {
+    public function edit($id) {
         $where = array('id' => $id);
         $data['pengumuman'] = $this->model_pengumuman->form_edit($where, 'tbl_pengumuman');
         $this->load->view('templates/baak/header');
@@ -62,7 +62,7 @@ class Pengumuman extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Pengumuman')); 
+            redirect(base_url('baak/pengumuman')); 
         }
     } 
 
@@ -96,7 +96,7 @@ class Pengumuman extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Pengumuman')); 
+            redirect(base_url('baak/pengumuman')); 
         }
     } 
 
@@ -109,7 +109,7 @@ class Pengumuman extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('BAAK/Pengumuman')); 
+        redirect(base_url('baak/pengumuman')); 
     }
 
     public function _rules() {

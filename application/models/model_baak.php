@@ -11,6 +11,11 @@ class Model_Baak extends CI_Model {
     public function form_edit($id, $table) {
         return $this->db->get_where($table, $id)->result();
     }
+
+    public function form_info($id, $table) {
+        return $this->db->get_where($table, $id);
+    }
+
     public function update_data($id, $data, $table) {
         $this->db->where($id);
         $this->db->update($table, $data);

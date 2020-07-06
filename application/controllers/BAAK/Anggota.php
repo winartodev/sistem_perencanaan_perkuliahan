@@ -10,7 +10,7 @@ class Anggota extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -63,7 +63,7 @@ class Anggota extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Anggota')); 
+            redirect(base_url('baak/anggota')); 
         }
     }
 
@@ -95,7 +95,7 @@ class Anggota extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('BAAK/Anggota')); 
+            redirect(base_url('baak/anggota')); 
         }
     }
 
@@ -108,7 +108,7 @@ class Anggota extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('BAAK/Anggota')); 
+        redirect(base_url('baak/anggota')); 
     }
 
     public function _rules() {

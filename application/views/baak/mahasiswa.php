@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('BAAK/Mahasiswa/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mahasiswa</a>
+                        <a class="btn btn-primary mb-4" href="<?= base_url('baak/mahasiswa/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mahasiswa</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -38,9 +38,9 @@
 														<td><?= $mhs->email; ?></td>																																																			
 														<td><?= $mhs->angkatan; ?></td>																																																			
 														<td>
-                                                            <?= anchor(base_url('BAAK/Mahasiswa/Info/'. $mhs->npm), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
-															<?= anchor(base_url('BAAK/Mahasiswa/Edit/'. $mhs->npm), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('BAAK/Mahasiswa/Delete/'. $mhs->npm), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+                                                            <?= anchor(base_url('baak/mahasiswa/info/'. $mhs->npm), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
+															<?= anchor(base_url('baak/mahasiswa/edit/'. $mhs->npm), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('baak/mahasiswa/delete/'. $mhs->npm), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>
                                                 <?php endforeach; ?>

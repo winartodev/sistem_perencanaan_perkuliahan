@@ -41,7 +41,7 @@
 														<td><?= $_kelas->nama_mk?></td>
 														<td><?= $_kelas->nama_dosen ?></td>
 														<td>
-                                                            <?= anchor(base_url('BAAK/Kelas/Info/'. $_kelas->id), '<div class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-eye"></i></div>')?>
+                                                            <?= anchor(base_url('baak/kelas/info/'. $_kelas->id), '<div class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-eye"></i></div>')?>
 														</td>
 													</tr>
 												<?php endforeach; ?>
