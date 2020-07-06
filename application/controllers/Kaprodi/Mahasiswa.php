@@ -10,7 +10,7 @@ class Mahasiswa extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,7 +22,7 @@ class Mahasiswa extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Info($npm) {
+    public function info($npm) {
         $where = array('npm' => $npm);
         $data['mahasiswa'] = $this->model_mahasiswa->form_info($where, 'tbl_mahasiswa')->result();
         $data['matakuliah'] = $this->model_mahasiswa->get_matakuliah($npm)->result();

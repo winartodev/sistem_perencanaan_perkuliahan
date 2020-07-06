@@ -55,7 +55,7 @@
 											</div>
 											<div class="card-footer text-right">
 												<button class="btn btn-danger" type="reset"> <i class="fa fa-undo mr-1"></i>Reset</button>
-												<button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1">Save</i>
+												<button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1"></i>Save</button>
 											</div>
 										</form>
 									</div>

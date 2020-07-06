@@ -10,7 +10,7 @@ class Dosen extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,7 +22,7 @@ class Dosen extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Add() {
+    public function add() {
         $data['kode_dosen'] = $this->model_dosen->get_kode_dsn();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
@@ -30,7 +30,7 @@ class Dosen extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }   
 
-    public function Edit($kode_dosen) {
+    public function edit($kode_dosen) {
         $where = array('kode_dosen' => $kode_dosen);
         $data['dosen'] = $this->model_dosen->form_edit($where, 'tbl_dosen')->result();
         $this->load->view('templates/kaprodi/header');
@@ -39,7 +39,7 @@ class Dosen extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Info($kode_dosen) {
+    public function info($kode_dosen) {
         $where = array('kode_dosen' => $kode_dosen);
         $data['dosen'] = $this->model_dosen->form_edit($where, 'tbl_dosen')->result();
         $data['matakuliah'] = $this->model_dosen->get_matakuliah($where, 'tbl_kelas')->result();
@@ -74,7 +74,7 @@ class Dosen extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/Dosen')); 
+            redirect(base_url('kaprodi/dosen')); 
         }
     }
 
@@ -107,7 +107,7 @@ class Dosen extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/Dosen')); 
+            redirect(base_url('kaprodi/dosen')); 
         }
     }
 
@@ -120,7 +120,7 @@ class Dosen extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('Kaprodi/Dosen')); 
+        redirect(base_url('kaprodi/dosen')); 
     }
 
     public function _rules() {

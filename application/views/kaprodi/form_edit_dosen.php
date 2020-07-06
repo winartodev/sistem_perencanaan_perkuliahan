@@ -16,7 +16,7 @@
 								<div class="row">
 									<div class="col-md-6">
                                     <?php foreach($dosen as $dsn): ?>
-                                        <form method="POST" action="<?= base_url('Kaprodi/Dosen/update_dosen')?>" enctype="multipart/form-data">
+                                        <form method="POST" action="<?= base_url('kaprodi/dosen/update_dosen')?>" enctype="multipart/form-data">
 											<div class="card-header">
 												<h4>Form Dosen</h4>
 											</div>

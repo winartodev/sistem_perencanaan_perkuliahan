@@ -10,7 +10,7 @@ class Kelas extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,7 +22,7 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Add() {
+    public function add() {
         $data['kelompok']   = $this->model_kelas->get_nama_Kelompok();
         $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
         $data['dosen']      = $this->model_dosen->read_data()->result();
@@ -32,7 +32,7 @@ class Kelas extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Edit($id) {
+    public function edit($id) {
         $where = array('id' => $id);
         $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas');
         $data['kelompok']   = $this->model_kelas->get_nama_Kelompok();
@@ -85,7 +85,7 @@ class Kelas extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/Kelas')); 
+            redirect(base_url('kaprodi/kelas')); 
         }
     }
 
@@ -122,7 +122,7 @@ class Kelas extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/Kelas')); 
+            redirect(base_url('kaprodi/kelas')); 
         }
     }
 
@@ -135,7 +135,7 @@ class Kelas extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('Kaprodi/Kelas'));  
+        redirect(base_url('kaprodi/kelas'));  
     }
 
 

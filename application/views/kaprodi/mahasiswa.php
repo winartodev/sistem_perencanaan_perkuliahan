@@ -38,7 +38,7 @@
 														<td><?= $mhs->email; ?></td>																																																			
 														<td><?= $mhs->angkatan; ?></td>																																																			
 														<td>
-                                                            <?= anchor(base_url('Kaprodi/Mahasiswa/Info/'. $mhs->npm), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
+                                                            <?= anchor(base_url('kaprodi/mahasiswa/info/'. $mhs->npm), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
 														</td>
 													</tr>
                                                 <?php endforeach; ?>

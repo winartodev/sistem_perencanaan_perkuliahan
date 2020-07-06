@@ -10,7 +10,7 @@ class MataKuliah extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -22,7 +22,7 @@ class MataKuliah extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Add() {
+    public function add() {
         $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
         $data['kode_mk'] = $this->model_matakuliah->get_kode_mk();
         $this->load->view('templates/kaprodi/header');
@@ -31,7 +31,7 @@ class MataKuliah extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
-    public function Edit($kode_mk) {
+    public function edit($kode_mk) {
         $where = array('kode_mk' => $kode_mk);
         $data['matakuliah'] = $this->model_matakuliah->form_edit($where, 'tbl_matakuliah')->result();
         $this->load->view('templates/kaprodi/header');
@@ -65,7 +65,7 @@ class MataKuliah extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/MataKuliah')); 
+            redirect(base_url('kaprodi/matakuliah')); 
         }
     }
 
@@ -98,7 +98,7 @@ class MataKuliah extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Kaprodi/MataKuliah')); 
+            redirect(base_url('kaprodi/matakuliah')); 
         }
     }
 
@@ -111,7 +111,7 @@ class MataKuliah extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-        redirect(base_url('Kaprodi/MataKuliah')); 
+        redirect(base_url('kaprodi/matakuliah')); 
     }
 
     public function _rules() {

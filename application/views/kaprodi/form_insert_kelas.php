@@ -15,7 +15,7 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6">
-										<form method="POST" action="<?= base_url('Kaprodi/Kelas/insert_kelas')?>" enctype="multipart/form-data">
+										<form method="POST" action="<?= base_url('kaprodi/kelas/insert_kelas')?>" enctype="multipart/form-data">
 											<div class="card-header">
 												<h4>Form Kelas</h4>
 											</div>

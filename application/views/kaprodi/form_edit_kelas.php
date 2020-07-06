@@ -23,7 +23,7 @@
                                                 <div class="card-body">
                                                     <div class="form-group">
                                                         <label>Nama Kelompok</label>
-                                                        <input type="text" name="id" class="form-control" value="<?= $_kelas->id?>">
+                                                        <input type="text" name="id" class="form-control" value="<?= $_kelas->id?>" hidden>
                                                         <select class="form-control" name="kode_kelompok">
                                                             <option value="<?= $_kelas->kode_kelompok?>"><?= $_kelas->nama_kelompok?></option>
                                                             <?php foreach($kelompok as $_kelompok): ?>

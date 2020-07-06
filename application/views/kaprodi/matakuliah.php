@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('Kaprodi/MataKuliah/Add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mata Kuliah</a>
+                        <a class="btn btn-primary mb-4" href="<?= base_url('kaprodi/matakuliah/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Mata Kuliah</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -39,8 +39,8 @@
 														<td><?= $mk->sks; ?></td>
 														<td><?= $mk->angkatan; ?></td>
 														<td>
-															<?= anchor(base_url('Kaprodi/MataKuliah/Edit/'. $mk->kode_mk), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('Kaprodi/MataKuliah/Delete/'. $mk->kode_mk), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+															<?= anchor(base_url('kaprodi/matakuliah/edit/'. $mk->kode_mk), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+															<?= anchor(base_url('kaprodi/matakuliah/delete/'. $mk->kode_mk), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>
