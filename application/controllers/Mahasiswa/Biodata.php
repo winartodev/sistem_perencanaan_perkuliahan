@@ -59,7 +59,7 @@ class Biodata extends CI_Controller {
                                                 </div>');
         } else {
             $this->session->set_flashdata('cek_email','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                    <b>Anda Belum Terdaftar, Klik <a href='.base_url('Mahasiswa/Biodata/buat_email').'  style="color:blue;" >link</a> Berikut Agar Bisa Membuat Email.</b>
+                                                    <b>Anda Belum Terdaftar, Klik <a href='.base_url('mahasiswa/biodata/buat_email').'  style="color:blue;" >link</a> Berikut Agar Bisa Membuat Email.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -82,7 +82,7 @@ class Biodata extends CI_Controller {
 
         $this->model_mahasiswa->update_data($where, $data, 'tbl_mahasiswa');
         $this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <b>Email Anda Berhasil Di Buat Silahkan <a href='.base_url('Guest/login').'  style="color:blue;" >Log Out</a> Terlebih dahulu.</b>
+                                                    <b>Email Anda Berhasil Di Buat Silahkan <a href='.base_url('guest/login').'  style="color:blue;" >Log Out</a> Terlebih dahulu.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span> 
                                                     </button>
