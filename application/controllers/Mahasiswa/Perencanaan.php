@@ -22,7 +22,7 @@ class Perencanaan extends CI_Controller {
         $this->load->view('templates/mahasiswa/footer');
     }
 
-    public function Detail_Rencana() {
+    public function detail_rencana() {
         $data['jadwal'] = $this->model_rencana->get_kode_kelas()->result();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
@@ -30,7 +30,7 @@ class Perencanaan extends CI_Controller {
         $this->load->view('templates/mahasiswa/footer');
     }
 
-    public function Daftar($id) {
+    public function daftar($id) {
         $kode_kelas = $id;
         $npm        = $this->session->userdata('npm');
         $angkatan   = $this->session->userdata('angkatan');
@@ -72,7 +72,7 @@ class Perencanaan extends CI_Controller {
         }       
     }
 
-    public function Batal($id) {
+    public function batal($id) {
         $where = array('id_tmp' => $id);
         $this->model_rencana->delete_data($where, 'tbl_perencanaan');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
