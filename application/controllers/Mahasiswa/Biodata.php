@@ -14,7 +14,7 @@ class Biodata extends CI_Controller {
         }
     }
 
-    public function Info($npm) {
+    public function info($npm) {
         $where = array('npm' => $npm);
         $data['mahasiswa'] = $this->model_mahasiswa->form_info($where, 'tbl_mahasiswa');
         $this->load->view('templates/mahasiswa/header');
