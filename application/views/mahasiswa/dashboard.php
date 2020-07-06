@@ -36,7 +36,7 @@
                       <div class="media-body">
                         <div class="float-right text-primary"><?= $_pengumuman->tanggal ?></div>
                         <div class="media-title text-uppercase mb-3"><?= $_pengumuman->judul ?></div>
-						<?= anchor(base_url('Mahasiswa/Pengumuman/Detail/'. $_pengumuman->id), '<div class="btn btn-info btn-action mr-1 text-bold" href="">Detail</div>')?>
+						<?= anchor(base_url('mahasiswa/pengumuman/detail/'. $_pengumuman->id), '<div class="btn btn-info btn-action mr-1 text-bold" href="">Detail</div>')?>
                       </div>
                     </li>
 				  <?php endforeach; ?>

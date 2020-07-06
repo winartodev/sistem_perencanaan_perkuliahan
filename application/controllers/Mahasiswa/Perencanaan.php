@@ -10,7 +10,7 @@ class Perencanaan extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-            redirect(base_url('Guest/login'));
+            redirect(base_url('guest/login'));
         }
     }
     
@@ -68,7 +68,7 @@ class Perencanaan extends CI_Controller {
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('Mahasiswa/Perencanaan')); 
+            redirect(base_url('mahasiswa/perencanaan')); 
         }       
     }
 
@@ -81,7 +81,7 @@ class Perencanaan extends CI_Controller {
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>');
-        redirect(base_url('Mahasiswa/Perencanaan/detail_rencana')); 
+        redirect(base_url('mahasiswa/perencanaan/detail_rencana')); 
     }
 
 

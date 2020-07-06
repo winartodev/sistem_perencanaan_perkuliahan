@@ -9,7 +9,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<form method="POST" action="<?= base_url('Mahasiswa/Biodata/update_password')?>"
+							<form method="POST" action="<?= base_url('mahasiswa/biodata/update_password')?>"
 								enctype="multipart/form-data">
 								<div class="card-body">
 									<div class="form-group">

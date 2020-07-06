@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-info mb-4" href="<?= base_url('Mahasiswa/Perencanaan/Detail_Rencana') ?>"> <i class="fa fa-eye fa-sm mr-2" ></i>Detail Rencana Mu</a>
+                        <a class="btn btn-info mb-4" href="<?= base_url('mahasiswa/perencanaan/detail_rencana') ?>"> <i class="fa fa-eye fa-sm mr-2" ></i>Detail Rencana Mu</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -41,7 +41,7 @@
 														<td><?= $kls->nama_dosen; ?></td>
 														<td><?= $kls->sks; ?></td>
 														<td>
-															<?= anchor(base_url('Mahasiswa/Perencanaan/Daftar/'. $kls->id), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
+															<?= anchor(base_url('mahasiswa/perencanaan/daftar/'. $kls->id), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>

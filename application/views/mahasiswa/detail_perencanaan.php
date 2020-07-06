@@ -40,7 +40,7 @@
 														<td><?= $jdwl->angkatan; ?></td>
 														<td><span class="badge badge-pill badge-warning text-dark font-weight-bold text-capitalize"><?= $jdwl->status; ?></span></td>
 														<td>
-															<?= anchor(base_url('Mahasiswa/Perencanaan/Batal/'. $jdwl->id_tmp), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
+															<?= anchor(base_url('mahasiswa/perencanaan/batal/'. $jdwl->id_tmp), '<div class="btn btn-danger btn-action mr-1 text-bold" href="">Batal</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>
