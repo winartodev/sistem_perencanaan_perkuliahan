@@ -131,7 +131,7 @@ class Mahasiswa extends CI_Controller {
     public function _rules() {
         $this->form_validation->set_rules('npm', 'NPM', 'required');
         $this->form_validation->set_rules('nama_mhs', 'Nama Mahasiswa', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required');
+        // $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('no_telp', 'No Telp', 'required');
         $this->form_validation->set_rules('angkatan', 'angkatan', 'required');
     }

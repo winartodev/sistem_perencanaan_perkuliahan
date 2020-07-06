@@ -114,6 +114,6 @@ class Anggota extends CI_Controller {
     public function _rules() {
         $this->form_validation->set_rules('id', '', 'required');
         $this->form_validation->set_rules('nama', '', 'required');
-        $this->form_validation->set_rules('email', '', 'required');
+        // $this->form_validation->set_rules('email', '', 'required');
     }
 }
