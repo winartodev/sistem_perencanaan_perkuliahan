@@ -63,7 +63,7 @@ class TahunAkademik extends CI_Controller {
 
     public function insert_tahun_akademik() 
     {
-        $this->_rules();
+        $this->_rules_tahun_akademik();
              
         if ($this->form_validation->run() == FALSE) {
             $this->buat_tahun_akademik();
@@ -89,7 +89,7 @@ class TahunAkademik extends CI_Controller {
         }
     }
 
-    public function _rules() {
+    public function _rules_tahun_akademik() {
         $this->form_validation->set_rules('tahun_akademik', 'tahun akademik', 'required');
         $this->form_validation->set_rules('semester', 'semester', 'required');
     }
