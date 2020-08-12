@@ -40,7 +40,7 @@ class TahunAkademik extends CI_Controller {
             $this->session->set_flashdata('check_tahun_akademik','<div>
                                                 <b>Tahun Akademik '.$this->model_tahun_akademik->get_tahun_akademik().' Semester '.$this->model_tahun_akademik->get_semester().'</b>
                                                 <br><br>
-                                                <a class="btn btn-info btn-sm mr-3" href='.base_url('baak/tahunakademik/buat_tahun_akademik').'> 
+                                                <a class="btn btn-info btn-sm mr-3" href='.base_url('baak/penginputan/batas_tanggal_input_akademik').'> 
                                                 Buat Tanggal Input Akademik
                                                 </a> 
                                                 <a class="btn btn-warning btn-sm mr-3" href='.base_url('baak/tahunakademik/buat_tahun_akademik').'> 
@@ -63,7 +63,7 @@ class TahunAkademik extends CI_Controller {
 
     public function insert_tahun_akademik() 
     {
-        $this->_rules_tahun_akademik();
+        $this->_rules();
              
         if ($this->form_validation->run() == FALSE) {
             $this->buat_tahun_akademik();
@@ -89,7 +89,7 @@ class TahunAkademik extends CI_Controller {
         }
     }
 
-    public function _rules_tahun_akademik() {
+    public function _rules() {
         $this->form_validation->set_rules('tahun_akademik', 'tahun akademik', 'required');
         $this->form_validation->set_rules('semester', 'semester', 'required');
     }
