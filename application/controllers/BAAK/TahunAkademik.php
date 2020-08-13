@@ -40,10 +40,10 @@ class TahunAkademik extends CI_Controller {
             $this->session->set_flashdata('check_tahun_akademik','<div>
                                                 <b>Tahun Akademik '.$this->model_tahun_akademik->get_tahun_akademik().' Semester '.$this->model_tahun_akademik->get_semester().'</b>
                                                 <br><br>
-                                                <a class="btn btn-info btn-sm mr-3" href='.base_url('baak/penginputan/batas_tanggal_input_akademik').'> 
+                                                <a class="btn btn-info btn-sm mr-3" href='.base_url('baak/penginputan/input_tanggal_akademik').'> 
                                                 Buat Tanggal Input Akademik
                                                 </a> 
-                                                <a class="btn btn-warning btn-sm mr-3" href='.base_url('baak/tahunakademik/buat_tahun_akademik').'> 
+                                                <a class="btn btn-warning btn-sm mr-3" href='.base_url('baak/penginputan/input_tanggal_perencanaan').'> 
                                                 Buat Tanggal Perencanaan
                                                 </a> 
                                                 <a class="btn btn-danger btn-sm" href='.base_url('baak/tahunakademik/buat_tahun_akademik').'> 
