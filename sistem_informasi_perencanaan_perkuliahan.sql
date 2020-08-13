@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jul 2020 pada 05.21
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.3
+-- Generation Time: Aug 13, 2020 at 02:28 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_baak`
+-- Table structure for table `tbl_baak`
 --
 
 CREATE TABLE `tbl_baak` (
@@ -37,16 +37,16 @@ CREATE TABLE `tbl_baak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_baak`
+-- Dumping data for table `tbl_baak`
 --
 
 INSERT INTO `tbl_baak` (`id`, `nama`, `email`, `pass`, `role_id`) VALUES
-('baak', 'BAAK', 'gajsga@gmail.com', 'f6edb4c31cf9be5ce497d12251a9d29e', '2');
+('baak', 'BAAK', '', 'f6edb4c31cf9be5ce497d12251a9d29e', '2');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_dosen`
+-- Table structure for table `tbl_dosen`
 --
 
 CREATE TABLE `tbl_dosen` (
@@ -57,7 +57,7 @@ CREATE TABLE `tbl_dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_dosen`
+-- Dumping data for table `tbl_dosen`
 --
 
 INSERT INTO `tbl_dosen` (`kode_dosen`, `nama_dosen`, `email`, `no_telp`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `tbl_dosen` (`kode_dosen`, `nama_dosen`, `email`, `no_telp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_jadwal`
+-- Table structure for table `tbl_jadwal`
 --
 
 CREATE TABLE `tbl_jadwal` (
@@ -113,7 +113,7 @@ CREATE TABLE `tbl_jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_jadwal`
+-- Dumping data for table `tbl_jadwal`
 --
 
 INSERT INTO `tbl_jadwal` (`id_jdwl`, `kode_kelas`, `npm`) VALUES
@@ -128,7 +128,7 @@ INSERT INTO `tbl_jadwal` (`id_jdwl`, `kode_kelas`, `npm`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kaprodi`
+-- Table structure for table `tbl_kaprodi`
 --
 
 CREATE TABLE `tbl_kaprodi` (
@@ -140,7 +140,7 @@ CREATE TABLE `tbl_kaprodi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_kaprodi`
+-- Dumping data for table `tbl_kaprodi`
 --
 
 INSERT INTO `tbl_kaprodi` (`id`, `nama`, `email`, `pass`, `role_id`) VALUES
@@ -149,7 +149,7 @@ INSERT INTO `tbl_kaprodi` (`id`, `nama`, `email`, `pass`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelas`
+-- Table structure for table `tbl_kelas`
 --
 
 CREATE TABLE `tbl_kelas` (
@@ -162,7 +162,7 @@ CREATE TABLE `tbl_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_kelas`
+-- Dumping data for table `tbl_kelas`
 --
 
 INSERT INTO `tbl_kelas` (`id`, `kode_kelompok`, `kode_mk`, `kode_dosen`, `angkatan`, `nama_kelas`) VALUES
@@ -185,7 +185,7 @@ INSERT INTO `tbl_kelas` (`id`, `kode_kelompok`, `kode_mk`, `kode_dosen`, `angkat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelompok`
+-- Table structure for table `tbl_kelompok`
 --
 
 CREATE TABLE `tbl_kelompok` (
@@ -194,7 +194,7 @@ CREATE TABLE `tbl_kelompok` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_kelompok`
+-- Dumping data for table `tbl_kelompok`
 --
 
 INSERT INTO `tbl_kelompok` (`kode_kelompok`, `nama_kelompok`) VALUES
@@ -204,7 +204,7 @@ INSERT INTO `tbl_kelompok` (`kode_kelompok`, `nama_kelompok`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_mahasiswa`
+-- Table structure for table `tbl_mahasiswa`
 --
 
 CREATE TABLE `tbl_mahasiswa` (
@@ -218,7 +218,7 @@ CREATE TABLE `tbl_mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_mahasiswa`
+-- Dumping data for table `tbl_mahasiswa`
 --
 
 INSERT INTO `tbl_mahasiswa` (`npm`, `nama_mhs`, `email`, `no_telp`, `angkatan`, `pass`, `role_id`) VALUES
@@ -230,7 +230,7 @@ INSERT INTO `tbl_mahasiswa` (`npm`, `nama_mhs`, `email`, `no_telp`, `angkatan`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_matakuliah`
+-- Table structure for table `tbl_matakuliah`
 --
 
 CREATE TABLE `tbl_matakuliah` (
@@ -241,7 +241,7 @@ CREATE TABLE `tbl_matakuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_matakuliah`
+-- Dumping data for table `tbl_matakuliah`
 --
 
 INSERT INTO `tbl_matakuliah` (`kode_mk`, `nama_mk`, `sks`, `angkatan`) VALUES
@@ -288,7 +288,28 @@ INSERT INTO `tbl_matakuliah` (`kode_mk`, `nama_mk`, `sks`, `angkatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengumuman`
+-- Table structure for table `tbl_penginputan`
+--
+
+CREATE TABLE `tbl_penginputan` (
+  `id_penginputan` int(11) NOT NULL,
+  `jenis_penginputan` enum('Input_Akademik','Buat_Perencanaan') DEFAULT NULL,
+  `tanggal_mulai` date DEFAULT NULL,
+  `tanggal_akhir` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_penginputan`
+--
+
+INSERT INTO `tbl_penginputan` (`id_penginputan`, `jenis_penginputan`, `tanggal_mulai`, `tanggal_akhir`) VALUES
+(24, 'Input_Akademik', '2020-08-14', '2020-08-15'),
+(25, 'Buat_Perencanaan', '2020-08-15', '2020-08-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pengumuman`
 --
 
 CREATE TABLE `tbl_pengumuman` (
@@ -299,7 +320,7 @@ CREATE TABLE `tbl_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_pengumuman`
+-- Dumping data for table `tbl_pengumuman`
 --
 
 INSERT INTO `tbl_pengumuman` (`id`, `judul`, `tanggal`, `konten`) VALUES
@@ -308,7 +329,7 @@ INSERT INTO `tbl_pengumuman` (`id`, `judul`, `tanggal`, `konten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_perencanaan`
+-- Table structure for table `tbl_perencanaan`
 --
 
 CREATE TABLE `tbl_perencanaan` (
@@ -320,7 +341,7 @@ CREATE TABLE `tbl_perencanaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_perencanaan`
+-- Dumping data for table `tbl_perencanaan`
 --
 
 INSERT INTO `tbl_perencanaan` (`id_tmp`, `npm`, `kode_kelas`, `angkatan`, `status`) VALUES
@@ -328,24 +349,43 @@ INSERT INTO `tbl_perencanaan` (`id_tmp`, `npm`, `kode_kelas`, `angkatan`, `statu
 (81, '1811010008', 34, '18', 'Di proses'),
 (82, '1811010008', 38, '18', 'Di proses');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tahun_akademik`
+--
+
+CREATE TABLE `tbl_tahun_akademik` (
+  `id_ta` int(11) NOT NULL,
+  `tahun_akademik` year(4) NOT NULL,
+  `semester` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_tahun_akademik`
+--
+
+INSERT INTO `tbl_tahun_akademik` (`id_ta`, `tahun_akademik`, `semester`) VALUES
+(5, 2019, 'Ganjil');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tbl_baak`
+-- Indexes for table `tbl_baak`
 --
 ALTER TABLE `tbl_baak`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_dosen`
+-- Indexes for table `tbl_dosen`
 --
 ALTER TABLE `tbl_dosen`
   ADD PRIMARY KEY (`kode_dosen`);
 
 --
--- Indeks untuk tabel `tbl_jadwal`
+-- Indexes for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   ADD PRIMARY KEY (`id_jdwl`),
@@ -353,13 +393,13 @@ ALTER TABLE `tbl_jadwal`
   ADD KEY `fk_npm` (`npm`);
 
 --
--- Indeks untuk tabel `tbl_kaprodi`
+-- Indexes for table `tbl_kaprodi`
 --
 ALTER TABLE `tbl_kaprodi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_kelas`
+-- Indexes for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
   ADD PRIMARY KEY (`id`),
@@ -368,83 +408,107 @@ ALTER TABLE `tbl_kelas`
   ADD KEY `fk_kelompok` (`kode_kelompok`);
 
 --
--- Indeks untuk tabel `tbl_kelompok`
+-- Indexes for table `tbl_kelompok`
 --
 ALTER TABLE `tbl_kelompok`
   ADD PRIMARY KEY (`kode_kelompok`);
 
 --
--- Indeks untuk tabel `tbl_mahasiswa`
+-- Indexes for table `tbl_mahasiswa`
 --
 ALTER TABLE `tbl_mahasiswa`
   ADD PRIMARY KEY (`npm`);
 
 --
--- Indeks untuk tabel `tbl_matakuliah`
+-- Indexes for table `tbl_matakuliah`
 --
 ALTER TABLE `tbl_matakuliah`
   ADD PRIMARY KEY (`kode_mk`);
 
 --
--- Indeks untuk tabel `tbl_pengumuman`
+-- Indexes for table `tbl_penginputan`
+--
+ALTER TABLE `tbl_penginputan`
+  ADD PRIMARY KEY (`id_penginputan`);
+
+--
+-- Indexes for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_perencanaan`
+-- Indexes for table `tbl_perencanaan`
 --
 ALTER TABLE `tbl_perencanaan`
   ADD PRIMARY KEY (`id_tmp`),
   ADD KEY `fk_kode_kelas` (`kode_kelas`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `tbl_tahun_akademik`
+--
+ALTER TABLE `tbl_tahun_akademik`
+  ADD PRIMARY KEY (`id_ta`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_jadwal`
+-- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_kelas`
+-- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_kelompok`
+-- AUTO_INCREMENT for table `tbl_kelompok`
 --
 ALTER TABLE `tbl_kelompok`
   MODIFY `kode_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_pengumuman`
+-- AUTO_INCREMENT for table `tbl_penginputan`
+--
+ALTER TABLE `tbl_penginputan`
+  MODIFY `id_penginputan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_perencanaan`
+-- AUTO_INCREMENT for table `tbl_perencanaan`
 --
 ALTER TABLE `tbl_perencanaan`
   MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- AUTO_INCREMENT for table `tbl_tahun_akademik`
+--
+ALTER TABLE `tbl_tahun_akademik`
+  MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tbl_jadwal`
+-- Constraints for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   ADD CONSTRAINT `fk_kelas` FOREIGN KEY (`kode_kelas`) REFERENCES `tbl_kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_npm` FOREIGN KEY (`npm`) REFERENCES `tbl_mahasiswa` (`npm`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tbl_kelas`
+-- Constraints for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
   ADD CONSTRAINT `fk_dosen` FOREIGN KEY (`kode_dosen`) REFERENCES `tbl_dosen` (`kode_dosen`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -452,7 +516,7 @@ ALTER TABLE `tbl_kelas`
   ADD CONSTRAINT `fk_mk` FOREIGN KEY (`kode_mk`) REFERENCES `tbl_matakuliah` (`kode_mk`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tbl_perencanaan`
+-- Constraints for table `tbl_perencanaan`
 --
 ALTER TABLE `tbl_perencanaan`
   ADD CONSTRAINT `fk_kode_kelas` FOREIGN KEY (`kode_kelas`) REFERENCES `tbl_kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
