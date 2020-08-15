@@ -90,6 +90,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('baak/matakuliah')?>" class="nav-link"><i class="fas fa-book"></i>
+								<span>Mata Kuliah</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('baak/kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Konfirmasi Kelas</span>
 							</a>
