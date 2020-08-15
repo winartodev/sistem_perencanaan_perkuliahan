@@ -42,7 +42,9 @@
 													<tr>
 														<th>Kelas</th>
 														<th>Mata Kuliah</th>
-														<th>SKS</th>
+														<th>SKS Teori</th>
+														<th>SKS Praktek</th>
+														<th>Total SKS</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -50,7 +52,9 @@
 													<tr>
 														<td><?= $mk->nama_kelas; ?></td>
 														<td><?= $mk->nama_mk; ?></td>
-														<td><?= $mk->sks; ?></td>
+														<td><?= $mk->sks_teori; ?></td>
+														<td><?= $mk->sks_praktek; ?></td>
+														<td><?= $mk->total_sks; ?></td>
 													</tr>
 												<?php endforeach; ?>
 												</tbody>
