@@ -32,15 +32,28 @@
 													<?= form_error('nama_mk', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
-													<label>Jumlah SKS</label>
-													<select class="form-control" name="sks">
-														<option value="<?= $mk->sks ?>"><?= $mk->sks ?></option>
+													<label>Jumlah SKS Teori</label>
+													<select class="form-control" name="sks_teori">
+														<option value="<?= $mk->sks_teori ?>"><?= $mk->sks_teori ?></option>
+														<option value="0">0</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
 														<option value="4">4</option>
 													</select>
-													<?= form_error('sks', '<div class="text-small text-danger">', '</div>'); ?>
+													<?= form_error('sks_teori', '<div class="text-small text-danger">', '</div>'); ?>
+												</div>
+												<div class="form-group">
+													<label>Jumlah SKS Praktek</label>
+													<select class="form-control" name="sks_praktek">
+														<option value="<?= $mk->sks_praktek ?>"><?= $mk->sks_praktek ?></option>
+														<option value="0">0</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+													<?= form_error('sks_praktek', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group mb-0">
 													<label>angkatan</label>

@@ -25,8 +25,10 @@
 												<thead>
 													<tr>
 														<th>Kode MK</th>
-														<th>Nama MK</th>
-														<th>SKS</th>																																																																								
+														<th>Nama MK</th>																																																																								
+														<th>SKS Teori</th>																																																																								
+														<th>SKS Praktek</th>	
+														<th>Total SKS</th>																																																																							
 														<th>angkatan</th>																																																																																																																																															
 														<th>Aksi</th>
 													</tr>
@@ -36,7 +38,9 @@
 													<tr>
 														<td><?= $mk->kode_mk; ?></td>
 														<td><?= $mk->nama_mk; ?></td>
-														<td><?= $mk->sks; ?></td>
+														<td><?= $mk->sks_teori; ?></td>
+														<td><?= $mk->sks_praktek; ?></td>
+														<td><?= $mk->total_sks; ?></td>
 														<td><?= $mk->angkatan; ?></td>
 														<td>
 															<?= anchor(base_url('kaprodi/matakuliah/edit/'. $mk->kode_mk), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>

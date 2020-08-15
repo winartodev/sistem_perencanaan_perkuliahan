@@ -46,15 +46,19 @@ class MataKuliah extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $kode_mk    = $this->input->post('kode_mk');
-            $nama_mk    = $this->input->post('nama_mk');
-            $sks        = $this->input->post('sks');
-            $angkatan   = $this->input->post('angkatan');
+            $kode_mk        = $this->input->post('kode_mk');
+            $nama_mk        = $this->input->post('nama_mk');
+            $sks_teori      = $this->input->post('sks_teori');
+            $sks_praktek    = $this->input->post('sks_praktek');
+            $total_sks      = $sks_teori + $sks_praktek; 
+            $angkatan       = $this->input->post('angkatan');
 
             $data = array (
                 'kode_mk'       => $kode_mk,
                 'nama_mk'       => $nama_mk,
-                'sks'           => $sks,
+                'sks_teori'     => $sks_teori,
+                'sks_praktek'   => $sks_praktek,
+                'total_sks'     => $total_sks,
                 'angkatan'      => $angkatan
             );
 
@@ -75,15 +79,19 @@ class MataKuliah extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $kode_mk    = $this->input->post('kode_mk');
-            $nama_mk    = $this->input->post('nama_mk');
-            $sks        = $this->input->post('sks');
-            $angkatan   = $this->input->post('angkatan');
+            $kode_mk        = $this->input->post('kode_mk');
+            $nama_mk        = $this->input->post('nama_mk');
+            $sks_teori      = $this->input->post('sks_teori');
+            $sks_praktek    = $this->input->post('sks_praktek');
+            $total_sks      = $sks_teori + $sks_praktek; 
+            $angkatan       = $this->input->post('angkatan');
 
             $data = array (
                 'kode_mk'       => $kode_mk,
                 'nama_mk'       => $nama_mk,
-                'sks'           => $sks,
+                'sks_teori'     => $sks_teori,
+                'sks_praktek'   => $sks_praktek,
+                'total_sks'     => $total_sks,
                 'angkatan'      => $angkatan
             );
 
@@ -117,7 +125,8 @@ class MataKuliah extends CI_Controller {
     public function _rules() {
         $this->form_validation->set_rules('kode_mk', 'Kode Mata Kuliah', 'required');
         $this->form_validation->set_rules('nama_mk', 'Nama Mata Kuliah', 'required');
-        $this->form_validation->set_rules('sks', 'SKS', 'required');
+        $this->form_validation->set_rules('sks_teori', 'SKS Teori', 'required');
+        $this->form_validation->set_rules('sks_praktek', 'SKS Praktek', 'required');
         $this->form_validation->set_rules('angkatan', 'angkatan', 'required');
     }
 }
