@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 02:28 PM
+-- Generation Time: Aug 15, 2020 at 04:15 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -236,7 +236,9 @@ INSERT INTO `tbl_mahasiswa` (`npm`, `nama_mhs`, `email`, `no_telp`, `angkatan`, 
 CREATE TABLE `tbl_matakuliah` (
   `kode_mk` varchar(19) NOT NULL,
   `nama_mk` varchar(50) NOT NULL,
-  `sks` int(2) NOT NULL,
+  `sks_teori` int(11) NOT NULL,
+  `sks_praktek` int(11) NOT NULL,
+  `total_sks` int(2) DEFAULT NULL,
   `angkatan` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -244,46 +246,48 @@ CREATE TABLE `tbl_matakuliah` (
 -- Dumping data for table `tbl_matakuliah`
 --
 
-INSERT INTO `tbl_matakuliah` (`kode_mk`, `nama_mk`, `sks`, `angkatan`) VALUES
-('TIF001-19', 'Dasar-Dasar Pemrograman (Gel. 1)', 2, '18'),
-('TIF002-19', 'Praktikum Pemrograman I (Gel. 1)', 1, '18'),
-('TIF003-19', 'Proyek Perangkat Lunak', 3, '15'),
-('TIF004-19', 'Pemrograman Mobile ', 3, '16'),
-('TIF005-19', 'Interaksi Manusia Komputer', 2, '17'),
-('TIF006-19', 'Grafika Komputer (Teori)', 2, '16'),
-('TIF007-19', 'Sistem Paralel dan Terdistribusi', 3, '16'),
-('TIF008-19', 'Sistem Operasi', 3, '17'),
-('TIF009-19', 'Organisasi dan Arsitektur Komputer', 4, '18'),
-('TIF010-19', 'Kriptografi', 2, '16'),
-('TIF011-19', 'Socio-Informatika dan Profesionalisme (E-Learning)', 2, '16'),
-('TIF012-19', 'Metodologi Penelitian Ilmu Komputer', 2, '16'),
-('TIF013-19', 'Sistem Informasi Lanjut', 2, '15'),
-('TIF014-19', 'Rekayasa Perangkat Lunak', 2, '16'),
-('TIF015-19', 'Manajemen Basis Data', 2, '17'),
-('TIF016-19', 'Administrasi Jaringan Komputer', 3, '15'),
-('TIF017-19', 'Dasar-Dasar Pemrograman', 2, '18'),
-('TIF018-19', 'Praktikum Pemrograman I', 1, '18'),
-('TIF019-19', 'Sistem Informasi', 2, '16'),
-('TIF020-19', 'Organisasi dan Arsitektur Komputer (Gel 1)', 4, '18'),
-('TIF021-19', 'Sistem Multimedia (Teori)', 2, '15'),
-('TIF022-19', 'Komunikasi Data', 3, '17'),
-('TIF023-19', 'Analisis dan Strategi Algoritma', 2, '17'),
-('TIF024-19', 'Pemrograman Berorientasi Objek', 3, '17'),
-('TIF025-19', 'Pengantar Teknologi Informasi (E-Learning) (Gel 1)', 2, '18'),
-('TIF026-19', 'Temu Kembali Informasi', 3, '16'),
-('TIF028-19', 'Keamanan Jaringan', 3, '16'),
-('TIF029-19', 'Troubleshooting & Administrasi Sistem', 3, '17'),
-('TIF030-19', 'Logika Informatika', 2, '18'),
-('TIF031-19', 'Logika Informatika (Gel 1)', 2, '18'),
-('TIF032-19', 'Matematika', 2, '18'),
-('TIF033-19', 'Matematika (Gel 1)', 2, '18'),
-('TIF034-19', 'Bahasa Inggris II', 2, '17'),
-('TIF035-19', 'Dasar-Dasar Akuntansi', 4, '18'),
-('TIF036-19', 'Pendidikan Jasmani dan Olahraga', 2, '18'),
-('TIF037-19', 'Pendidikan Jasmani dan Olahraga (Gel 1)', 2, '18'),
-('TIF038-19', 'Pancasila dan Kewarganegaraan (Gel 1)', 3, '18'),
-('TIF039-19', 'Aplikasi Komputer (Gel 1)', 2, '18'),
-('TIF040-19', 'Aplikasi Komputer', 2, '18');
+INSERT INTO `tbl_matakuliah` (`kode_mk`, `nama_mk`, `sks_teori`, `sks_praktek`, `total_sks`, `angkatan`) VALUES
+('TIF001-19', 'Dasar-Dasar Pemrograman (Gel. 1)', 0, 2, 2, '18'),
+('TIF002-19', 'Praktikum Pemrograman I (Gel. 1)', 0, 0, 1, '18'),
+('TIF003-19', 'Proyek Perangkat Lunak', 0, 0, 3, '15'),
+('TIF004-19', 'Pemrograman Mobile ', 0, 0, 3, '16'),
+('TIF005-19', 'Interaksi Manusia Komputer', 0, 0, 2, '17'),
+('TIF006-19', 'Grafika Komputer (Teori)', 0, 0, 2, '16'),
+('TIF007-19', 'Sistem Paralel dan Terdistribusi', 0, 0, 3, '16'),
+('TIF008-19', 'Sistem Operasi', 0, 0, 3, '17'),
+('TIF009-19', 'Organisasi dan Arsitektur Komputer', 0, 0, 4, '18'),
+('TIF010-19', 'Kriptografi', 0, 0, 2, '16'),
+('TIF011-19', 'Socio-Informatika dan Profesionalisme (E-Learning)', 0, 0, 2, '16'),
+('TIF012-19', 'Metodologi Penelitian Ilmu Komputer', 0, 0, 2, '16'),
+('TIF013-19', 'Sistem Informasi Lanjut', 0, 0, 2, '15'),
+('TIF014-19', 'Rekayasa Perangkat Lunak', 0, 0, 2, '16'),
+('TIF015-19', 'Manajemen Basis Data', 0, 0, 2, '17'),
+('TIF016-19', 'Administrasi Jaringan Komputer', 0, 0, 3, '15'),
+('TIF017-19', 'Dasar-Dasar Pemrograman', 0, 0, 2, '18'),
+('TIF018-19', 'Praktikum Pemrograman I', 0, 0, 1, '18'),
+('TIF019-19', 'Sistem Informasi', 0, 0, 2, '16'),
+('TIF020-19', 'Organisasi dan Arsitektur Komputer (Gel 1)', 0, 0, 4, '18'),
+('TIF021-19', 'Sistem Multimedia (Teori)', 0, 0, 2, '15'),
+('TIF022-19', 'Komunikasi Data', 0, 0, 3, '17'),
+('TIF023-19', 'Analisis dan Strategi Algoritma', 0, 0, 2, '17'),
+('TIF024-19', 'Pemrograman Berorientasi Objek', 0, 0, 3, '17'),
+('TIF025-19', 'Pengantar Teknologi Informasi (E-Learning) (Gel 1)', 0, 0, 2, '18'),
+('TIF026-19', 'Temu Kembali Informasi', 0, 0, 3, '16'),
+('TIF028-19', 'Keamanan Jaringan', 0, 0, 3, '16'),
+('TIF029-19', 'Troubleshooting & Administrasi Sistem', 0, 0, 3, '17'),
+('TIF030-19', 'Logika Informatika', 0, 0, 2, '18'),
+('TIF031-19', 'Logika Informatika (Gel 1)', 0, 0, 2, '18'),
+('TIF032-19', 'Matematika', 0, 0, 2, '18'),
+('TIF033-19', 'Matematika (Gel 1)', 0, 0, 2, '18'),
+('TIF034-19', 'Bahasa Inggris II', 0, 0, 2, '17'),
+('TIF035-19', 'Dasar-Dasar Akuntansi', 0, 0, 4, '18'),
+('TIF036-19', 'Pendidikan Jasmani dan Olahraga', 0, 0, 2, '18'),
+('TIF037-19', 'Pendidikan Jasmani dan Olahraga (Gel 1)', 0, 0, 2, '18'),
+('TIF038-19', 'Pancasila dan Kewarganegaraan (Gel 1)', 0, 0, 3, '18'),
+('TIF039-19', 'Aplikasi Komputer (Gel 1)', 0, 0, 2, '18'),
+('TIF040-19', 'Aplikasi Komputer', 0, 0, 2, '18'),
+('TIF041-19', 'keker', 2, 1, 4, '15'),
+('TIF042-19', 'a', 2, 2, 4, '15');
 
 -- --------------------------------------------------------
 
@@ -303,8 +307,7 @@ CREATE TABLE `tbl_penginputan` (
 --
 
 INSERT INTO `tbl_penginputan` (`id_penginputan`, `jenis_penginputan`, `tanggal_mulai`, `tanggal_akhir`) VALUES
-(24, 'Input_Akademik', '2020-08-14', '2020-08-15'),
-(25, 'Buat_Perencanaan', '2020-08-15', '2020-08-22');
+(32, 'Buat_Perencanaan', '2020-08-14', '2020-08-21');
 
 -- --------------------------------------------------------
 
@@ -366,7 +369,7 @@ CREATE TABLE `tbl_tahun_akademik` (
 --
 
 INSERT INTO `tbl_tahun_akademik` (`id_ta`, `tahun_akademik`, `semester`) VALUES
-(5, 2019, 'Ganjil');
+(6, 2019, 'Ganjil');
 
 --
 -- Indexes for dumped tables
@@ -476,7 +479,7 @@ ALTER TABLE `tbl_kelompok`
 -- AUTO_INCREMENT for table `tbl_penginputan`
 --
 ALTER TABLE `tbl_penginputan`
-  MODIFY `id_penginputan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_penginputan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
@@ -494,7 +497,7 @@ ALTER TABLE `tbl_perencanaan`
 -- AUTO_INCREMENT for table `tbl_tahun_akademik`
 --
 ALTER TABLE `tbl_tahun_akademik`
-  MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
