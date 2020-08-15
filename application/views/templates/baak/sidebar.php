@@ -95,6 +95,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('baak/dosen')?>" class="nav-link"><i class="fas fa-users"></i>
+								<span>Dosen</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('baak/kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Konfirmasi Kelas</span>
 							</a>
