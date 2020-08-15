@@ -95,6 +95,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('kaprodi/keilmuan')?>" class="nav-link"><i class="fas fa-flask"></i>
+								<span>Keilmuan</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('kaprodi/mahasiswa')?>" class="nav-link"><i class="fas fa-user-graduate"></i>
 								<span>Mahasiswa</span>
 							</a>
