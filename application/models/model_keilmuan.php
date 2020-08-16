@@ -18,6 +18,15 @@ class Model_Keilmuan extends CI_Model {
         return $data->result();
     }
 
+    public function filter_data($id) 
+    {
+        $data = $this->db->from('tbl_keilmuan') ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_keilmuan.kode_mk')
+                                                ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_keilmuan.kode_dosen')
+                                                ->where('tbl_keilmuan.kode_mk', $id)
+                                                ->get(); 
+        return $data->result();
+    }
+
     public function form_info($id, $table) {
         return $this->db->get_where($table, $id);
     }
