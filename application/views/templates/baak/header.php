@@ -40,4 +40,5 @@
 		gtag('config', 'UA-94034622-3');
 	</script>
 	<!-- /END GA -->
+	<script src="<?= base_url('assets') ?>/modules/jquery.min.js"></script>
 </head>
