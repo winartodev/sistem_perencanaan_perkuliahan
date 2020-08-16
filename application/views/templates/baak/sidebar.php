@@ -100,6 +100,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('baak/keilmuan')?>" class="nav-link"><i class="fas fa-flask"></i>
+								<span>Keilmuan</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('baak/kelas')?>" class="nav-link"><i class="fas fa-building"></i>
 								<span>Konfirmasi Kelas</span>
 							</a>
