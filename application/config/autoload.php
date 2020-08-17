@@ -136,4 +136,4 @@ $autoload['model'] = array( 'model_matakuliah', 'model_dosen', 'model_kelas',
                             'model_mahasiswa', 'model_pengumuman', 'model_auth', 
                             'model_baak', 'model_rencana', 'model_jadwal',
                             'model_kaprodi', 'model_tahun_akademik', 'model_penginputan',
-                            'model_keilmuan', 'model_kurikulum');
+                            'model_keilmuan', 'model_kurikulum', 'model_verifikasi_perencanaan');
