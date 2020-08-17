@@ -105,7 +105,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('baak/kelas')?>" class="nav-link"><i class="fas fa-check"></i>
+							<a href="<?= base_url('baak/verifikasi_perencanaan')?>" class="nav-link"><i class="fas fa-check"></i>
 								<span>Verifikasi Perencanaan</span>
 							</a>
 						</li>
