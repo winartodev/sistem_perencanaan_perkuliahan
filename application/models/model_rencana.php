@@ -10,7 +10,7 @@ class Model_Rencana extends CI_Model {
     }
 
     public function count_data() {
-        return $this->db->get('tbl_perencanaan')->num_rows();
+        return $this->db->get('tbl_verifikasi_perencanaan')->num_rows();
     }
 
     public function read_data($table) {
@@ -18,9 +18,9 @@ class Model_Rencana extends CI_Model {
     }
 
     public function get_kode_kelas() {
-        return $this->db->from('tbl_perencanaan')   ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
+        return $this->db->from('tbl_verifikasi_perencanaan')   ->join('tbl_kelas', 'tbl_kelas.id = tbl_verifikasi_perencanaan.kode_kelas')
                                                     ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
-                                                    ->where('tbl_perencanaan.npm', $this->session->userdata('npm'))
+                                                    ->where('tbl_verifikasi_perencanaan.npm', $this->session->userdata('npm'))
                                                     ->get(); 
     } 
 

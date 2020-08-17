@@ -46,7 +46,7 @@ class Kelas extends CI_Controller {
         );
 
         $this->model_baak->insert_data($data, 'tbl_jadwal');
-        $this->model_baak->delete_Data($where, 'tbl_perencanaan');
+        $this->model_baak->delete_Data($where, 'tbl_verifikasi_perencanaan');
 
         $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                     <b>Berhasil Di Verifikasi</b>

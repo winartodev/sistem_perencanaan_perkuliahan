@@ -28,7 +28,7 @@ class Model_Baak extends CI_Model {
 
     public function info_kelas_baak ($id, $table) {
         $data = $this->db->where($id);
-        $data = $this->db->from($table) ->join('tbl_perencanaan', 'tbl_perencanaan.kode_kelas = tbl_kelas.id')
+        $data = $this->db->from($table) ->join('tbl_verifikasi_perencanaan', 'tbl_verifikasi_perencanaan.kode_kelas = tbl_kelas.id')
                                         ->get(); 
         return $data->result();
     }
@@ -36,7 +36,7 @@ class Model_Baak extends CI_Model {
     public function get_data_perencanaan($id, $filed) {
         $this->db->select($filed);
         $this->db->where('kode_kelas', $id);
-        $res = $this->db->get('tbl_perencanaan');
+        $res = $this->db->get('tbl_verifikasi_perencanaan');
 
         return $res->row()->$filed;
     }
