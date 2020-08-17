@@ -84,11 +84,11 @@
 							<a href="<?= base_url('kaprodi/biodata/info/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-user"></i><span>Data User</span></a>
 						</li>
 						<li class="menu-header">Main</li>
-						<li>
+						<!-- <li>
 							<a href="<?= base_url('kaprodi/matakuliah')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Mata Kuliah</span>
 							</a>
-						</li>
+						</li> -->
 						<li>
 							<a href="<?= base_url('kaprodi/dosen')?>" class="nav-link"><i class="fas fa-user"></i>
 								<span>Dosen</span>
@@ -97,6 +97,11 @@
 						<li>
 							<a href="<?= base_url('kaprodi/keilmuan')?>" class="nav-link"><i class="fas fa-flask"></i>
 								<span>Keilmuan</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?= base_url('kaprodi/kurikulum')?>" class="nav-link"><i class="fas fa-book"></i>
+								<span>Kurikulum</span>
 							</a>
 						</li>
 						<li>
