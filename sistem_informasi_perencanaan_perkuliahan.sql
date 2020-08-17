@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2020 at 04:15 AM
+-- Generation Time: Aug 17, 2020 at 05:16 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -149,6 +149,28 @@ INSERT INTO `tbl_kaprodi` (`id`, `nama`, `email`, `pass`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_keilmuan`
+--
+
+CREATE TABLE `tbl_keilmuan` (
+  `id_keilmuan` int(11) NOT NULL,
+  `kode_dosen` varchar(20) NOT NULL,
+  `bidang_ilmu` varchar(20) NOT NULL,
+  `kode_mk` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_keilmuan`
+--
+
+INSERT INTO `tbl_keilmuan` (`id_keilmuan`, `kode_dosen`, `bidang_ilmu`, `kode_mk`) VALUES
+(7, '001', 'Teknik Informatika', 'TIF001-19'),
+(8, '002', 'Teknik Informatika', 'TIF001-19'),
+(9, '003', 'Teknik Informatika', 'TIF003-19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_kelas`
 --
 
@@ -200,6 +222,28 @@ CREATE TABLE `tbl_kelompok` (
 INSERT INTO `tbl_kelompok` (`kode_kelompok`, `nama_kelompok`) VALUES
 (1, 'Kelompok Ilmu Komputer dan Pemrograman'),
 (2, 'Kelompok Jaringan Komputer, Komunikasi Data, Troubleshooting, Sistem Cerdas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kurikulum`
+--
+
+CREATE TABLE `tbl_kurikulum` (
+  `id_kurikulum` int(11) NOT NULL,
+  `id_tahun_akademik` int(11) NOT NULL,
+  `angkatan` varchar(3) NOT NULL,
+  `semester_kurikulum` varchar(10) NOT NULL,
+  `kode_mk` varchar(35) NOT NULL,
+  `kode_dosen` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_kurikulum`
+--
+
+INSERT INTO `tbl_kurikulum` (`id_kurikulum`, `id_tahun_akademik`, `angkatan`, `semester_kurikulum`, `kode_mk`, `kode_dosen`) VALUES
+(1, 6, '18', '2', 'TIF001-19', '002');
 
 -- --------------------------------------------------------
 
@@ -402,6 +446,14 @@ ALTER TABLE `tbl_kaprodi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_keilmuan`
+--
+ALTER TABLE `tbl_keilmuan`
+  ADD PRIMARY KEY (`id_keilmuan`),
+  ADD KEY `fk_kode_dosen` (`kode_dosen`),
+  ADD KEY `fk_keilmuan_dosen` (`kode_mk`);
+
+--
 -- Indexes for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
@@ -415,6 +467,15 @@ ALTER TABLE `tbl_kelas`
 --
 ALTER TABLE `tbl_kelompok`
   ADD PRIMARY KEY (`kode_kelompok`);
+
+--
+-- Indexes for table `tbl_kurikulum`
+--
+ALTER TABLE `tbl_kurikulum`
+  ADD PRIMARY KEY (`id_kurikulum`),
+  ADD KEY `fk_kurikulum_dosen` (`kode_dosen`),
+  ADD KEY `fk_kurikulum_mk` (`kode_mk`),
+  ADD KEY `fk_kurikulum_tahun_akademik` (`id_tahun_akademik`);
 
 --
 -- Indexes for table `tbl_mahasiswa`
@@ -464,6 +525,12 @@ ALTER TABLE `tbl_jadwal`
   MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
+-- AUTO_INCREMENT for table `tbl_keilmuan`
+--
+ALTER TABLE `tbl_keilmuan`
+  MODIFY `id_keilmuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
@@ -474,6 +541,12 @@ ALTER TABLE `tbl_kelas`
 --
 ALTER TABLE `tbl_kelompok`
   MODIFY `kode_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_kurikulum`
+--
+ALTER TABLE `tbl_kurikulum`
+  MODIFY `id_kurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_penginputan`
@@ -511,12 +584,27 @@ ALTER TABLE `tbl_jadwal`
   ADD CONSTRAINT `fk_npm` FOREIGN KEY (`npm`) REFERENCES `tbl_mahasiswa` (`npm`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `tbl_keilmuan`
+--
+ALTER TABLE `tbl_keilmuan`
+  ADD CONSTRAINT `fk_keilmuan_dosen` FOREIGN KEY (`kode_mk`) REFERENCES `tbl_matakuliah` (`kode_mk`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_kode_dosen` FOREIGN KEY (`kode_dosen`) REFERENCES `tbl_dosen` (`kode_dosen`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
   ADD CONSTRAINT `fk_dosen` FOREIGN KEY (`kode_dosen`) REFERENCES `tbl_dosen` (`kode_dosen`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_kelompok` FOREIGN KEY (`kode_kelompok`) REFERENCES `tbl_kelompok` (`kode_kelompok`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_mk` FOREIGN KEY (`kode_mk`) REFERENCES `tbl_matakuliah` (`kode_mk`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_kurikulum`
+--
+ALTER TABLE `tbl_kurikulum`
+  ADD CONSTRAINT `fk_kurikulum_dosen` FOREIGN KEY (`kode_dosen`) REFERENCES `tbl_dosen` (`kode_dosen`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_kurikulum_mk` FOREIGN KEY (`kode_mk`) REFERENCES `tbl_matakuliah` (`kode_mk`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_kurikulum_tahun_akademik` FOREIGN KEY (`id_tahun_akademik`) REFERENCES `tbl_tahun_akademik` (`id_ta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tbl_perencanaan`
