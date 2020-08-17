@@ -16,7 +16,7 @@
 								<div class="row">
 									<div class="col-md-6">
 									<?php foreach($kurikulum as $_kurikulum): ?>
-										<form method="POST" action="<?= base_url('kaprodi/kurikulum/update_kurikulums')?>"
+										<form method="POST" action="<?= base_url('kaprodi/kurikulum/update_kurikulum')?>"
 											enctype="multipart/form-data">
 											<div class="card-header">
 												<h4>Form Edit Kurikulum</h4>
