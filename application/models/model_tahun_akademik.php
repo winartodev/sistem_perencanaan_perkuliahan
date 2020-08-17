@@ -1,5 +1,10 @@
 <?php 
 class Model_Tahun_Akademik extends CI_Model {
+    public function read_data() 
+    {
+        return $this->db->get('tbl_tahun_akademik');
+    }
+
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }
