@@ -22,8 +22,38 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="form-group">
-                                                        <label>Angkatan</label>
+                                                        <label>Nama Kelompok</label>
                                                         <input type="text" name="id" class="form-control" value="<?= $_kelas->id?>" hidden>
+                                                        <select class="form-control" name="kode_kelompok">
+                                                            <option value="<?= $_kelas->kode_kelompok?>"><?= $_kelas->nama_kelompok?></option>
+                                                            <?php foreach($kelompok as $_kelompok): ?>
+                                                                <option value="<?= $_kelompok->kode_kelompok ?>"><?= $_kelompok->nama_kelompok; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                        <?= form_error('kode_kelompok', '<div class="text-small text-danger">', '</div>'); ?>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Matakuliah</label>
+                                                        <select class="form-control" name="kode_mk">
+                                                            <option value="<?= $_kelas->kode_mk?>"><?= $_kelas->nama_mk?></option>
+                                                            <?php $no = 1; foreach($matakuliah as $_matakuliah): ?>
+                                                                <option value="<?= $_matakuliah->kode_mk ?>"><?=$no++,". ", $_matakuliah->nama_mk; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                        <?= form_error('kode_mk', '<div class="text-small text-danger">', '</div>'); ?>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Dosen</label>
+                                                        <select class="form-control" name="kode_dosen">
+                                                            <option value="<?= $_kelas->kode_dosen?>"><?= $_kelas->nama_dosen?></option>
+                                                            <?php $no = 1; foreach($dosen as $_dosen): ?>
+                                                                <option value="<?= $_dosen->kode_dosen ?>"><?=$_dosen->kode_dosen,". ", $_dosen->nama_dosen; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                        <?= form_error('kode_dosen', '<div class="text-small text-danger">', '</div>'); ?>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Angkatan</label>
                                                         <select class="form-control" name="angkatan">
                                                             <option value="<?= $_kelas->angkatan?>"><?= $_kelas->angkatan?></option>
                                                             <option value="15">15</option>
@@ -41,7 +71,7 @@
                                                 </div>
                                                 <div class="card-footer text-right">
                                                     <button class="btn btn-danger" type="reset"> <i class="fa fa-undo mr-1"></i>Reset</button>
-                                                    <button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1"></i>Save</button>
+                                                    <button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1">Save</i>
                                                 </div>
                                             </form>
                                         <?php endforeach; ?>
