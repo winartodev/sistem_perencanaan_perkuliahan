@@ -32,13 +32,12 @@ class Verifikasi_Perencanaan extends CI_Controller {
     }
 
     public function verifikasi($id) {
-        $kode_kelas = $id;
-        $npm        =  $this->model_verifikasi_perencanaan->get_data_perencanaan($id, 'npm');
-        $id_tmp = $this->model_verifikasi_perencanaan->get_data_perencanaan($id, 'id_tmp');
-
+        $id_perencanaan = $id;
+        $npm            = $this->model_verifikasi_perencanaan->get_data_perencanaan($id, 'npm');
+        $id_tmp         = $this->model_verifikasi_perencanaan->get_data_perencanaan($id, 'id_tmp');
         $data = array (
-            'kode_kelas'    => $kode_kelas,
-            'npm'           => $npm,
+            'id_perencanaan'    => $id_perencanaan,
+            'npm'               => $npm
         );
 
         $where = array (

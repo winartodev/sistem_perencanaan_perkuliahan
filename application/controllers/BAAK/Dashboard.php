@@ -16,7 +16,7 @@ class Dashboard extends CI_Controller {
     
     public function index() {
         $data['jumlah_mahasiswa'] = $this->model_mahasiswa->count_data();
-        $data['jumlah_konfirmasi'] = $this->model_rencana->count_data();
+        $data['jumlah_konfirmasi'] = $this->model_perencanaan->count_data();
         $data['jumlah_pengumuman'] = $this->model_pengumuman->count_data();
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
