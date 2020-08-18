@@ -36,8 +36,10 @@
 												</thead>
 												<tbody> 
 												<?php 
-													foreach($kelas as $kls): 
-														if ($kls->status_perencanaan == 'sudah_verifikasi'):
+													foreach($penginputan as $tanggal):
+														if(date('Y-m-d') != $tanggal->tanggal_akhir):
+															foreach($kelas as $kls): 
+																if ($kls->status_perencanaan == 'sudah_verifikasi'):
 													?>
 													<tr>
 														<td><?= $kls->nama_kelas; ?></td>
@@ -52,7 +54,16 @@
 														</td>
 													</tr>               
 												<?php 
-														endif;
+																endif;
+															endforeach; 
+														else: ?>
+															<tr>
+																<td colspan="8" align="center" class="text-danger">
+																	BATAS PERENCANAAN SUDAH BERAKHIR
+																</td>
+															</tr>
+														<?php 
+															endif;
 													endforeach; 
 												?>
 												</tbody>

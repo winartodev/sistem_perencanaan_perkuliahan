@@ -16,6 +16,7 @@ class Perencanaan extends CI_Controller {
     
     public function index() {
         $data['kelas'] = $this->model_perencanaan->read_data();
+        $data['penginputan'] = $this->model_penginputan->read_data();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
         $this->load->view('mahasiswa/perencanaan_kuliah', $data);

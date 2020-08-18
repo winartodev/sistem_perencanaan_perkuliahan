@@ -1,6 +1,11 @@
 <?php
 class Model_Penginputan extends CI_Model {
 
+    public function read_data() 
+    {
+        return $this->db->get('tbl_penginputan')->result();
+    }
+
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }
