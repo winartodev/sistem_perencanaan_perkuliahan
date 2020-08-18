@@ -24,9 +24,9 @@ class Perencanaan extends CI_Controller {
 
     public function add() {
         $data['kelompok']   = $this->model_kelas->get_nama_Kelompok();
-        $data['kelas']   = $this->model_kelas->read_data();
-        $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
-        $data['dosen']      = $this->model_dosen->read_data()->result();
+        // $data['kelas']   = $this->model_kelas->read_data();
+        // $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
+        // $data['dosen']      = $this->model_dosen->read_data()->result();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
         $this->load->view('kaprodi/form_insert_perencanaan', $data);
@@ -76,6 +76,58 @@ class Perencanaan extends CI_Controller {
                                                         </button>
                                                     </div>');
             redirect(base_url('kaprodi/perencanaan')); 
+        }
+    }
+
+    public function filter_matakuliah () 
+    {
+        $angkatan = $this->input->post('angkatan');
+        $semester = $this->input->post('semester');
+
+        $data = $this->model_perencanaan->filter_matakuliah($angkatan, $semester);
+
+        if ($angkatan || $semester) 
+        {
+            ?> 
+                <option value="">Pilih Matakuliah</option>
+            <?php
+            foreach($data as $row): ?>
+                <option value="<?= $row->kode_mk ?>"><?= $row->nama_mk ?></option>
+            <?php endforeach; ?> <?php
+        }
+    }
+
+    public function filter_dosen () 
+    {
+        $kode_mk = $this->input->post('kode_mk');
+
+        $data = $this->model_perencanaan->filter_dosen($kode_mk);
+
+        if ($kode_mk) 
+        {
+            ?> 
+                <option value="">Pilih Dosen</option>
+            <?php
+            foreach($data as $row): ?>
+                <option value="<?= $row->kode_dosen ?>"><?= $row->nama_dosen?></option>
+            <?php endforeach; ?> <?php
+        }
+    }
+
+    public function filter_kelas () 
+    {
+        $angkatan = $this->input->post('angkatan');
+
+        $data = $this->model_perencanaan->filter_kelas($angkatan);
+
+        if ($angkatan) 
+        {
+            ?> 
+                <option value="">Pilih Kelas</option>
+            <?php
+            foreach($data as $row): ?>
+                <option value="<?= $row->id ?>"><?= $row->nama_kelas?></option>
+            <?php endforeach; ?> <?php
         }
     }
 
@@ -133,8 +185,8 @@ class Perencanaan extends CI_Controller {
 
     public function _rules() {
         $this->form_validation->set_rules('kode_kelompok', 'Nama Kelompok', 'required');
-        $this->form_validation->set_rules('angkatan', 'Angkatan', 'required');
-        $this->form_validation->set_rules('semester', 'Semester', 'required');
+        // $this->form_validation->set_rules('angkatan', 'Angkatan', 'required');
+        // $this->form_validation->set_rules('semester', 'Semester', 'required');
         $this->form_validation->set_rules('kode_mk', 'Mata Kuliah', 'required');
         $this->form_validation->set_rules('kode_dosen', 'Dosen', 'required');
         $this->form_validation->set_rules('kode_kelas', 'Kode Kelas', 'required');
