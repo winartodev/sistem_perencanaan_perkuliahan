@@ -79,7 +79,7 @@ class Kurikulum extends CI_Controller {
 
             $data = array (
                 'id_tahun_akademik'     => $tahun_akademik,
-                'angkatan'              => $angkatan,
+                'angkatan_kurikulum'              => $angkatan,
                 'semester_kurikulum'    => $semester,
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen
@@ -112,7 +112,7 @@ class Kurikulum extends CI_Controller {
 
             $data = array (
                 'id_tahun_akademik'     => $tahun_akademik,
-                'angkatan'              => $angkatan,
+                'angkatan_kurikulum'              => $angkatan,
                 'semester_kurikulum'    => $semester,
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen

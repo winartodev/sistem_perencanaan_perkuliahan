@@ -37,7 +37,7 @@
 												<div class="form-group">
 													<label>Angkatan</label>
 													<select class="form-control" name="angkatan">
-														<option value="<?= $_kurikulum->angkatan ?>"><?= $_kurikulum->angkatan ?></option>
+														<option value="<?= $_kurikulum->angkatan_kurikulum ?>"><?= $_kurikulum->angkatan_kurikulum ?></option>
 														<option value="15">15</option>
 														<option value="16">16</option>
 														<option value="17">17</option>

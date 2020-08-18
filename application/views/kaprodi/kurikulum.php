@@ -41,7 +41,7 @@
 													<tr>
 														<td><?= $no++ ?></td>
 														<td><?= $_kurikulum->tahun_akademik ?></td>
-														<td><?= $_kurikulum->angkatan ?></td>
+														<td><?= $_kurikulum->angkatan_kurikulum ?></td>
 														<td><?= $_kurikulum->semester_kurikulum ?></td>
 														<td><?= $_kurikulum->nama_dosen ?></td>
 														<td><?= $_kurikulum->nama_mk ?></td>
