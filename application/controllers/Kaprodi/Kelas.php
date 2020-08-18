@@ -46,7 +46,7 @@ class Kelas extends CI_Controller {
 
     public function info($id) {
         $where = array('id' => $id);
-        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_kelas');
+        $data['kelas']      = $this->model_kelas->form_edit($where, 'tbl_perencanaan');
         $data['mahasiswa']  = $this->model_kelas->get_mahasiswa($id)->result();
         $data['A15']        = $this->model_kelas->count_angkatan($id,'15','tbl_jadwal');
         $data['A16']        = $this->model_kelas->count_angkatan($id,'16','tbl_jadwal');
@@ -64,16 +64,10 @@ class Kelas extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->add();
         } else {
-            $kode_kelompok      = $this->input->post('kode_kelompok');
-            $kode_mk            = $this->input->post('kode_mk');
-            $kode_dosen         = $this->input->post('kode_dosen');
             $angkatan           = $this->input->post('angkatan');
             $nama_kelas         = $this->input->post('nama_kelas');
 
             $data = array (
-                'kode_kelompok'     => $kode_kelompok,
-                'kode_mk'           => $kode_mk,
-                'kode_dosen'        => $kode_dosen,
                 'angkatan'          => $angkatan,
                 'nama_kelas'        => $nama_kelas
             );
@@ -96,17 +90,10 @@ class Kelas extends CI_Controller {
             $this->add();
         } else {
             $id                 = $this->input->post('id');
-            $kode_kelompok      = $this->input->post('kode_kelompok');
-            $kode_mk            = $this->input->post('kode_mk');
-            $kode_dosen         = $this->input->post('kode_dosen');
             $angkatan           = $this->input->post('angkatan');
             $nama_kelas         = $this->input->post('nama_kelas');
 
             $data = array (
-                'id'                => $id,
-                'kode_kelompok'     => $kode_kelompok,
-                'kode_mk'           => $kode_mk,
-                'kode_dosen'        => $kode_dosen,
                 'angkatan'          => $angkatan,
                 'nama_kelas'        => $nama_kelas
             ); 
@@ -140,9 +127,6 @@ class Kelas extends CI_Controller {
 
 
     public function _rules() {
-        $this->form_validation->set_rules('kode_kelompok', 'Nama Kelompok', 'required');
-        $this->form_validation->set_rules('kode_mk', 'Mata Kuliah', 'required');
-        $this->form_validation->set_rules('kode_dosen', 'Dosen', 'required');
         $this->form_validation->set_rules('angkatan', 'Angkatan', 'required');
         $this->form_validation->set_rules('nama_kelas', 'Nama Kelas', 'required');
     }

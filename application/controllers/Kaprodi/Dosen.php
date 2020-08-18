@@ -42,7 +42,7 @@ class Dosen extends CI_Controller {
     public function info($kode_dosen) {
         $where = array('kode_dosen' => $kode_dosen);
         $data['dosen'] = $this->model_dosen->form_edit($where, 'tbl_dosen')->result();
-        $data['matakuliah'] = $this->model_dosen->get_matakuliah($where, 'tbl_kelas')->result();
+        $data['matakuliah'] = $this->model_dosen->get_matakuliah($where, 'tbl_perencanaan')->result();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
         $this->load->view('kaprodi/info_dosen', $data);
