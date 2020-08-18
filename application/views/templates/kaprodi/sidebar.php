@@ -114,6 +114,11 @@
 								<span>Kelas</span>
 							</a>
 						</li>
+						<li>
+							<a href="<?= base_url('kaprodi/perencanaan')?>" class="nav-link"><i class="fas fa-tasks"></i>
+								<span>Perencanaan</span>
+							</a>
+						</li>
 						<li class="menu-header">Settings</li>
 						<li>
 							<a  href="<?= base_url('kaprodi/biodata/user_email/'.$this->session->userdata('id')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
