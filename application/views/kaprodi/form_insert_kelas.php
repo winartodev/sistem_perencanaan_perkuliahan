@@ -20,36 +20,6 @@
 												<h4>Form Kelas</h4>
 											</div>
 											<div class="card-body">
-												<div class="form-group">
-													<label>Nama Kelompok</label>
-													<select class="form-control" name="kode_kelompok">
-														<option value="">Pilih Kelompok</option>
-                                                        <?php foreach($kelompok as $_kelompok): ?>
-														    <option value="<?= $_kelompok->kode_kelompok ?>"><?= $_kelompok->nama_kelompok; ?></option>
-                                                        <?php endforeach; ?>
-													</select>
-													<?= form_error('kode_kelompok', '<div class="text-small text-danger">', '</div>'); ?>
-												</div>
-												<div class="form-group">
-													<label>Matakuliah</label>
-													<select class="form-control" name="kode_mk">
-														<option value="">Pilih Mata Kuliah</option>
-                                                        <?php $no = 1; foreach($matakuliah as $_matakuliah): ?>
-														    <option value="<?= $_matakuliah->kode_mk ?>"><?=$no++,". ", $_matakuliah->nama_mk; ?></option>
-                                                        <?php endforeach; ?>
-													</select>
-													<?= form_error('kode_mk', '<div class="text-small text-danger">', '</div>'); ?>
-												</div>
-                                                <div class="form-group">
-													<label>Dosen</label>
-													<select class="form-control" name="kode_dosen">
-														<option value="">Pilih Dosen</option>
-                                                        <?php $no = 1; foreach($dosen as $_dosen): ?>
-														    <option value="<?= $_dosen->kode_dosen ?>"><?=$_dosen->kode_dosen,". ", $_dosen->nama_dosen; ?></option>
-                                                        <?php endforeach; ?>
-													</select>
-													<?= form_error('kode_dosen', '<div class="text-small text-danger">', '</div>'); ?>
-												</div>
                                                 <div class="form-group">
 													<label>Angkatan</label>
 													<select class="form-control" name="angkatan">
