@@ -50,6 +50,21 @@ class Model_Perencanaan extends CI_Model {
         return $this->db->get('tbl_kelompok')->result();
     }
 
+    public function get_mahasiswa($id) {
+        return $this->db->from('tbl_jadwal')->join('tbl_perencanaan', 'tbl_perencanaan.id_perencanaan = tbl_jadwal.id_perencanaan')
+                                            ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
+                                            ->join('tbl_mahasiswa', 'tbl_mahasiswa.npm = tbl_jadwal.npm')
+                                            ->where('tbl_jadwal.id_perencanaan', $id)                                            
+                                            ->get();
+    }
+
+    public function count_angkatan($id,$angkatan, $table) {
+        return $this->db->from($table)  ->join('tbl_mahasiswa', 'tbl_mahasiswa.npm = tbl_jadwal.npm')
+                                        ->where('id_perencanaan', $id)
+                                        ->where('angkatan', $angkatan)
+                                        ->get()->num_rows();
+    }
+
     public function get_kode_kelas() {
         return $this->db->from('tbl_verifikasi_perencanaan')    ->join('tbl_perencanaan', 'tbl_perencanaan.id_perencanaan = tbl_verifikasi_perencanaan.id_perencanaan')
                                                                 ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
