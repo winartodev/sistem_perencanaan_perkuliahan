@@ -1,11 +1,7 @@
 <?php 
 class Model_Kelas extends CI_Model {
     public function read_data() {
-        return $this->db->from('tbl_kelas') ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
-                                            ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kelas.kode_dosen')
-                                            ->join('tbl_kelompok', 'tbl_kelompok.kode_kelompok = tbl_kelas.kode_kelompok')
-                                            ->order_by('id', 'asc')
-                                            ->get()->result(); 
+        return $this->db->get('tbl_kelas')->result(); 
     }
 
     public function get_nama_Kelompok() {
@@ -36,10 +32,7 @@ class Model_Kelas extends CI_Model {
 
     public function form_edit($id, $table) {
         $data = $this->db->where($id);
-        $data = $this->db->from($table) ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kelas.kode_mk')
-                                        ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kelas.kode_dosen')
-                                        ->join('tbl_kelompok', 'tbl_kelompok.kode_kelompok = tbl_kelas.kode_kelompok')
-                                        ->get(); 
+        $data = $this->db->get($table);
         return $data->result();
     }
 
