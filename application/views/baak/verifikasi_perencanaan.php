@@ -43,7 +43,7 @@
 														<td><?= $_kelas->nama_mk?></td>
 														<td><?= $_kelas->nama_dosen ?></td>
 														<td>
-															<?= anchor(base_url('baak/verifikasi_perencanaan/verifikasi/'. $_kelas->kode_kelas), '<div class="btn btn-info btn-action mr-1 text-bold" href="">Verifikasi</div>')?>
+															<?= anchor(base_url('baak/verifikasi_perencanaan/verifikasi/'. $_kelas->id_perencanaan), '<div class="btn btn-info btn-action mr-1 text-bold" href="">Verifikasi</div>')?>
                                                             <!-- <?= anchor(base_url('baak/verifikasi_perencanaan/info/'. $_kelas->id), '<div class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-eye"></i></div>')?> -->
 														</td>
 													</tr>

@@ -50,7 +50,7 @@
 													<tr>
 														<td><?= $mk->nama_kelas; ?></td>
 														<td><?= $mk->nama_mk; ?></td>
-														<td><?= $mk->sks; ?></td>
+														<td><?= $mk->total_sks; ?></td>
 													</tr>
 												<?php endforeach; ?>
 												</tbody>
