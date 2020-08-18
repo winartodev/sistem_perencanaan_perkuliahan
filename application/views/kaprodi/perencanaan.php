@@ -30,6 +30,7 @@
 														<th>Nama MK</th>																																																			
 														<th>Nama Dosen</th>																																																			
 														<th>Angkatan</th>																																																			
+														<th>Angkatan</th>																																																			
 														<th>Aksi</th>
 													</tr>
 												</thead>
@@ -44,7 +45,19 @@
 														<td><?= $_perencanaan->nama_dosen ?></td>
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
 														<td>
-                                                            <!-- <?= anchor(base_url('kaprodi/perencanaan/info/'. $_perencanaan->id_perencanaan), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?> -->
+															<?php 
+																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):
+															?>
+																	<span class="badge badge-primary">Sudah Verifikasi</span>																
+															<?php
+																else:?>
+																	<span class="badge badge-danger ">Belum Verifikasi</span>																
+															<?php	 
+																endif
+															?>
+														</td>
+														<td>
+                                                            <?= anchor(base_url('kaprodi/perencanaan/verifikasi/'. $_perencanaan->id_perencanaan), '<div class="btn btn-success btn-action mr-1" data-toggle="tooltip" title="Verifikasi" href=""><i class="fas fa-check"></i></div>')?>
 															<?= anchor(base_url('kaprodi/perencanaan/edit/'. $_perencanaan->id_perencanaan), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
 															<?= anchor(base_url('kaprodi/perencanaan/delete/'. $_perencanaan->id_perencanaan), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
 														</td>

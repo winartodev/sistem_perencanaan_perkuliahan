@@ -65,7 +65,8 @@ class Perencanaan extends CI_Controller {
                 'semester_perencanaan'  => $semester,
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen,
-                'kode_kelas'            => $kode_kelas
+                'kode_kelas'            => $kode_kelas,
+                'status_perencanaan'      => 'belum_verifikasi'
             );
 
             $this->model_perencanaan->insert_data($data, 'tbl_perencanaan');
@@ -152,7 +153,8 @@ class Perencanaan extends CI_Controller {
                 'semester_perencanaan'  => $semester,
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen,
-                'kode_kelas'            => $kode_kelas
+                'kode_kelas'            => $kode_kelas,
+                'status_perencanaan'      => 'belum_verifikasi'
             );
 
             $where = array(
@@ -168,6 +170,28 @@ class Perencanaan extends CI_Controller {
                                                     </div>');
             redirect(base_url('kaprodi/perencanaan')); 
         }
+    }
+
+    public function verifikasi($id) 
+    {
+        $id_perencanaan = $id;  
+
+        $data = array (
+            'status_perencanaan'      => 'sudah_verifikasi'
+        );
+
+        $where = array(
+            'id_perencanaan' => $id_perencanaan
+        );
+
+        $this->model_perencanaan->update_data($where, $data, 'tbl_perencanaan');
+        $this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                    <b>Perencanaan Berhasil di Verifikasi.</b>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>');
+        redirect(base_url('kaprodi/perencanaan'));        
     }
 
     public function delete($id) {

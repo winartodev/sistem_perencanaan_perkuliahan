@@ -35,7 +35,10 @@
 													</tr>
 												</thead>
 												<tbody> 
-												<?php foreach($kelas as $kls): ?>
+												<?php 
+													foreach($kelas as $kls): 
+														if ($kls->status_perencanaan == 'sudah_verifikasi'):
+													?>
 													<tr>
 														<td><?= $kls->nama_kelas; ?></td>
 														<td><?= $kls->kode_mk; ?></td>
@@ -48,7 +51,10 @@
 															<?= anchor(base_url('mahasiswa/perencanaan/daftar/'. $kls->id_perencanaan), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
 													</tr>               
-												<?php endforeach; ?>
+												<?php 
+														endif;
+													endforeach; 
+												?>
 												</tbody>
 											</table>
 										</div>
