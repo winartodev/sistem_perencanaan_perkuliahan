@@ -28,7 +28,9 @@
 														<th>Kode MK</th>
                                                         <th>Nama Mk</th>
                                                         <th>Nama Dosen</th>
-														<th>Sks</th>																																																																																																																																																																																																																							
+														<th>SKS Teori</th>																																																																																																																																																																																																																							
+														<th>SKS Praktek</th>																																																																																																																																																																																																																							
+														<th>Total SKS</th>																																																																																																																																																																																																																							
 														<th>Aksi</th>
 													</tr>
 												</thead>
@@ -39,9 +41,11 @@
 														<td><?= $kls->kode_mk; ?></td>
 														<td><?= $kls->nama_mk; ?></td>
 														<td><?= $kls->nama_dosen; ?></td>
-														<td><?= $kls->sks; ?></td>
+														<td><?= $kls->sks_teori; ?></td>
+														<td><?= $kls->sks_praktek; ?></td>
+														<td><?= $kls->total_sks; ?></td>
 														<td>
-															<?= anchor(base_url('mahasiswa/perencanaan/daftar/'. $kls->id), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
+															<?= anchor(base_url('mahasiswa/perencanaan/daftar/'. $kls->id_perencanaan), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
 													</tr>               
 												<?php endforeach; ?>
