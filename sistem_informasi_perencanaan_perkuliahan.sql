@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2020 at 08:01 AM
+-- Generation Time: Aug 18, 2020 at 12:30 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -116,7 +116,7 @@ CREATE TABLE `tbl_jadwal` (
 --
 
 INSERT INTO `tbl_jadwal` (`id_jdwl`, `id_perencanaan`, `npm`) VALUES
-(71, 8, '1811010008');
+(72, 11, '1811010008');
 
 -- --------------------------------------------------------
 
@@ -338,7 +338,7 @@ CREATE TABLE `tbl_penginputan` (
 --
 
 INSERT INTO `tbl_penginputan` (`id_penginputan`, `jenis_penginputan`, `tanggal_mulai`, `tanggal_akhir`) VALUES
-(32, 'Buat_Perencanaan', '2020-08-14', '2020-08-21');
+(32, 'Buat_Perencanaan', '2020-08-04', '2020-08-21');
 
 -- --------------------------------------------------------
 
@@ -373,16 +373,17 @@ CREATE TABLE `tbl_perencanaan` (
   `semester_perencanaan` varchar(2) NOT NULL,
   `kode_mk` varchar(20) NOT NULL,
   `kode_dosen` varchar(20) NOT NULL,
-  `kode_kelas` int(11) NOT NULL
+  `kode_kelas` int(11) NOT NULL,
+  `status_perencanaan` enum('belum_verifikasi','sudah_verifikasi') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_perencanaan`
 --
 
-INSERT INTO `tbl_perencanaan` (`id_perencanaan`, `kode_kelompok`, `angkatan_perencanaan`, `semester_perencanaan`, `kode_mk`, `kode_dosen`, `kode_kelas`) VALUES
-(8, 1, '15', '1', 'TIF001-19', '002', 6),
-(9, 1, '15', '2', 'TIF001-19', '002', 5);
+INSERT INTO `tbl_perencanaan` (`id_perencanaan`, `kode_kelompok`, `angkatan_perencanaan`, `semester_perencanaan`, `kode_mk`, `kode_dosen`, `kode_kelas`, `status_perencanaan`) VALUES
+(11, 1, '15', '1', 'TIF001-19', '001', 4, 'sudah_verifikasi'),
+(13, 1, '15', '1', 'TIF001-19', '001', 6, 'belum_verifikasi');
 
 -- --------------------------------------------------------
 
@@ -531,7 +532,7 @@ ALTER TABLE `tbl_verifikasi_perencanaan`
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `tbl_keilmuan`
@@ -573,7 +574,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_perencanaan`
 --
 ALTER TABLE `tbl_perencanaan`
-  MODIFY `id_perencanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_perencanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_tahun_akademik`
@@ -585,7 +586,7 @@ ALTER TABLE `tbl_tahun_akademik`
 -- AUTO_INCREMENT for table `tbl_verifikasi_perencanaan`
 --
 ALTER TABLE `tbl_verifikasi_perencanaan`
-  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- Constraints for dumped tables
