@@ -15,7 +15,7 @@ class Perencanaan extends CI_Controller {
     }
     
     public function index() {
-        $data['kelas'] = $this->model_kelas->read_data();
+        $data['kelas'] = $this->model_perencanaan->read_data();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
         $this->load->view('mahasiswa/perencanaan_kuliah', $data);
@@ -23,7 +23,7 @@ class Perencanaan extends CI_Controller {
     }
 
     public function detail_rencana() {
-        $data['jadwal'] = $this->model_rencana->get_kode_kelas()->result();
+        $data['jadwal'] = $this->model_perencanaan->get_kode_kelas()->result();
         $this->load->view('templates/mahasiswa/header');
         $this->load->view('templates/mahasiswa/sidebar');
         $this->load->view('mahasiswa/detail_perencanaan', $data);
@@ -31,17 +31,17 @@ class Perencanaan extends CI_Controller {
     }
 
     public function daftar($id) {
-        $kode_kelas = $id;
-        $npm        = $this->session->userdata('npm');
-        $angkatan   = $this->session->userdata('angkatan');
+        $id_perencanaan = $id;
+        $npm            = $this->session->userdata('npm');
+        $angkatan       = $this->session->userdata('angkatan');
 
         $array = array(
-            'kode_kelas'    => $kode_kelas, 
-            'npm'           => $npm
+            'id_perencanaan'    => $id_perencanaan, 
+            'npm'               => $npm
         );
 
-        $check1 = $this->model_rencana->check_duplicate_data($array, 'tbl_verifikasi_perencanaan');
-        $check2 = $this->model_rencana->check_duplicate_data($array, 'tbl_jadwal');
+        $check1 = $this->model_perencanaan->check_duplicate_data($array, 'tbl_verifikasi_perencanaan');
+        $check2 = $this->model_perencanaan->check_duplicate_data($array, 'tbl_jadwal');
         $num1 = $check1->num_rows();
         $num2 = $check2->num_rows();
 
@@ -55,13 +55,13 @@ class Perencanaan extends CI_Controller {
             redirect(base_url('Mahasiswa/Perencanaan')); 
         } else {
             $data = array (
-                'npm'           => $npm,
-                'kode_kelas'    => $kode_kelas,
-                'angkatan'      => $angkatan,
-                'status'        => 'Di Proses',
+                'npm'               => $npm,
+                'id_perencanaan'    => $id_perencanaan,
+                'angkatan'          => $angkatan,
+                'status'            => 'Di Proses',
             );
     
-            $this->model_rencana->insert_data($data, 'tbl_verifikasi_perencanaan');
+            $this->model_perencanaan->insert_data($data, 'tbl_verifikasi_perencanaan');
             $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
                                                         <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -74,7 +74,7 @@ class Perencanaan extends CI_Controller {
 
     public function batal($id) {
         $where = array('id_tmp' => $id);
-        $this->model_rencana->delete_data($where, 'tbl_verifikasi_perencanaan');
+        $this->model_perencanaan->delete_data($where, 'tbl_verifikasi_perencanaan');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                     <b>Rencana Perkuliahan Anda Berhasil di Batalkan.</b>
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
