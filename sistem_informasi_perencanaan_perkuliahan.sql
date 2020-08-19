@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2020 at 12:30 PM
+-- Generation Time: Aug 19, 2020 at 06:50 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -116,7 +116,14 @@ CREATE TABLE `tbl_jadwal` (
 --
 
 INSERT INTO `tbl_jadwal` (`id_jdwl`, `id_perencanaan`, `npm`) VALUES
-(72, 11, '1811010008');
+(73, 18, '1811010008'),
+(74, 18, '1711010008'),
+(75, 18, '1611010008'),
+(76, 19, '1811010008'),
+(77, 19, '1711010008'),
+(78, 19, '1611010008'),
+(79, 18, '1511010008'),
+(80, 19, '1511010008');
 
 -- --------------------------------------------------------
 
@@ -137,7 +144,7 @@ CREATE TABLE `tbl_kaprodi` (
 --
 
 INSERT INTO `tbl_kaprodi` (`id`, `nama`, `email`, `pass`, `role_id`) VALUES
-('kaprodi', 'Kaprodi', 'winarto_zing@yahoo.com', '3c13922905d2bc454cc35e665335e2fd', '1');
+('kaprodi', 'Kaprodi', '', '3c13922905d2bc454cc35e665335e2fd', '1');
 
 -- --------------------------------------------------------
 
@@ -157,8 +164,27 @@ CREATE TABLE `tbl_keilmuan` (
 --
 
 INSERT INTO `tbl_keilmuan` (`id_keilmuan`, `kode_dosen`, `bidang_ilmu`, `kode_mk`) VALUES
-(7, '001', 'Teknik Informatika', 'TIF001-19'),
-(8, '002', 'Teknik Informatika', 'TIF001-19');
+(10, '001', 'Teknik Informatika', 'TIF001-19'),
+(11, '001', 'Teknik Informatika', 'TIF002-19'),
+(12, '002', 'Teknik Informatika', 'TIF003-19'),
+(13, '002', 'Teknik Informatika', 'TIF004-19'),
+(14, '002', 'Teknik Informatika', 'TIF005-19'),
+(15, '002', 'Teknik Informatika', 'TIF006-19'),
+(16, '003', 'Teknik Informatika', 'TIF007-19'),
+(17, '003', 'Teknik Informatika', 'TIF008-19'),
+(18, '004', 'Teknik Informatika', 'TIF009-19'),
+(19, '005', 'Teknik Informatika', 'TIF010-19'),
+(20, '006', 'Teknik Informatika', 'TIF011-19'),
+(21, '007', 'Teknik Informatika', 'TIF012-19'),
+(22, '008', 'Teknik Informatika', 'TIF013-19'),
+(23, '009', 'Teknik Informatika', 'TIF014-19'),
+(24, '011', 'Teknik Informatika', 'TIF016-19'),
+(25, '011', 'Teknik Informatika', 'TIF017-19'),
+(26, '011', 'Teknik Informatika', 'TIF018-19'),
+(27, '011', 'Teknik Informatika', 'TIF015-19'),
+(28, '012', 'Teknik Informatika', 'TIF012-19'),
+(29, '012', 'Teknik Informatika', 'TIF019-19'),
+(30, '013', 'Teknik Informatika', 'TIF020-19');
 
 -- --------------------------------------------------------
 
@@ -188,7 +214,8 @@ INSERT INTO `tbl_kelas` (`id`, `angkatan`, `nama_kelas`) VALUES
 (10, '17', 'IF 17 B'),
 (11, '17', 'IF 17 C'),
 (12, '18', 'IF 18 B'),
-(13, '18', 'IF 18 C');
+(13, '18', 'IF 18 C'),
+(14, '16', 'IF 16 D');
 
 -- --------------------------------------------------------
 
@@ -229,8 +256,28 @@ CREATE TABLE `tbl_kurikulum` (
 --
 
 INSERT INTO `tbl_kurikulum` (`id_kurikulum`, `id_tahun_akademik`, `angkatan_kurikulum`, `semester_kurikulum`, `kode_mk`, `kode_dosen`) VALUES
-(11, 6, '15', '1', 'TIF001-19', '001'),
-(12, 6, '15', '2', 'TIF001-19', '002');
+(13, 6, '18', '1', 'TIF001-19', '001'),
+(14, 6, '18', '1', 'TIF002-19', '001'),
+(15, 6, '15', '7', 'TIF003-19', '002'),
+(16, 6, '16', '5', 'TIF004-19', '002'),
+(17, 6, '17', '3', 'TIF005-19', '002'),
+(18, 6, '16', '5', 'TIF006-19', '002'),
+(19, 6, '16', '5', 'TIF007-19', '003'),
+(20, 6, '17', '3', 'TIF008-19', '003'),
+(21, 6, '18', '1', 'TIF009-19', '004'),
+(22, 6, '15', '7', 'TIF010-19', '005'),
+(23, 6, '16', '5', 'TIF011-19', '006'),
+(24, 6, '16', '5', 'TIF012-19', '007'),
+(25, 6, '15', '7', 'TIF013-19', '008'),
+(26, 6, '16', '5', 'TIF014-19', '009'),
+(27, 6, '17', '3', 'TIF015-19', '011'),
+(28, 6, '15', '7', 'TIF016-19', '011'),
+(29, 6, '18', '1', 'TIF017-19', '011'),
+(30, 6, '17', '3', 'TIF018-19', '011'),
+(31, 6, '17', '3', 'TIF015-19', '011'),
+(32, 6, '16', '5', 'TIF012-19', '012'),
+(33, 6, '16', '5', 'TIF019-19', '012'),
+(34, 6, '18', '1', 'TIF020-19', '013');
 
 -- --------------------------------------------------------
 
@@ -256,7 +303,7 @@ INSERT INTO `tbl_mahasiswa` (`npm`, `nama_mhs`, `email`, `no_telp`, `angkatan`, 
 ('1511010008', 'Ujang', '', '-', '15', '6e32bdc9fe252c6d8c60bca4bdae4737', '3'),
 ('1611010008', 'Joni', '', '-', '16', 'ac87219217d5ac8d006a5f047042fbbc', '3'),
 ('1711010008', 'Adi', '', '-', '17', 'b775062e8381f88ca9f431c3f97dd8e7', '3'),
-('1811010008', 'Winarto', 'winarto.1811010008@mail.darmajaya.ac.id', '0218717006', '18', '579ed24c6e3993daddaee2f604fca230', '3');
+('1811010008', 'Winarto', '', '-', '18', '579ed24c6e3993daddaee2f604fca230', '3');
 
 -- --------------------------------------------------------
 
@@ -279,46 +326,44 @@ CREATE TABLE `tbl_matakuliah` (
 
 INSERT INTO `tbl_matakuliah` (`kode_mk`, `nama_mk`, `sks_teori`, `sks_praktek`, `total_sks`, `angkatan`) VALUES
 ('TIF001-19', 'Dasar-Dasar Pemrograman (Gel. 1)', 2, 2, 4, '18'),
-('TIF002-19', 'Praktikum Pemrograman I (Gel. 1)', 0, 0, 1, '18'),
-('TIF003-19', 'Proyek Perangkat Lunak', 0, 0, 3, '15'),
-('TIF004-19', 'Pemrograman Mobile ', 0, 0, 3, '16'),
-('TIF005-19', 'Interaksi Manusia Komputer', 0, 0, 2, '17'),
-('TIF006-19', 'Grafika Komputer (Teori)', 0, 0, 2, '16'),
-('TIF007-19', 'Sistem Paralel dan Terdistribusi', 0, 0, 3, '16'),
-('TIF008-19', 'Sistem Operasi', 0, 0, 3, '17'),
-('TIF009-19', 'Organisasi dan Arsitektur Komputer', 0, 0, 4, '18'),
-('TIF010-19', 'Kriptografi', 0, 0, 2, '16'),
-('TIF011-19', 'Socio-Informatika dan Profesionalisme (E-Learning)', 0, 0, 2, '16'),
-('TIF012-19', 'Metodologi Penelitian Ilmu Komputer', 0, 0, 2, '16'),
-('TIF013-19', 'Sistem Informasi Lanjut', 0, 0, 2, '15'),
-('TIF014-19', 'Rekayasa Perangkat Lunak', 0, 0, 2, '16'),
-('TIF015-19', 'Manajemen Basis Data', 0, 0, 2, '17'),
-('TIF016-19', 'Administrasi Jaringan Komputer', 0, 0, 3, '15'),
-('TIF017-19', 'Dasar-Dasar Pemrograman', 0, 0, 2, '18'),
-('TIF018-19', 'Praktikum Pemrograman I', 0, 0, 1, '18'),
-('TIF019-19', 'Sistem Informasi', 0, 0, 2, '16'),
-('TIF020-19', 'Organisasi dan Arsitektur Komputer (Gel 1)', 0, 0, 4, '18'),
-('TIF021-19', 'Sistem Multimedia (Teori)', 0, 0, 2, '15'),
-('TIF022-19', 'Komunikasi Data', 0, 0, 3, '17'),
-('TIF023-19', 'Analisis dan Strategi Algoritma', 0, 0, 2, '17'),
-('TIF024-19', 'Pemrograman Berorientasi Objek', 0, 0, 3, '17'),
-('TIF025-19', 'Pengantar Teknologi Informasi (E-Learning) (Gel 1)', 0, 0, 2, '18'),
-('TIF026-19', 'Temu Kembali Informasi', 0, 0, 3, '16'),
-('TIF028-19', 'Keamanan Jaringan', 0, 0, 3, '16'),
-('TIF029-19', 'Troubleshooting & Administrasi Sistem', 0, 0, 3, '17'),
-('TIF030-19', 'Logika Informatika', 0, 0, 2, '18'),
-('TIF031-19', 'Logika Informatika (Gel 1)', 0, 0, 2, '18'),
-('TIF032-19', 'Matematika', 0, 0, 2, '18'),
-('TIF033-19', 'Matematika (Gel 1)', 0, 0, 2, '18'),
-('TIF034-19', 'Bahasa Inggris II', 0, 0, 2, '17'),
-('TIF035-19', 'Dasar-Dasar Akuntansi', 0, 0, 4, '18'),
-('TIF036-19', 'Pendidikan Jasmani dan Olahraga', 0, 0, 2, '18'),
-('TIF037-19', 'Pendidikan Jasmani dan Olahraga (Gel 1)', 0, 0, 2, '18'),
-('TIF038-19', 'Pancasila dan Kewarganegaraan (Gel 1)', 0, 0, 3, '18'),
-('TIF039-19', 'Aplikasi Komputer (Gel 1)', 0, 0, 2, '18'),
-('TIF040-19', 'Aplikasi Komputer', 0, 0, 2, '18'),
-('TIF041-19', 'keker', 2, 1, 4, '15'),
-('TIF042-19', 'a', 2, 2, 4, '15');
+('TIF002-19', 'Praktikum Pemrograman I (Gel. 1)', 1, 2, 3, '18'),
+('TIF003-19', 'Proyek Perangkat Lunak', 2, 2, 4, '15'),
+('TIF004-19', 'Pemrograman Mobile ', 0, 0, 0, '16'),
+('TIF005-19', 'Interaksi Manusia Komputer', 0, 0, 0, '17'),
+('TIF006-19', 'Grafika Komputer (Teori)', 0, 0, 0, '16'),
+('TIF007-19', 'Sistem Paralel dan Terdistribusi', 0, 0, 0, '16'),
+('TIF008-19', 'Sistem Operasi', 0, 0, 0, '17'),
+('TIF009-19', 'Organisasi dan Arsitektur Komputer', 0, 0, 0, '18'),
+('TIF010-19', 'Kriptografi', 0, 0, 0, '16'),
+('TIF011-19', 'Socio-Informatika dan Profesionalisme (E-Learning)', 0, 0, 0, '16'),
+('TIF012-19', 'Metodologi Penelitian Ilmu Komputer', 0, 0, 0, '16'),
+('TIF013-19', 'Sistem Informasi Lanjut', 0, 0, 0, '15'),
+('TIF014-19', 'Rekayasa Perangkat Lunak', 0, 0, 0, '16'),
+('TIF015-19', 'Manajemen Basis Data', 0, 0, 0, '17'),
+('TIF016-19', 'Administrasi Jaringan Komputer', 0, 0, 0, '15'),
+('TIF017-19', 'Dasar-Dasar Pemrograman', 0, 0, 0, '18'),
+('TIF018-19', 'Praktikum Pemrograman I', 0, 0, 0, '18'),
+('TIF019-19', 'Sistem Informasi', 0, 0, 0, '16'),
+('TIF020-19', 'Organisasi dan Arsitektur Komputer (Gel 1)', 0, 0, 0, '18'),
+('TIF021-19', 'Sistem Multimedia (Teori)', 0, 0, 0, '15'),
+('TIF022-19', 'Komunikasi Data', 0, 0, 0, '17'),
+('TIF023-19', 'Analisis dan Strategi Algoritma', 0, 0, 0, '17'),
+('TIF024-19', 'Pemrograman Berorientasi Objek', 0, 0, 0, '17'),
+('TIF025-19', 'Pengantar Teknologi Informasi (E-Learning) (Gel 1)', 0, 0, 0, '18'),
+('TIF026-19', 'Temu Kembali Informasi', 0, 0, 0, '16'),
+('TIF028-19', 'Keamanan Jaringan', 0, 0, 0, '16'),
+('TIF029-19', 'Troubleshooting & Administrasi Sistem', 0, 0, 0, '17'),
+('TIF030-19', 'Logika Informatika', 0, 0, 0, '18'),
+('TIF031-19', 'Logika Informatika (Gel 1)', 0, 0, 0, '18'),
+('TIF032-19', 'Matematika', 0, 0, 0, '18'),
+('TIF033-19', 'Matematika (Gel 1)', 0, 0, 0, '18'),
+('TIF034-19', 'Bahasa Inggris II', 0, 0, 0, '17'),
+('TIF035-19', 'Dasar-Dasar Akuntansi', 0, 0, 0, '18'),
+('TIF036-19', 'Pendidikan Jasmani dan Olahraga', 0, 0, 0, '18'),
+('TIF037-19', 'Pendidikan Jasmani dan Olahraga (Gel 1)', 0, 0, 0, '18'),
+('TIF038-19', 'Pancasila dan Kewarganegaraan (Gel 1)', 0, 0, 0, '18'),
+('TIF039-19', 'Aplikasi Komputer (Gel 1)', 0, 0, 0, '18'),
+('TIF040-19', 'Aplikasi Komputer', 0, 0, 0, '18');
 
 -- --------------------------------------------------------
 
@@ -382,8 +427,21 @@ CREATE TABLE `tbl_perencanaan` (
 --
 
 INSERT INTO `tbl_perencanaan` (`id_perencanaan`, `kode_kelompok`, `angkatan_perencanaan`, `semester_perencanaan`, `kode_mk`, `kode_dosen`, `kode_kelas`, `status_perencanaan`) VALUES
-(11, 1, '15', '1', 'TIF001-19', '001', 4, 'sudah_verifikasi'),
-(13, 1, '15', '1', 'TIF001-19', '001', 6, 'belum_verifikasi');
+(14, 1, '18', '1', 'TIF001-19', '001', 3, 'sudah_verifikasi'),
+(15, 1, '18', '1', 'TIF001-19', '001', 12, 'sudah_verifikasi'),
+(16, 1, '18', '1', 'TIF002-19', '001', 3, 'sudah_verifikasi'),
+(17, 1, '18', '1', 'TIF002-19', '001', 12, 'sudah_verifikasi'),
+(18, 1, '15', '7', 'TIF003-19', '002', 4, 'sudah_verifikasi'),
+(19, 1, '15', '7', 'TIF003-19', '002', 5, 'sudah_verifikasi'),
+(20, 1, '16', '5', 'TIF004-19', '002', 2, 'belum_verifikasi'),
+(21, 1, '16', '5', 'TIF004-19', '002', 7, 'belum_verifikasi'),
+(22, 1, '16', '5', 'TIF004-19', '002', 8, 'belum_verifikasi'),
+(25, 1, '17', '3', 'TIF005-19', '002', 9, 'belum_verifikasi'),
+(26, 1, '17', '3', 'TIF005-19', '002', 10, 'belum_verifikasi'),
+(29, 1, '16', '5', 'TIF006-19', '002', 2, 'belum_verifikasi'),
+(30, 1, '16', '5', 'TIF006-19', '002', 7, 'belum_verifikasi'),
+(31, 1, '16', '5', 'TIF006-19', '002', 8, 'belum_verifikasi'),
+(32, 1, '16', '5', 'TIF006-19', '002', 14, 'belum_verifikasi');
 
 -- --------------------------------------------------------
 
@@ -532,19 +590,19 @@ ALTER TABLE `tbl_verifikasi_perencanaan`
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_jdwl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `tbl_keilmuan`
 --
 ALTER TABLE `tbl_keilmuan`
-  MODIFY `id_keilmuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_keilmuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_kelompok`
@@ -556,7 +614,7 @@ ALTER TABLE `tbl_kelompok`
 -- AUTO_INCREMENT for table `tbl_kurikulum`
 --
 ALTER TABLE `tbl_kurikulum`
-  MODIFY `id_kurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_kurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tbl_penginputan`
@@ -574,7 +632,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_perencanaan`
 --
 ALTER TABLE `tbl_perencanaan`
-  MODIFY `id_perencanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_perencanaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tbl_tahun_akademik`
@@ -586,7 +644,7 @@ ALTER TABLE `tbl_tahun_akademik`
 -- AUTO_INCREMENT for table `tbl_verifikasi_perencanaan`
 --
 ALTER TABLE `tbl_verifikasi_perencanaan`
-  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- Constraints for dumped tables
