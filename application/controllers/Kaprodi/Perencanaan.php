@@ -47,8 +47,8 @@ class Perencanaan extends CI_Controller {
     }
 
     public function info($id) {
-        $where = array('id' => $id);
-        $data['kelas']      = $this->model_perencanaan->form_edit($where, 'tbl_perencanaan');
+        $where = array('id_perencanaan' => $id);
+        $data['perencanaan']      = $this->model_perencanaan->form_edit($where, 'tbl_perencanaan');
         $data['mahasiswa']  = $this->model_perencanaan->get_mahasiswa($id)->result();
         $data['A15']        = $this->model_perencanaan->count_angkatan($id,'15','tbl_jadwal');
         $data['A16']        = $this->model_perencanaan->count_angkatan($id,'16','tbl_jadwal');
@@ -56,7 +56,7 @@ class Perencanaan extends CI_Controller {
         $data['A18']        = $this->model_perencanaan->count_angkatan($id,'18','tbl_jadwal');
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
-        $this->load->view('kaprodi/info_kelas', $data);
+        $this->load->view('kaprodi/info_perencanaan', $data);
         $this->load->view('templates/kaprodi/footer');
     }
 
