@@ -110,6 +110,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="<?= base_url('baak/perencanaan')?>" class="nav-link"><i class="fas fa-tasks"></i>
+								<span>Data Perencanaan</span>
+							</a>
+						</li>
+						<li>
 							<a href="<?= base_url('baak/pengumuman')?>" class="nav-link"><i class="fas fa-bullhorn"></i>
 								<span>Pengumuman</span>
 							</a>
