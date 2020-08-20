@@ -99,11 +99,11 @@
 								<span>Dosen</span>
 							</a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="<?= base_url('baak/keilmuan')?>" class="nav-link"><i class="fas fa-flask"></i>
 								<span>Keilmuan</span>
 							</a>
-						</li>
+						</li> -->
 						<li>
 							<a href="<?= base_url('baak/verifikasi_perencanaan')?>" class="nav-link"><i class="fas fa-check"></i>
 								<span>Verifikasi Perencanaan</span>

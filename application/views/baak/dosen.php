@@ -24,7 +24,7 @@
 											<table class="table table-striped" id="table-1">
 												<thead>
 													<tr>
-														<th>Kode Dosen</th>
+														<th>NIK</th>
 														<th>Nama</th>																										
 														<th>Email</th>																																																			
 														<th>No Telp</th>																																																			

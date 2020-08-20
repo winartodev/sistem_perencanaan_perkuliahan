@@ -27,7 +27,7 @@
 														<th>Kelas</th>
 														<th>Kode MK</th>
                                                         <th>Nama Mk</th>
-                                                        <th>Nama Dosen</th>
+                                                        <!-- <th>Nama Dosen</th> -->
 														<th>SKS Teori</th>																																																																																																																																																																																																																							
 														<th>SKS Praktek</th>																																																																																																																																																																																																																							
 														<th>Total SKS</th>																																																																																																																																																																																																																							
@@ -45,7 +45,7 @@
 														<td><?= $kls->nama_kelas; ?></td>
 														<td><?= $kls->kode_mk; ?></td>
 														<td><?= $kls->nama_mk; ?></td>
-														<td><?= $kls->nama_dosen; ?></td>
+														<!-- <td><?= $kls->nama_dosen; ?></td> -->
 														<td><?= $kls->sks_teori; ?></td>
 														<td><?= $kls->sks_praktek; ?></td>
 														<td><?= $kls->total_sks; ?></td>
