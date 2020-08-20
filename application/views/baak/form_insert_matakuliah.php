@@ -22,7 +22,7 @@
 											<div class="card-body">
 												<div class="form-group">
 													<label>Kode Mata Kuliah</label>
-													<input type="text" name="kode_mk" class="form-control" value="<?= $kode_mk; ?>" readonly>
+													<input type="text" name="kode_mk" class="form-control">
 													<?= form_error('kode_mk', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">

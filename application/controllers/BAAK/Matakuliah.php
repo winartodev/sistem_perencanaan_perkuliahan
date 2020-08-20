@@ -24,7 +24,7 @@ class MataKuliah extends CI_Controller {
 
     public function add() {
         $data['matakuliah'] = $this->model_matakuliah->read_data()->result();
-        $data['kode_mk'] = $this->model_matakuliah->get_kode_mk();
+        // $data['kode_mk'] = $this->model_matakuliah->get_kode_mk();
         $this->load->view('templates/baak/header');
         $this->load->view('templates/baak/sidebar');
         $this->load->view('baak/form_insert_matakuliah', $data);
