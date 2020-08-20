@@ -222,9 +222,9 @@ class Perencanaan extends CI_Controller {
 
 
     public function _rules() {
-        $this->form_validation->set_rules('kode_kelompok', 'Nama Kelompok', 'required');
-        // $this->form_validation->set_rules('angkatan', 'Angkatan', 'required');
-        // $this->form_validation->set_rules('semester', 'Semester', 'required');
+        $this->form_validation->set_rules('kode_kelompok', 'Jurusan', 'required');
+        $this->form_validation->set_rules('angkatan', 'Angkatan', 'required');
+        $this->form_validation->set_rules('semester', 'Semester', 'required');
         $this->form_validation->set_rules('kode_mk', 'Mata Kuliah', 'required');
         $this->form_validation->set_rules('kode_dosen', 'Dosen', 'required');
         $this->form_validation->set_rules('kode_kelas', 'Kode Kelas', 'required');

@@ -21,7 +21,7 @@
 											</div>
 											<div class="card-body">
 												<div class="form-group">
-													<label>Nama Kelompok</label>
+													<label>Jurusan</label>
 													<select class="form-control" name="kode_kelompok">
 														<option value="">Pilih Kelompok</option>
                                                         <?php foreach($kelompok as $_kelompok): ?>
@@ -39,7 +39,7 @@
 														<option value="17">17</option>
 														<option value="18">18</option>
 													</select>
-													<!-- <?= form_error('angkatan', '<div class="text-small text-danger">', '</div>'); ?> -->
+													<?= form_error('angkatan', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
 													<label>Semester</label>
@@ -54,7 +54,7 @@
 														<option value="7">7</option>
 														<option value="8">8</option>
 													</select>
-													<!-- <?= form_error('semester', '<div class="text-small text-danger">', '</div>'); ?> -->
+													<?= form_error('semester', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
 													<label>Matakuliah</label>
