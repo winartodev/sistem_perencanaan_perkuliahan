@@ -23,10 +23,10 @@ class Dosen extends CI_Controller {
     }
 
     public function add() {
-        $data['kode_dosen'] = $this->model_dosen->get_kode_dsn();
+        // $data['kode_dosen'] = $this->model_dosen->get_kode_dsn();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
-        $this->load->view('kaprodi/form_insert_dosen', $data);
+        $this->load->view('kaprodi/form_insert_dosen');
         $this->load->view('templates/kaprodi/footer');
     }   
 

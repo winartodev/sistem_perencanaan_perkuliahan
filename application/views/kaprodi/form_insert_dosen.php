@@ -22,7 +22,7 @@
 											<div class="card-body">
 												<div class="form-group">
 													<label>Kode Dosen</label>
-													<input type="text" name="kode_dosen" class="form-control" value="<?= $kode_dosen; ?>" readonly>
+													<input type="text" name="kode_dosen" class="form-control">
 													<?= form_error('kode_dosen', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 												<div class="form-group">
