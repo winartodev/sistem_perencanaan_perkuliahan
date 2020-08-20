@@ -30,7 +30,7 @@
 														<th>Nama MK</th>																																																			
 														<th>Nama Dosen</th>																																																			
 														<th>Angkatan</th>																																																			
-														<th>Angkatan</th>																																																			
+														<th>Status</th>																																																			
 														<th>Aksi</th>
 													</tr>
 												</thead>
