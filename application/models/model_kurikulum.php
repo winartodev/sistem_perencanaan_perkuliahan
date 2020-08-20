@@ -16,6 +16,37 @@ class Model_Kurikulum extends CI_Model {
         return $query;
     }
 
+    public function filter_angkatan($angkatan) 
+    {
+        $query = $this->db->from('tbl_kurikulum')   ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kurikulum.kode_mk')
+                                                    ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kurikulum.kode_dosen')
+                                                    ->join('tbl_tahun_akademik', 'tbl_tahun_akademik.id_ta = tbl_kurikulum.id_tahun_akademik')
+                                                    ->where('tbl_kurikulum.angkatan_kurikulum', $angkatan)
+                                                    ->get()->result(); 
+        return $query;
+    }
+
+    public function filter_semester($semester) 
+    {
+        $query = $this->db->from('tbl_kurikulum')   ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kurikulum.kode_mk')
+                                                    ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kurikulum.kode_dosen')
+                                                    ->join('tbl_tahun_akademik', 'tbl_tahun_akademik.id_ta = tbl_kurikulum.id_tahun_akademik')
+                                                    ->where('tbl_kurikulum.semester_kurikulum', $semester)
+                                                    ->get()->result(); 
+        return $query;
+    }
+
+    public function filter_angkatan_with_semester($angkatan, $semester) 
+    {
+        $query = $this->db->from('tbl_kurikulum')   ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_kurikulum.kode_mk')
+                                                    ->join('tbl_dosen', 'tbl_dosen.kode_dosen = tbl_kurikulum.kode_dosen')
+                                                    ->join('tbl_tahun_akademik', 'tbl_tahun_akademik.id_ta = tbl_kurikulum.id_tahun_akademik')
+                                                    ->where(array('tbl_kurikulum.semester_kurikulum' => $semester, 'tbl_kurikulum.angkatan_kurikulum' => $angkatan ))
+                                                    ->get()->result(); 
+                                                    echo('asdf');
+        return $query;
+    }
+
     public function insert_data($data, $table) {
         $this->db->insert($table, $data);
     }

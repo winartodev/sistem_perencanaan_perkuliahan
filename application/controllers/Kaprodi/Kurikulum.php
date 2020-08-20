@@ -145,6 +145,56 @@ class Kurikulum extends CI_Controller {
         redirect(base_url('kaprodi/kurikulum'));  
     }
 
+    public function filter_angkatan_with_semester()
+    {
+        $angkatan     = $_GET['angkatan'];
+        $semester     = $_GET['semester'];
+
+        if ($semester == "" && $angkatan == "") 
+        {
+            $data   = $this->model_kurikulum->read_data();
+        } 
+        else if ($semester != "" && $angkatan == "") 
+        {
+            $data   = $this->model_kurikulum->filter_semester($semester);
+
+        } else if ($semester == "" && $angkatan != "") 
+        {
+            $data   = $this->model_kurikulum->filter_angkatan($angkatan);
+        } else
+        {
+            $data   = $this->model_kurikulum->filter_angkatan_with_semester($angkatan, $semester);
+
+        }
+
+        if (!empty($data)) 
+        {
+            $no = 1; 
+            foreach($data as $_kurikulum):  ?>
+            <tr>
+            	<td><?= $no++ ?></td>
+            	<td><?= $_kurikulum->tahun_akademik ?></td>
+            	<td><?= $_kurikulum->angkatan_kurikulum ?></td>
+            	<td><?= $_kurikulum->semester_kurikulum ?></td>
+            	<td><?= $_kurikulum->nama_dosen ?></td>
+            	<td><?= $_kurikulum->nama_mk ?></td>
+            	<td>
+            		<?= anchor(base_url('kaprodi/kurikulum/info/'. $_kurikulum->id_kurikulum), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
+            		<?= anchor(base_url('kaprodi/kurikulum/edit/'. $_kurikulum->id_kurikulum), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
+            		<?= anchor(base_url('kaprodi/kurikulum/delete/'. $_kurikulum->id_kurikulum), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
+            	</td>
+            </tr>
+            <?php endforeach; ?> <?php
+        } else 
+        {
+            ?>
+                 <tr>
+                    <td colspan="7" align="center">DATA TIDAK DI TEMUKAN</td>
+                </tr>
+            <?php
+        }
+    }
+
 
     public function _rules() {
         $this->form_validation->set_rules('tahun_akademik', 'tahun akademik', 'required');

@@ -10,49 +10,57 @@
 						</div> -->
 					</div>
 
-					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('kaprodi/kurikulum/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Kurikulum </a>
+					<div class="section-body">
+						<a class="btn btn-primary mb-4" href="<?= base_url('kaprodi/kurikulum/add') ?>"> <i
+								class="fa fa-plus fa-sm"></i> Tambah Kurikulum </a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
 								<div class="card">
 									<div class="card-header">
 										<h4>Daftar Data Kurikulum</h4>
-										
 									</div>
 									<div class="card-body">
-										<div class="table-responsive">
+										<div class="row">
+											<div class="col">
+												<label>Angkatan</label>
+												<select class="form-control" id="angkatan">
+													<option value="">Pilih Angkatan</option>
+													<option value="15">15</option>
+													<option value="16">16</option>
+													<option value="17">17</option>
+													<option value="18">18</option>
+												</select>
+											</div>
+											<div class="col">
+												<label>Semester</label>
+												<select class="form-control" id="semester">
+													<option value="">Pilih Semester</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+												</select>
+											</div>
+										</div>
+										<div class="table-responsive mt-3">
 											<table class="table table-striped" id="table-1">
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Tahun Akademik</th>																										
-														<th>Angkatan</th>																																																			
+														<th>Tahun Akademik</th>
+														<th>Angkatan</th>
 														<th>Semester</th>
 														<th>Nama Dosen</th>
-														<th>Nama MK</th>																																																																																																						
+														<th>Nama MK</th>
 														<th>Aksi</th>
 													</tr>
 												</thead>
-                                                <?php
-                                                    $no = 1; 
-                                                    foreach($kurikulum as $_kurikulum): 
-                                                ?>
-													<tr>
-														<td><?= $no++ ?></td>
-														<td><?= $_kurikulum->tahun_akademik ?></td>
-														<td><?= $_kurikulum->angkatan_kurikulum ?></td>
-														<td><?= $_kurikulum->semester_kurikulum ?></td>
-														<td><?= $_kurikulum->nama_dosen ?></td>
-														<td><?= $_kurikulum->nama_mk ?></td>
-														<td>
-                                                            <?= anchor(base_url('kaprodi/kurikulum/info/'. $_kurikulum->id_kurikulum), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
-															<?= anchor(base_url('kaprodi/kurikulum/edit/'. $_kurikulum->id_kurikulum), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit" href=""><i class="fas fa-pencil-alt"></i></div>')?>
-															<?= anchor(base_url('kaprodi/kurikulum/delete/'. $_kurikulum->id_kurikulum), '<div class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></div>')?>
-														</td>
-													</tr>
-												<?php endforeach; ?>
-												<tbody>                                                 
+												<tbody>
 												</tbody>
 											</table>
 										</div>
@@ -63,3 +71,73 @@
 					</div>
 				</section>
 			</div>
+
+			<script>
+	$(document).ready(function() {
+		filter_angkatan_and_semester();
+
+		$('#angkatan').change(function(){
+			filter_angkatan_and_semester();
+		});
+		$('#semester').change(function(){
+			filter_angkatan_and_semester();
+		});
+
+		$('#semester').change(function(){
+			$('#angkatan').change(function(){
+				filter_angkatan_and_semester();
+			});
+		});
+
+		$('#angkatan').change(function(){
+			$('#semester').change(function(){
+				filter_angkatan_and_semester();
+			});
+		});
+	});
+
+	function filter_angkatan() {
+		var angkatan = $('#angkatan').val();
+		console.log(angkatan);
+		$.ajax({
+			url		: "<?= base_url('kaprodi/kurikulum/filter_angkatan') ?>",
+			data	: 'angkatan=' + angkatan,
+			success : function(data) 
+			{
+				// console.log(data)
+				$("#table-1 tbody").html(data)
+			}
+		});
+	}
+
+	function filter_semester() 
+	{
+		var semester = $('#semester').val();
+		console.log('2')
+		$.ajax({
+			url		: "<?= base_url('kaprodi/kurikulum/filter_semester') ?>",
+			data	: 'semester=' + semester,
+			success : function(data) 
+			{
+				// console.log(data)
+				$("#table-1 tbody").html(data)
+			}
+		});
+	}
+
+	function filter_angkatan_and_semester() 
+	{
+		var semester = $('#semester').val();
+		var angkatan = $('#angkatan').val();
+		$.ajax({
+			url		: "<?= base_url('kaprodi/kurikulum/filter_angkatan_with_semester') ?>",
+			data	: {'semester':semester,  'angkatan': angkatan},
+			success : function(data) 
+			{
+				// console.log(data)
+				$("#table-1 tbody").html(data)
+			}
+		});
+	}
+
+</script>
