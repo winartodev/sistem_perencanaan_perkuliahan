@@ -124,7 +124,7 @@ class Dosen extends CI_Controller {
     }
 
     public function _rules() {
-        $this->form_validation->set_rules('kode_dosen', 'Kode Dosen', 'required');
+        $this->form_validation->set_rules('kode_dosen', 'NIK Dosen', 'required');
         $this->form_validation->set_rules('nama_dosen', 'Nama Dosen', 'required');
     }
 
