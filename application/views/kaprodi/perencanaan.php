@@ -29,7 +29,8 @@
 														<th>Nama Kelas</th>																										
 														<th>Nama MK</th>																																																			
 														<th>Nama Dosen</th>																																																			
-														<th>Angkatan</th>																																																			
+														<th>Angkatan</th>
+														<th>Jumlah Mahasiswa</th>																																																			
 														<th>Status</th>																																																			
 														<th>Aksi</th>
 													</tr>
@@ -44,6 +45,7 @@
 														<td><?= $_perencanaan->nama_mk ?></td>
 														<td><?= $_perencanaan->nama_dosen ?></td>
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
+														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan) ?> / 10</td>
 														<td>
 															<?php 
 																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):
