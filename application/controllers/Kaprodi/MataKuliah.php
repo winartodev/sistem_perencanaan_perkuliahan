@@ -42,7 +42,7 @@ class MataKuliah extends CI_Controller {
 
     public function info($kode_mk) {
         $where = array('tbl_matakuliah.kode_mk' => $kode_mk);
-        $data['matakuliah'] = $this->model_matakuliah->info_matakuliah($where)->result();
+        $data['matakuliah'] = $this->model_matakuliah->form_edit($where, 'tbl_matakuliah')->result();
         $data['mahasiswa'] = $this->model_matakuliah->get_mahasiswa($where)->result();
         $this->load->view('templates/kaprodi/header');
         $this->load->view('templates/kaprodi/sidebar');
