@@ -43,34 +43,47 @@ class Perencanaan extends CI_Controller {
 
         $check1 = $this->model_perencanaan->check_duplicate_data($array, 'tbl_verifikasi_perencanaan');
         $check2 = $this->model_perencanaan->check_duplicate_data($array, 'tbl_jadwal');
+        $check3 = $this->model_perencanaan->jumlah_mahasiswa($id_perencanaan);
         $num1 = $check1->num_rows();
         $num2 = $check2->num_rows();
-
-        if ($num1 == 1 || $num2 == 1) {
+        if ($check3 == 2) 
+        {
             $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                    <b>Anda Sudah Mengambil Perkuliahan Ini.</b>
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>');
-            redirect(base_url('Mahasiswa/Perencanaan')); 
-        } else {
-            $data = array (
-                'npm'               => $npm,
-                'id_perencanaan'    => $id_perencanaan,
-                'angkatan'          => $angkatan,
-                'status'            => 'Di Proses',
-            );
-    
-            $this->model_perencanaan->insert_data($data, 'tbl_verifikasi_perencanaan');
-            $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                        <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
+                                                        <b>Kelas Sudah Penuh.</b>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>');
-            redirect(base_url('mahasiswa/perencanaan')); 
-        }       
+            redirect(base_url('Mahasiswa/Perencanaan')); 
+        } 
+        else {
+            if ($num1 == 1 || $num2 == 1) {
+                $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                        <b>Anda Sudah Mengambil Perkuliahan Ini.</b>
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>');
+                redirect(base_url('Mahasiswa/Perencanaan')); 
+            } else {
+                $data = array (
+                    'npm'               => $npm,
+                    'id_perencanaan'    => $id_perencanaan,
+                    'angkatan'          => $angkatan,
+                    'status'            => 'Di Proses',
+                );
+        
+                $this->model_perencanaan->insert_data($data, 'tbl_verifikasi_perencanaan');
+                $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                            <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>');
+                redirect(base_url('mahasiswa/perencanaan')); 
+            }       
+        }
+       
     }
 
     public function batal($id) {
