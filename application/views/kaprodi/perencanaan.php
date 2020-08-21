@@ -45,7 +45,7 @@
 														<td><?= $_perencanaan->nama_mk ?></td>
 														<td><?= $_perencanaan->nama_dosen ?></td>
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
-														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan) ?> / 10</td>
+														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan), ' / ', $_perencanaan->jumlah_mahasiswa?></td>
 														<td>
 															<?php 
 																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):

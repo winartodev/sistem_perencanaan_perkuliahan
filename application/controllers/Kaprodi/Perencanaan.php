@@ -72,6 +72,7 @@ class Perencanaan extends CI_Controller {
             $kode_mk            = $this->input->post('kode_mk');
             $kode_dosen         = $this->input->post('kode_dosen');
             $kode_kelas         = $this->input->post('kode_kelas');
+            $jumlah_mahasiswa   = $this->input->post('jumlah_mahasiswa');
 
             $data = array (
                 'kode_kelompok'         => $kode_kelompok,
@@ -80,7 +81,8 @@ class Perencanaan extends CI_Controller {
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen,
                 'kode_kelas'            => $kode_kelas,
-                'status_perencanaan'      => 'belum_verifikasi'
+                'jumlah_mahasiswa'      => $jumlah_mahasiswa,
+                'status_perencanaan'    => 'belum_verifikasi'
             );
 
             $this->model_perencanaan->insert_data($data, 'tbl_perencanaan');
@@ -160,6 +162,7 @@ class Perencanaan extends CI_Controller {
             $kode_mk            = $this->input->post('kode_mk');
             $kode_dosen         = $this->input->post('kode_dosen');
             $kode_kelas         = $this->input->post('kode_kelas');
+            $jumlah_mahasiswa   = $this->input->post('jumlah_mahasiswa');
 
             $data = array (
                 'kode_kelompok'         => $kode_kelompok,
@@ -168,6 +171,7 @@ class Perencanaan extends CI_Controller {
                 'kode_mk'               => $kode_mk,
                 'kode_dosen'            => $kode_dosen,
                 'kode_kelas'            => $kode_kelas,
+                'jumlah_mahasiswa'      => $jumlah_mahasiswa,
                 'status_perencanaan'      => 'belum_verifikasi'
             );
 
@@ -228,6 +232,7 @@ class Perencanaan extends CI_Controller {
         $this->form_validation->set_rules('kode_mk', 'Mata Kuliah', 'required');
         $this->form_validation->set_rules('kode_dosen', 'Dosen', 'required');
         $this->form_validation->set_rules('kode_kelas', 'Kode Kelas', 'required');
+        $this->form_validation->set_rules('jumlah_mahasiswa', 'Jumlah Mahasiswa', 'required');
     }
 
 }

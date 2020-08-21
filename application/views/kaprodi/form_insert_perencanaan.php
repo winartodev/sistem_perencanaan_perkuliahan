@@ -74,6 +74,18 @@
 													</select>
 													<?= form_error('kode_kelas', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
+												<div class="form-group">
+                                                        <label>Jumlah Mahasiswa</label>
+                                                        <select class="form-control" name="jumlah_mahasiswa" id="kelas">
+															<option value="">Pilih Jumlah Mahasiswa</option>
+                                                           <option value="10">10</option>
+                                                           <option value="20">20</option>
+                                                           <option value="30">30</option>
+                                                           <option value="35">35</option>
+                                                           <option value="40">40</option>
+                                                        </select>
+                                                        <?= form_error('jumlah_mahasiswa', '<div class="text-small text-danger">', '</div>'); ?>
+                                                    </div>
 											</div>
 											<div class="card-footer text-right">
 												<button class="btn btn-danger" type="reset"> <i class="fa fa-undo mr-1"></i>Reset</button>
