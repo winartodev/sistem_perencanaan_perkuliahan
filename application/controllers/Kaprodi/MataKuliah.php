@@ -40,6 +40,16 @@ class MataKuliah extends CI_Controller {
         $this->load->view('templates/kaprodi/footer');
     }
 
+    public function info($kode_mk) {
+        $where = array('tbl_matakuliah.kode_mk' => $kode_mk);
+        $data['matakuliah'] = $this->model_matakuliah->info_matakuliah($where)->result();
+        $data['mahasiswa'] = $this->model_matakuliah->get_mahasiswa($where)->result();
+        $this->load->view('templates/kaprodi/header');
+        $this->load->view('templates/kaprodi/sidebar');
+        $this->load->view('kaprodi/info_matakuliah', $data);
+        $this->load->view('templates/kaprodi/footer');
+    }
+
     public function insert_mk() {
         $this->_rules();
              

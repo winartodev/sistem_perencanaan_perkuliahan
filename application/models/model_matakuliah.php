@@ -19,6 +19,23 @@ class Model_Matakuliah extends CI_Model {
                                             ->get()->num_rows();
     }
 
+    public function info_matakuliah($kode_mk) 
+    {
+        return $this->db->from('tbl_matakuliah')    ->join('tbl_perencanaan', 'tbl_perencanaan.kode_mk = tbl_matakuliah.kode_mk')
+                                                    ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
+                                                    ->where($kode_mk)
+                                                    ->get();
+    }
+
+    public function get_mahasiswa($id) {
+        return $this->db->from('tbl_matakuliah')    ->join('tbl_perencanaan', 'tbl_perencanaan.kode_mk = tbl_matakuliah.kode_mk')
+                                                    ->join('tbl_jadwal', 'tbl_jadwal.id_perencanaan = tbl_perencanaan.id_perencanaan')
+                                                    ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
+                                                    ->join('tbl_mahasiswa', 'tbl_mahasiswa.npm = tbl_jadwal.npm')
+                                                    ->where($id)                                            
+                                                    ->get();
+    }
+
     // public function get_kode_mk() {
     //     $this->db->select_max('kode_mk');
 
