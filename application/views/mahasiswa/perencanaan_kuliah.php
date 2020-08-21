@@ -50,7 +50,7 @@
 														<td><?= $kls->sks_teori; ?></td>
 														<td><?= $kls->sks_praktek; ?></td>
 														<td><?= $kls->total_sks; ?></td>
-														<td> <?= $this->model_perencanaan->jumlah_mahasiswa($kls->id_perencanaan) ?> / 10</td>
+														<td> <?= $this->model_perencanaan->jumlah_mahasiswa($kls->id_perencanaan), ' / ', $kls->jumlah_mahasiswa?></td>
 														<td>
 															<?= anchor(base_url('mahasiswa/pra_perencanaan/daftar/'. $kls->id_perencanaan), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
