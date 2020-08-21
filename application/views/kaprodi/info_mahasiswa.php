@@ -34,7 +34,7 @@
 										<?php endforeach; ?>
 
 										<hr class="mb-4">
-										<h5>Mata Kuliah Yang Di Ampuh</h5>
+										<h5>Mata Kuliah Yang Di Ambil</h5>
 
 										<div class="table-responsive">
 											<table class="table table-striped" id="table-1">
