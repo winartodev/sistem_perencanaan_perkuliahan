@@ -25,6 +25,7 @@
 													<tr>
 														<th>Kelas</th>
 														<th>Kode MK</th>
+														<th>Kode MK</th>
 														<th>Nama MK</th>
                                                         <th>Nama Dosen</th>
 														<th>Status</th>																																																																																																																																																																																																																							
@@ -35,6 +36,7 @@
 												<?php foreach($jadwal as $jdwl): ?>
 													<tr>
 														<td><?= $jdwl->nama_kelas; ?></td>
+														<td><?= $jdwl->id_perencanaan; ?></td>
 														<td><?= $jdwl->kode_mk; ?></td>
 														<td><?= $jdwl->nama_mk; ?></td>
 														<td><?= $jdwl->angkatan; ?></td>
