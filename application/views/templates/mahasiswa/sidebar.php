@@ -85,12 +85,12 @@
 						</li>
 						<li class="menu-header">Main</li>
 						<li>
-							<a href="<?= base_url('mahasiswa/perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('mahasiswa/pra_perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Pra Perencanaan</span>
 							</a>
 						</li>
 						<li>
-							<a href="<?= base_url('mahasiswa/jadwal')?>" class="nav-link"><i class="fas fa-book"></i>
+							<a href="<?= base_url('mahasiswa/perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
 								<span>Perencanaan</span>
 							</a>
 						</li>

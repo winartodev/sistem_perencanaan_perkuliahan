@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-info mb-4" href="<?= base_url('mahasiswa/perencanaan/detail_rencana') ?>"> <i class="fa fa-eye fa-sm mr-2" ></i>Detail Rencana Mu</a>
+                        <a class="btn btn-info mb-4" href="<?= base_url('mahasiswa/pra_perencanaan/detail_rencana') ?>"> <i class="fa fa-eye fa-sm mr-2" ></i>Detail Rencana Mu</a>
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -50,9 +50,9 @@
 														<td><?= $kls->sks_teori; ?></td>
 														<td><?= $kls->sks_praktek; ?></td>
 														<td><?= $kls->total_sks; ?></td>
-														<td> <?= $this->model_perencanaan->jumlah_mahasiswa($kls->id_perencanaan) ?> / 2</td>
+														<td> <?= $this->model_perencanaan->jumlah_mahasiswa($kls->id_perencanaan) ?> / 10</td>
 														<td>
-															<?= anchor(base_url('mahasiswa/perencanaan/daftar/'. $kls->id_perencanaan), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
+															<?= anchor(base_url('mahasiswa/pra_perencanaan/daftar/'. $kls->id_perencanaan), '<div class="btn btn-warning btn-action mr-1 text-bold" href="">Daftar</div>')?>
 														</td>
 													</tr>               
 												<?php 
