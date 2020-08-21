@@ -12,6 +12,13 @@ class Model_Matakuliah extends CI_Model {
         $this->db->insert($table, $data);
     }
 
+    public function jumlah_mahasiswa($kode_mk) 
+    {
+        return $this->db->from('tbl_jadwal')->join('tbl_perencanaan', 'tbl_perencanaan.id_perencanaan = tbl_jadwal.id_perencanaan')
+                                            ->where('tbl_perencanaan.kode_mk', $kode_mk)
+                                            ->get()->num_rows();
+    }
+
     // public function get_kode_mk() {
     //     $this->db->select_max('kode_mk');
 
