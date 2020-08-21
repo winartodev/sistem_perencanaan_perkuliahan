@@ -9,6 +9,16 @@ class Model_Tahun_Akademik extends CI_Model {
         $this->db->insert($table, $data);
     }
 
+    public function form_edit($id, $table) 
+    {
+        return $this->db->get_where($table, $id)->result();
+    }
+
+    public function update_data($id, $data, $table) {
+        $this->db->where($id);
+        $this->db->update($table, $data);
+    }
+
     public function count_data() {
         return $this->db->get('tbl_tahun_akademik')->num_rows();
     }
