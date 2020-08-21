@@ -8,4 +8,11 @@ class Model_Jadwal extends CI_Model {
                                                 ->where('npm', $this->session->userdata('npm'))
                                                 ->get()->result();
     }
+
+    public function jumlah_mahasiswa($id)
+    {
+        $data =  $this->db->get_where('tbl_jadwal', array('id_perencanaan' => $id))->num_rows();
+
+        return $data;
+    }
 }
