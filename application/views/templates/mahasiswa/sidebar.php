@@ -94,11 +94,11 @@
 								<span>Perencanaan</span>
 							</a>
 						</li>
-						<!-- <li>
-							<a href="<?= base_url('Kaprodi/Kelas')?>" class="nav-link"><i class="fas fa-building"></i>
-								<span>Buat Kelas</span>
+						<li>
+							<a href="<?= base_url('mahasiswa/pengajuan')?>" class="nav-link"><i class="fas fa-building"></i>
+								<span>Pengajuan Pembukaan MK</span>
 							</a>
-						</li> -->
+						</li>
 						<li class="menu-header">Settings</li>
 						<li>
 							<a  href="<?= base_url('mahasiswa/biodata/email_mahasiswa/'.$this->session->userdata('npm')) ?>" class="nav-link"><i class="fas fa-envelope"></i>
