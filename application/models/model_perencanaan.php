@@ -50,6 +50,13 @@ class Model_Perencanaan extends CI_Model {
         return $this->db->get('tbl_kelompok')->result();
     }
 
+    public function jumlah_mahasiswa($id)
+    {
+        $data =  $this->db->get_where('tbl_verifikasi_perencanaan', array('id_perencanaan' => $id))->num_rows();
+
+        return $data;
+    }
+
     public function get_mahasiswa($id) {
         return $this->db->from('tbl_jadwal')->join('tbl_perencanaan', 'tbl_perencanaan.id_perencanaan = tbl_jadwal.id_perencanaan')
                                             ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
