@@ -29,7 +29,7 @@
 														<th>SKS Teori</th>																																																																								
 														<th>SKS Praktek</th>	
 														<th>Total SKS</th>																																																																							
-														<th>angkatan</th>																																																																																																																																															
+														<th>angkatan</th>																																																																																																																																														
 														<th>Aksi</th>
 													</tr>
 												</thead>
