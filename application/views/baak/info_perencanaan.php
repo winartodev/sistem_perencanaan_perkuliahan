@@ -45,6 +45,10 @@
 														<td>18</td>
 														<td><?= $A18; ?></td>
 													</tr>
+													<tr>
+														<th>Total Mahasiswa</th>
+														<th><?= $A15 + $A16 + $A17 + $A18; ?></th>
+													</tr>
 												</tbody>
 											</table>
 										</div>
