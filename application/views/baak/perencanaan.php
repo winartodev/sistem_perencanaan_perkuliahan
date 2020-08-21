@@ -11,7 +11,7 @@
 					</div>
 
 					<div class="section-body">						
-                        <a class="btn btn-primary mb-4" href="<?= base_url('kaprodi/perencanaan/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Perencanaan </a>
+                        <!-- <a class="btn btn-primary mb-4" href="<?= base_url('kaprodi/perencanaan/add') ?>"> <i class="fa fa-plus fa-sm" ></i> Tambah Perencanaan </a> -->
 						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
@@ -30,7 +30,8 @@
 														<th>Nama MK</th>																																																			
 														<th>Nama Dosen</th>																																																			
 														<th>Angkatan</th>																																																			
-														<th>Angkatan</th>																																																			
+														<th>Jumlah Mahasiswa</th>																																																			
+														<th>Status</th>																																																			
 														<th>Aksi</th>
 													</tr>
 												</thead>
@@ -45,6 +46,7 @@
 														<td><?= $_perencanaan->nama_mk ?></td>
 														<td><?= $_perencanaan->nama_dosen ?></td>
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
+														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan) ?> / 10</td>
 														<td>
 															<?php 
 																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):
