@@ -176,7 +176,7 @@ class Kurikulum extends CI_Controller {
             	<td><?= $_kurikulum->tahun_akademik ?></td>
             	<td><?= $_kurikulum->angkatan_kurikulum ?></td>
             	<td><?= $_kurikulum->semester_kurikulum ?></td>
-            	<td><?= $_kurikulum->nama_dosen ?></td>
+            	<!-- <td><?= $_kurikulum->nama_dosen ?></td> -->
             	<td><?= $_kurikulum->nama_mk ?></td>
             	<td>
             		<?= anchor(base_url('kaprodi/kurikulum/info/'. $_kurikulum->id_kurikulum), '<div class="btn btn-info btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>

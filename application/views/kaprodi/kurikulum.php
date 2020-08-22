@@ -55,7 +55,7 @@
 														<th>Tahun Akademik</th>
 														<th>Angkatan</th>
 														<th>Semester</th>
-														<th>Nama Dosen</th>
+														<!-- <th>Nama Dosen</th> -->
 														<th>Nama MK</th>
 														<th>Aksi</th>
 													</tr>
