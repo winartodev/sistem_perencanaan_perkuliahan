@@ -77,28 +77,26 @@ class Kelas extends CI_Controller {
 
             foreach ($check_kelas as $row) 
             {
-                if ($row->nama_kelas == $nama_kelas_concat && $row->angkatan == $angkatan) 
+                if ($row->nama_kelas == $nama_kelas_concat) 
                 {
                     $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                                <b>Kelas '.$nama_kelas_concat.'  pada angkatan '.$angkatan.' Sudah ada.</b>
+                                                                <b>Kelas '.$nama_kelas_concat.' Sudah ada.</b>
                                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>');
                     redirect(base_url('kaprodi/kelas')); 
                 } 
-                else 
-                {
-                    $this->model_kelas->insert_data($data, 'tbl_kelas');
-                    $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                                <b>Kelas Berhasil di Buat.</b>
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>');
-                    redirect(base_url('kaprodi/kelas')); 
-                }
             }
+
+            $this->model_kelas->insert_data($data, 'tbl_kelas');
+            $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                        <b>Kelas Berhasil di Buat.</b>
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>');
+            redirect(base_url('kaprodi/kelas')); 
 
 
 
