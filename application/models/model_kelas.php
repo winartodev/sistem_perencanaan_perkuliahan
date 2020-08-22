@@ -22,6 +22,11 @@ class Model_Kelas extends CI_Model {
                                         ->get()->num_rows();
     }
 
+    public function check_duplicate_data($data, $table) {
+        $this->db->where($data);
+        return $this->db->get($table);       
+    }
+
     public function count_data() {
         return $this->db->get('tbl_kelas')->num_rows();
     }
