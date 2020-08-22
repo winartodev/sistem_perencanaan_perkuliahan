@@ -69,7 +69,7 @@ class Kelas extends CI_Controller {
 
             $data = array (
                 'angkatan'          => $angkatan,
-                'nama_kelas'        => $nama_kelas
+                'nama_kelas'        => 'IF ' . $angkatan . ' ' . $nama_kelas 
             );
 
             $this->model_kelas->insert_data($data, 'tbl_kelas');
@@ -95,7 +95,7 @@ class Kelas extends CI_Controller {
 
             $data = array (
                 'angkatan'          => $angkatan,
-                'nama_kelas'        => $nama_kelas
+                'nama_kelas'        => 'IF' + $angkatan + $nama_kelas
             ); 
 
             $where = array(

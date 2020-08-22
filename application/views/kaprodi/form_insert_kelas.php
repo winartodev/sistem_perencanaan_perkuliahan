@@ -33,13 +33,24 @@
 												</div>
                                                 <div class="form-group">
 													<label>Nama Kelas</label>
-													<input type="text" name="nama_kelas" class="form-control" placeholder="ex : A, B, C, Gab TK">
+													<select class="form-control" name="nama_kelas">
+														<option value="">Pilih Kelas</option>
+														<option value="A">A</option>
+														<option value="B">B</option>
+														<option value="C">C</option>
+														<option value="D">D</option>
+														<option value="E">E</option>
+														<option value="F">F</option>
+														<option value="G">G</option>
+														<option value="FX">FX</option>
+														<option value="GX">GX</option>
+													</select>
 													<?= form_error('nama_kelas', '<div class="text-small text-danger">', '</div>'); ?>
 												</div>
 											</div>
 											<div class="card-footer text-right">
 												<button class="btn btn-danger" type="reset"> <i class="fa fa-undo mr-1"></i>Reset</button>
-												<button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1">Save</i>
+												<button class="btn btn-primary mr-2" type="submit"> <i class="fa fa-save mr-1"></i>Save</button>
 											</div>
 										</form>
 									</div>

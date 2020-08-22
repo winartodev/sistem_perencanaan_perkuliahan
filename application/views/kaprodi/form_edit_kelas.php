@@ -35,7 +35,18 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Nama Kelas</label>
-                                                        <input type="text" name="nama_kelas" class="form-control" value="<?= $_kelas->nama_kelas?>">
+                                                        <select class="form-control" name="angkatan">
+                                                            <option value="<?= $_kelas->nama_kelas?>"><?= $_kelas->nama_kelas?></option>
+                                                            <option value="A">A</option>
+                                                            <option value="B">B</option>
+                                                            <option value="C">C</option>
+                                                            <option value="D">D</option>
+                                                            <option value="E">E</option>
+                                                            <option value="F">F</option>
+                                                            <option value="G">G</option>
+                                                            <option value="FX">FX</option>
+                                                            <option value="GX">GX</option>
+                                                        </select>
                                                         <?= form_error('nama_kelas', '<div class="text-small text-danger">', '</div>'); ?>
                                                     </div>
                                                 </div>
