@@ -23,7 +23,7 @@
 												<div class="form-group">
 													<label>Jurusan</label>
 													<select class="form-control" name="kode_kelompok">
-														<option value="">Pilih Kelompok</option>
+														<option value="">Pilih Jurusan</option>
                                                         <?php foreach($kelompok as $_kelompok): ?>
 														    <option value="<?= $_kelompok->kode_kelompok ?>"><?= $_kelompok->nama_kelompok; ?></option>
                                                         <?php endforeach; ?>
@@ -76,14 +76,7 @@
 												</div>
 												<div class="form-group">
                                                         <label>Jumlah Mahasiswa</label>
-                                                        <select class="form-control" name="jumlah_mahasiswa" id="kelas">
-															<option value="">Pilih Jumlah Mahasiswa</option>
-                                                           <option value="10">10</option>
-                                                           <option value="20">20</option>
-                                                           <option value="30">30</option>
-                                                           <option value="35">35</option>
-                                                           <option value="40">40</option>
-                                                        </select>
+														<input type="number" class="form-control" name="jumlah_mahasiswa">
                                                         <?= form_error('jumlah_mahasiswa', '<div class="text-small text-danger">', '</div>'); ?>
                                                     </div>
 											</div>
