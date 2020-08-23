@@ -38,7 +38,7 @@
 												<tbody> 
 												<?php 
 													foreach($penginputan as $tanggal):
-														if(date('Y-m-d') != $tanggal->tanggal_akhir):
+														if(date('Y-m-d') != $tanggal->tanggal_akhir && $tanggal->tanggal_mulai <= $tanggal->tanggal_akhir):
 															foreach($kelas as $kls): 
 																if ($kls->status_perencanaan == 'sudah_verifikasi'):
 													?>

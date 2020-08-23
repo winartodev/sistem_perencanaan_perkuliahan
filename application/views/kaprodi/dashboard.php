@@ -66,7 +66,7 @@
       								<tr>
       									<th>NPM</th>
       									<th>Nama Mahasiswa</th>
-      									<th>Email</th>
+      									<th>Keterangan</th>
       									<!-- <th>No Telp</th> -->
       									<th>Aksi</th>
       								</tr>

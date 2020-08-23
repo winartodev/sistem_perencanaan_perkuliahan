@@ -35,6 +35,7 @@ class Pra_Perencanaan extends CI_Controller {
         $id_perencanaan = $id;
         $npm            = $this->session->userdata('npm');
         $angkatan       = $this->session->userdata('angkatan');
+        $kode_mk        = $this->model_perencanaan->get_data_matakuliah($id_perencanaan, 'kode_mk');
 
         $array = array(
             'id_perencanaan'    => $id_perencanaan, 
@@ -47,7 +48,23 @@ class Pra_Perencanaan extends CI_Controller {
         $num1 = $check1->num_rows();
         $num2 = $check2->num_rows();
 
-        $kelas = $this->model_perencanaan->read_data();
+        $kelas = $this->model_perencanaan->get_kelas($id_perencanaan);
+        $matkul = $this->model_perencanaan->check_duplicate_matkul_by_mhs($npm);
+
+        foreach($matkul as $mk) 
+        {
+            if ($kode_mk == $mk->kode_mk) 
+            {
+                $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                            <b>Anda Sudah Mengambil Matakuliah '.$mk->nama_mk.'.</b>
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>');
+                                            redirect(base_url('mahasiswa/pra_perencanaan'));
+            } 
+        }
+
         foreach ($kelas as $row) 
         {
             if ($check3 == $row->jumlah_mahasiswa) 
@@ -59,35 +76,24 @@ class Pra_Perencanaan extends CI_Controller {
                                                             </button>
                                                         </div>');
                 redirect(base_url('mahasiswa/pra_perencanaan')); 
-            } 
-            else {
-                if ($num1 == 1 || $num2 == 1) {
-                    $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                            <b>Anda Sudah Mengambil Perkuliahan Ini.</b>
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>');
-                    redirect(base_url('mahasiswa/pra_perencanaan')); 
-                } else {
-                    $data = array (
-                        'npm'               => $npm,
-                        'id_perencanaan'    => $id_perencanaan,
-                        'angkatan'          => $angkatan,
-                        'status'            => 'Di Proses',
-                    );
-            
-                    $this->model_perencanaan->insert_data($data, 'tbl_verifikasi_perencanaan');
-                    $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
-                                                                <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>');
-                    redirect(base_url('mahasiswa/pra_perencanaan')); 
-                }       
             }
         }
+
+        $data = array (
+            'npm'               => $npm,
+            'id_perencanaan'    => $id_perencanaan,
+            'angkatan'          => $angkatan,
+            'status'            => 'Di Proses',
+        );
+
+        $this->model_perencanaan->insert_data($data, 'tbl_verifikasi_perencanaan');
+        $this->session->set_flashdata('pesan','<div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                    <b>Rencana Perkuliahan Anda Berhasil Di Tambah.</b>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>');
+        redirect(base_url('mahasiswa/pra_perencanaan'));     
         
        
     }

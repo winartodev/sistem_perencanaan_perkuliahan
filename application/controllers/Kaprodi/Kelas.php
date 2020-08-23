@@ -122,6 +122,22 @@ class Kelas extends CI_Controller {
                 'id' => $id
             );
 
+            $check_kelas = $this->model_kelas->check_duplicate_data($data, 'tbl_kelas')->result();
+
+            foreach ($check_kelas as $row) 
+            {
+                if ($row->nama_kelas == $nama_kelas_concat) 
+                {
+                    $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <b>Kelas '.$nama_kelas_concat.' Sudah ada.</b>
+                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>');
+                    redirect(base_url('kaprodi/kelas')); 
+                } 
+            }
+
             $this->model_kelas->update_data($where, $data, 'tbl_kelas');
             $this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade show" role="alert">
                                                         <b>Kelas Berhasil di Ubah.</b>

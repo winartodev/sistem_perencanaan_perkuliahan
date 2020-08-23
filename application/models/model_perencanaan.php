@@ -22,6 +22,22 @@ class Model_Perencanaan extends CI_Model {
                                                     ->get()->result(); 
     }
 
+    
+    public function check_duplicate_matkul_by_mhs($array) 
+    {
+        return $this->db->from('tbl_verifikasi_perencanaan')    ->join('tbl_perencanaan', 'tbl_perencanaan.id_perencanaan = tbl_verifikasi_perencanaan.id_perencanaan')
+                                                                ->join('tbl_matakuliah', 'tbl_matakuliah.kode_mk = tbl_perencanaan.kode_mk')
+                                                                ->where('tbl_verifikasi_perencanaan.npm', $array)
+                                                                ->get()->result();
+    }
+
+    public function get_kelas($id_perencanaan) 
+    {
+        return $this->db->from('tbl_perencanaan')   ->join('tbl_kelas', 'tbl_kelas.id = tbl_perencanaan.kode_kelas')
+                                                    ->where('tbl_perencanaan.id_perencanaan', $id_perencanaan)
+                                                    ->get()->result(); 
+    }
+
     public function filter_matakuliah($angkatan, $semester) 
     {
         $array = array('tbl_kurikulum.angkatan_kurikulum' => $angkatan, 'tbl_kurikulum.semester_kurikulum' => $semester);
@@ -107,5 +123,13 @@ class Model_Perencanaan extends CI_Model {
     public function delete_data($id, $table) {
         $this->db->where($id);
         $this->db->delete($table);
+    }
+
+    public function get_data_matakuliah($id, $filed) {
+        $this->db->select($filed);
+        $this->db->where('id_perencanaan', $id);
+        $res = $this->db->get('tbl_perencanaan');
+
+        return $res->row()->$filed;
     }
 }
