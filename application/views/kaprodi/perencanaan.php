@@ -17,10 +17,10 @@
 							<div class="col-12">
 								<div class="card">
 									<div class="card-header">
-										<h4>Daftar Data Perencanaan</h4>
-										
+										<h4>Daftar Data Perencanaan</h4><br>
 									</div>
 									<div class="card-body">
+										<a class="btn btn-warning mb-4" href=""> <i class="fa fa-print fa-lg mr-2" ></i> Print</a>
 										<div class="table-responsive">
 											<table class="table table-striped" id="table-1">
 												<thead>
@@ -28,9 +28,9 @@
 														<th>No</th>
 														<th>Nama Kelas</th>																										
 														<th>Nama MK</th>																																																			
-														<!-- <th>Nama Dosen</th>																																																			 -->
 														<th>Angkatan</th>
-														<th>Jumlah Mahasiswa</th>																																																			
+														<th>Jumlah Mahasiswa</th>	
+														<th>Nama Dosen</th>																																																			
 														<th>Status</th>																																																			
 														<th>Aksi</th>
 													</tr>
@@ -43,9 +43,9 @@
 														<td><?= $no++ ?></td>
 														<td><?= $_perencanaan->nama_kelas ?></td>
 														<td><?= $_perencanaan->nama_mk ?></td>
-														<!-- <td><?= $_perencanaan->nama_dosen ?></td> -->
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
 														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan), ' / ', $_perencanaan->jumlah_mahasiswa?></td>
+														<td><?= $_perencanaan->nama_dosen ?></td>									
 														<td>
 															<?php 
 																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):

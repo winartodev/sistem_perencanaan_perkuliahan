@@ -47,7 +47,7 @@
 											</tr>
 										</table>
 									</div>
-									<div class="col-md-6">
+									<!-- <div class="col-md-6">
 										<table class="table">
 											<tr>
 												<td>Kode Dosen </td>
@@ -59,7 +59,7 @@
 											</tr>
 										</table>
 										<?php endforeach; ?>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
