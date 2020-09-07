@@ -235,4 +235,12 @@ class Perencanaan extends CI_Controller {
         $this->form_validation->set_rules('jumlah_mahasiswa', 'Jumlah Mahasiswa', 'required');
     }
 
+    public function print() {
+        $data['perencanaan'] = $this->model_perencanaan->read_data();
+        $this->load->view('templates/kaprodi/header');
+        // $this->load->view('templates/kaprodi/sidebar');
+        $this->load->view('kaprodi/print_perencanaan', $data);
+        // $this->load->view('templates/kaprodi/footer');
+    }
+
 }

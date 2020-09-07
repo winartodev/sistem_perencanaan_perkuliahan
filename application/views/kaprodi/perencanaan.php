@@ -20,7 +20,7 @@
 										<h4>Daftar Data Perencanaan</h4><br>
 									</div>
 									<div class="card-body">
-										<a class="btn btn-warning mb-4" href=""> <i class="fa fa-print fa-lg mr-2" ></i> Print</a>
+										<a class="btn btn-warning mb-4" href="<?= base_url('kaprodi/perencanaan/print') ?>"> <i class="fa fa-print fa-lg mr-2" ></i> Print</a>
 										<div class="table-responsive">
 											<table class="table table-striped" id="table-1">
 												<thead>
