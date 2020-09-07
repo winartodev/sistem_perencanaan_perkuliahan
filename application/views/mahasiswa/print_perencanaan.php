@@ -1,27 +1,14 @@
 			<!-- Main Content -->
 			<div class="main-content">
 				<section class="section">
-					<div class="section-header">
-						<h1>Perencanaan</h1>
-						<!-- <div class="section-header-breadcrumb">
-							<div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-							<div class="breadcrumb-item"><a href="#">Modules</a></div>
-							<div class="breadcrumb-item">Mata Kuliah</div>
-						</div> -->
-					</div>
-
 					<div class="section-body">						
-						<?= $this->session->flashdata('pesan'); ?>
 						<div class="row">
 							<div class="col-12">
 								<div class="card">
-									<div class="card-header">
-										<h4>Daftar Perencanaan Mu</h4>
-									</div>
 									<div class="card-body">
-									<a class="btn btn-warning mb-4" href="<?= base_url('mahasiswa/perencanaan/print') ?>"> <i class="fa fa-print fa-lg mr-2" ></i> Print</a>
+									<h4 class="text-center mb-5">Data Perencanaan</h4>
 										<div class="table-responsive">
-											<table class="table table-striped" id="table-1">	
+											<table class="table table-bordered">	
 												<thead>
 													<tr>
 														<th>Kode MK</th>
@@ -55,3 +42,8 @@
 					</div>
 				</section>
 			</div>
+
+			<script>
+				window.print()
+			</script>
+

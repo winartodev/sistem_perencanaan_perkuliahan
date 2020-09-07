@@ -21,4 +21,13 @@ class Perencanaan extends CI_Controller {
         $this->load->view('mahasiswa/jadwal', $data);
         $this->load->view('templates/mahasiswa/footer');
     }
+
+    public function print() {
+        $data['jadwal'] = $this->model_jadwal->read_data();
+        $this->load->view('templates/mahasiswa/header');
+        // $this->load->view('templates/mahasiswa/sidebar');
+        $this->load->view('mahasiswa/print_perencanaan', $data);
+        // $this->load->view('templates/mahasiswa/footer');
+    }
+
 }
