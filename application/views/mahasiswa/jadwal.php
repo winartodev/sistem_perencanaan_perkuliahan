@@ -26,7 +26,7 @@
 													<tr>
 														<th>Kode MK</th>
 														<th>Nama MK</th>
-                                                        <th>Nama Dosen</th>
+                                                        <!-- <th>Nama Dosen</th> -->
                                                         <th>SKS Teori</th>
                                                         <th>SKS Praktek</th>
                                                         <th>Total SKS</th>
@@ -38,7 +38,7 @@
 													<tr>
 														<td><?= $jdwl->kode_mk; ?></td>
 														<td><?= $jdwl->nama_mk; ?></td>
-														<td><?= $jdwl->nama_dosen; ?></td>
+														<!-- <td><?= $jdwl->nama_dosen; ?></td> -->
 														<td><?= $jdwl->sks_teori; ?></td>
 														<td><?= $jdwl->sks_praktek; ?></td>
 														<td><?= $jdwl->total_sks; ?></td>
