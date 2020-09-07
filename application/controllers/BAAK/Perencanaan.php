@@ -230,4 +230,12 @@ class Perencanaan extends CI_Controller {
         $this->form_validation->set_rules('kode_kelas', 'Kode Kelas', 'required');
     }
 
+    public function print() {
+        $data['perencanaan'] = $this->model_perencanaan->read_data();
+        $this->load->view('templates/baak/header');
+        // $this->load->view('templates/baak/sidebar');
+        $this->load->view('baak/print_perencanaan', $data);
+        // $this->load->view('templates/baak/footer');
+    }
+
 }

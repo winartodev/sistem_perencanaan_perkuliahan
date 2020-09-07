@@ -1,27 +1,16 @@
 			<!-- Main Content -->
 			<div class="main-content">
 				<section class="section">
-					<div class="section-header">
-						<h1>Perencanaan</h1>
-						<!-- <div class="section-header-breadcrumb">
-							<div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-							<div class="breadcrumb-item"><a href="#">Modules</a></div>
-							<div class="breadcrumb-item">Mata Kuliah</div>
-						</div> -->
-					</div>
-
 					<div class="section-body">						
-						<?= $this->session->flashdata('pesan'); ?>
+						<!-- <?= $this->session->flashdata('pesan'); ?> -->
 						<div class="row">
 							<div class="col-12">
 								<div class="card">
-									<div class="card-header">
-										<h4>Daftar Data Perencanaan</h4>
-									</div>
 									<div class="card-body">
-										<a class="btn btn-warning mb-4" href="<?= base_url('baak/perencanaan/print') ?>"> <i class="fa fa-print fa-lg" ></i> Print </a>
+									<h4 class="text-center mb-4">Daftar Data Perencanaan</h4>
+
 										<div class="table-responsive">
-											<table class="table table-striped" id="table-1">
+											<table class="table table-bordered">
 												<thead>
 													<tr>
 														<th>No</th>
@@ -30,8 +19,6 @@
 														<th>Nama Dosen</th>																																																			
 														<th>Angkatan</th>																																																			
 														<th>Jumlah Mahasiswa</th>																																																			
-														<th>Status</th>																																																			
-														<th>Aksi</th>
 													</tr>
 												</thead>
                                                 <?php
@@ -45,22 +32,8 @@
 														<td><?= $_perencanaan->nama_mk ?></td>
 														<td><?= $_perencanaan->nama_dosen ?></td>
 														<td><?= $_perencanaan->angkatan_perencanaan ?></td>
-														<td><?= $this->model_jadwal->jumlah_mahasiswa($_perencanaan->id_perencanaan) ?> / <?= $_perencanaan->jumlah_mahasiswa?></td>
-														<td>
-															<?php 
-																if ($_perencanaan->status_perencanaan == 'sudah_verifikasi'):
-															?>
-																	<span class="badge badge-primary">Sudah Verifikasi</span>																
-															<?php
-																else:?>
-																	<span class="badge badge-danger ">Belum Verifikasi</span>																
-															<?php	 
-																endif
-															?>
-														</td>
-														<td>
-															<?= anchor(base_url('baak/perencanaan/info/'. $_perencanaan->id_perencanaan), '<div class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Info" href=""><i class="fas fa-search-plus"></i></div>')?>
-														</td>
+														<td><?= $_perencanaan->jumlah_mahasiswa?></td>
+														
 													</tr>
 												<?php
 															endif;
@@ -77,3 +50,7 @@
 					</div>
 				</section>
 			</div>
+
+			<script>
+			window.print()
+			</script>
