@@ -86,7 +86,7 @@
 						<li class="menu-header">Main</li>
 						<li>
 							<a href="<?= base_url('mahasiswa/pra_perencanaan')?>" class="nav-link"><i class="fas fa-book"></i>
-								<span>Pra Perencanaan</span>
+								<span>Input Perencanaan</span>
 							</a>
 						</li>
 						<li>
